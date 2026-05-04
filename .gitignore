@@ -1,1 +1,31 @@
-*.DS_Store
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+
+# Data — large files and secrets
+data/snapshots/*.json
+data/odds/*.json
+*.csv
+*.parquet
+
+# Models — binary artifacts (track params separately)
+models/**/*.pkl
+models/**/*.joblib
+models/**/*.pt
+models/**/*.h5
+
+# Runtime
+runs/*/tmp/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
