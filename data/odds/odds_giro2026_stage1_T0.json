@@ -1,0 +1,18 @@
+{
+  "race_id": "giro2026",
+  "stage_number": 1,
+  "snapshot_timestamp": "TEMPLATE — replace with ISO8601 timestamp at T0",
+  "source": "TEMPLATE — replace with bookmaker name",
+  "constraint_reminder": "BENCHMARK ONLY — not a model input or calibration target",
+  "compliance_note": "Per contracts/v2.0/01_system_canonical.md Section 3: External proxy signals (market odds, rankings, model outputs) are FORBIDDEN from entering Layer 0, Layer 3, or Payoff Structure. Odds are used exclusively for post-hoc divergence analysis and human review.",
+  "stage_win_odds": [
+    {
+      "rider_id": "TEMPLATE",
+      "rider_name": "Template Rider",
+      "decimal_odds": 0.0,
+      "implied_probability": 0.0
+    }
+  ],
+  "top3_odds": [],
+  "top10_odds": []
+}
