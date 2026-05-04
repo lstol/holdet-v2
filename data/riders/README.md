@@ -6,6 +6,15 @@ Layer 0 — Rider-Intrinsic snapshots.
 `riders_{race_id}_{version}.json`
 Example: `riders_giro2026_v1.json`
 
+## Current files
+
+| File | Race | Riders | Version | Generated |
+|------|------|--------|---------|-----------|
+| `riders_giro2026_v1.json` | Giro d'Italia 2026 | 179 | v1 | 2026-05-04 |
+
+## Generation script
+`generate_riders.py` — rebuild from source data, re-run if startlist changes.
+
 ## Contents per rider
 - physiological capacity proxies
 - terrain affinity profile

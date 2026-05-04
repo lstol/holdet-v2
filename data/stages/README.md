@@ -2,6 +2,12 @@
 
 Layer 1 — Race-State stage profiles.
 
+## Current files
+
+| File | Race | Stages | Total km | Generated |
+|------|------|--------|----------|-----------|
+| `stages_giro2026.json` | Giro d'Italia 2026 | 21 | 3459.2 km | 2026-05-04 |
+
 ## File naming convention
 `stages_{race_id}.json`
 Example: `stages_giro2026.json`
