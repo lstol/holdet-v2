@@ -1,0 +1,104 @@
+{
+  "snapshot_type": "pre_race",
+  "timestamp": "2026-05-05T07:22:18.306492+00:00",
+  "fantasy_team_id": 6796783,
+  "bank": null,
+  "captain_holdet_id": null,
+  "team_tier": "gold",
+  "riders_selected": 0,
+  "note": "Team exists but 0 riders selected in holdet.dk — user must set up lineup before Stage 1 (May 8 17:00)",
+  "dns_alert": [
+    {
+      "holdet_id": 47380,
+      "name": "Lorenzo Germani",
+      "reason": "isOut=True in API as of 2026-05-05"
+    },
+    {
+      "holdet_id": 47350,
+      "name": "Filippo Conca",
+      "reason": "isOut=True in API as of 2026-05-05"
+    }
+  ],
+  "planned_riders_from_roadmap": [
+    {
+      "holdet_id": 47380,
+      "name": "Lorenzo Germani",
+      "price": 2500000,
+      "startPrice": 2500000,
+      "isOut": true,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    },
+    {
+      "holdet_id": 47372,
+      "name": "Jonas Vingegaard",
+      "price": 17500000,
+      "startPrice": 17500000,
+      "isOut": false,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    },
+    {
+      "holdet_id": 47378,
+      "name": "Liam Slock",
+      "price": 2500000,
+      "startPrice": 2500000,
+      "isOut": false,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    },
+    {
+      "holdet_id": 47377,
+      "name": "Lennert Van Eetvelt",
+      "price": 7500000,
+      "startPrice": 7500000,
+      "isOut": false,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    },
+    {
+      "holdet_id": 47350,
+      "name": "Filippo Conca",
+      "price": 2500000,
+      "startPrice": 2500000,
+      "isOut": true,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    },
+    {
+      "holdet_id": 47382,
+      "name": "Manuele Tarozzi",
+      "price": 2500000,
+      "startPrice": 2500000,
+      "isOut": false,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    },
+    {
+      "holdet_id": 47368,
+      "name": "Jay Vine",
+      "price": 8000000,
+      "startPrice": 8000000,
+      "isOut": false,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    },
+    {
+      "holdet_id": 47341,
+      "name": "Dion Smith",
+      "price": 2500000,
+      "startPrice": 2500000,
+      "isOut": false,
+      "isInjured": false,
+      "captainPopularity": 0.0,
+      "favorite": null
+    }
+  ]
+}

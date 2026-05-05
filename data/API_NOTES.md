@@ -1,16 +1,23 @@
 # API_NOTES.md — Holdet API Reference
-# All endpoints confirmed working as of April 2026
+# Confirmed working as of May 2026 (Phase 2b)
 # Base URL: https://nexus-app-fantasy-fargate.holdet.dk
 
 ---
 
 ## Authentication
 
-All endpoints require the session cookie from a logged-in browser.
+Holdet.dk uses **Better Auth** (not NextAuth). The session is stored in two cookies
+set on `www.holdet.dk` plus an additional `session` cookie set on the API domain
+after the first API call.
 
-Store in `.env`:
+**Full cookie string required (as of May 2026):**
 ```
-HOLDET_COOKIE=session=<uuid>; AWSALB=<token>; AWSALBCORS=<token>
+HOLDET_COOKIE=__Secure-better-auth.session_token=<token>; __Secure-better-auth.session_data=<jwt>; session=<uuid>; AWSALB=<token>; AWSALBCORS=<token>
+```
+
+Store in `.env` (all 5 cookies needed for authenticated endpoints):
+```
+HOLDET_COOKIE=<full cookie string above>
 HOLDET_GAME_ID=612
 HOLDET_GAME_ID_GIRO=612
 HOLDET_GAME_ID_TDF=TBC
@@ -19,11 +26,17 @@ HOLDET_CARTRIDGE=giro-d-italia-2026
 HOLDET_CARTRIDGE_TDF=tour-de-france-2026
 ```
 
-Refresh cookie when requests return 401/403:
+**Automated cookie capture (recommended):**
+Run `engine/siv/capture_cookie.py` — uses Playwright to log in and write cookies to .env.
+Requires `HOLDET_EMAIL` and `HOLDET_PASSWORD` in .env. Takes ~15 seconds.
+
+**Manual cookie capture (fallback):**
 1. Chrome → holdet.dk → log in
 2. F12 → Network → Fetch/XHR
-3. Navigate to rider list
-4. Find `players` request → Headers → copy Cookie value → update `.env`
+3. Navigate to `/da/giro-d-italia-2026/me/fantasyteams/6796783`
+4. Find any request → Headers → copy full Cookie header value → update `.env`
+
+Refresh cookie when requests return 401/403.
 
 **Never commit `.env` to git.**
 
@@ -31,6 +44,11 @@ Refresh cookie when requests return 401/403:
 the IP address of the browser that created them. The cookie will return 403 from
 any other machine or network (including CI, sandboxes, or other computers).
 Always capture the cookie from the same machine you will run the tool on.
+
+**Public vs authenticated endpoints:**
+- `/api/games/612/players` — public (no auth needed for rider list)
+- `/api/cartridges/giro-d-italia-2026/favorites` — requires auth (user lineup)
+- `/api/cartridges/giro-d-italia-2026/fantasyteams` — requires auth (user teams)
 
 ---
 
