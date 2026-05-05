@@ -1,114 +1,73 @@
 # Phase 3 Summary — Holdet v2 / Giro d'Italia 2026
-# Written: 2026-05-08 (pre-Stage 1)
+# Written: 2026-05-08
 
----
+## Overview
 
-## What Phase 3 delivered
+Phase 3 ran from May 5–8 and was split into five sub-phases as scope expanded
+and modeling errors were discovered. This is the definitive account.
 
-Phase 3 was split into four sub-phases as modeling errors were discovered
-and the scope expanded. This is the full account of what was built and fixed.
-
----
-
-## Phase 3a — Stage 1 decision dashboard
-
-**Deliverable:** interface/early/stage1_dashboard.html + build_stage1.py
-
-**Recommended team:** Jonathan Milan ★, Dylan Groenewegen, Arnaud De Lie,
-Kaden Groves, Tobias Bayer, Markus Hoelgaard, Max Walscheid, Luca Mozzato
-Total: 50,000,000 kr. Captain: Jonathan Milan.
-
-**Checks passed:** 8 riders, budget exact, no DNS riders, max 2 per real team.
-
----
+## Phase 3a — Stage 1 dashboard
+Minimal viable dashboard: 8-rider team, 3-stage EV, captain recommendation.
+Team: Milan ★, Groenewegen, De Lie, Groves, Mozzato, Gudmestad, De Buyst, Hoelgaard.
+Budget: exactly 50,000,000 kr.
 
 ## Phase 3b — EV model, optimizer, risk profiles
-
-**EV model (models/ev_breakdown.py):**
-Six auditable components: stage_finish, gc, jersey, sprint_kom, team_bonus,
-captain_bonus. Pre-computed for all 182 active riders × 21 stages.
-
-**Stage image parsing:**
-All 21 stage profile images parsed via Anthropic vision API.
-Key finds: Stage 2 has 3 KOMs (not 2). Stage 14 has 5 KOM climbs.
-Stage 19: HC Passo Giau (40 pts).
-
-**Optimizer (models/optimizer.py):**
-Multi-stage transfer-aware. Finds optimal team per stage, computes net EV
-gain minus transfer cost, outputs hold/transfer decision with rationale.
-StageDepthCount bonus modeled at team level.
-
-**Risk profiles (models/risk_profiles.py):**
-Conservative (max EV/σ), Balanced (optimizer output), All-In (concentrate
-top-EV picks + high-upside cheap riders). Consensus picks flagged.
-
----
+Six-component EV model (stage_finish, gc, jersey, sprint_kom, team_bonus, captain_bonus).
+Multi-stage transfer-aware optimizer. StageDepthCount bonus at team level.
+Conservative / Balanced / All-In risk profiles.
+21 stage images parsed via Anthropic vision API for sprint/KOM locations.
+Pre-computed ev_breakdown_stage{1–21}.json for all active riders.
 
 ## Phase 3c — Scoring fixes
-
-Five errors corrected after initial Phase 3b validation:
-
-| Error | Before | After |
-|-------|--------|-------|
-| Sprint/KOM points | Calibration constant | Actual roadbook data |
-| GC EV flat stages | 0 kr | 16,480 kr (Milan S1) |
-| Sprint/KOM EV | 1,242 kr | 51,858 kr (Milan S1) |
-| Captain bonus | 0.6× multiplier | E[max(ΔV,0)] |
-| Stage image | Broken path | Base64 data URI |
-
-New file: data/stages/stage_roadbook.json — official sprint/KOM point
-scales for all 21 stages.
-
----
+Five errors corrected: roadbook sprint/KOM points, GC EV on flat stages,
+captain bonus formula (E[max(ΔV,0)] not 0.6× multiplier), base64 image
+embedding in dashboard, KOM category point scales (HC/1/2/3/4 table).
+Milan S1 sprint_kom: 1,242 → 51,858 kr. Milan S1 GC EV: 0 → 16,480 kr.
 
 ## Phase 3d — Rider intelligence + probability recalibration
+Synthetic Phase 2a attributes replaced by Copilot-researched data for full field
+(data/external/riders_copilot.json, ingested via scripts/ingest_copilot_attributes.py).
+Override system with three-tier priority: manual (3) > expert_intel (2) > copilot (1).
+Contender pool corrected: 45 synthetic → ~12 genuine sprint contenders.
+Manual calibrations: Milan 0.96, Groenewegen 0.88 (relative to this field).
+load_rider_attributes() updated: PRIORITY-sorted application, mode:adjust (additive,
+clamped [0,1]), mode:replace (exact), stage_last_applicable scoping, _overridden tracking.
+One-command rebuild: python3 scripts/apply_corrections_and_rebuild.py.
 
-**Status: IN PROGRESS**
-
-**Problem identified:** Synthetic Phase 2a attributes are wrong for many
-riders. Milan's win probability was 5.4% (should be ~10–15%). Sprint/KOM
-EV exceeded stage_finish EV (internally inconsistent). Stage 2 EV too high
-for sprinters (terrain mismatch penalty not applied).
-
-**Solution:** Web search intelligence per rider via Anthropic API.
-scripts/gather_rider_intelligence.py researches each rider and writes
-corrected attributes to data/overrides/rider_attribute_overrides.yaml.
-The override file is append-only and never overwrites the main rider JSON.
-
-**Intelligence workflow:**
-1. gather_rider_intelligence.py --stage-type sprint (45 riders, ~11 min)
-2. review_contender_pool.py 1 (confirm pool)
-3. apply_corrections_and_rebuild.py (propagate downstream)
-
-**Still to build (HANDOFF_phase3d_probability_and_risk.md):**
-- Contender pool win probability model
-- Sprint/KOM EV consistency assertion
-- Terrain mismatch penalty (negative EV for sprinters on hilly stages)
-- Stage-type-conditional risk profiles
-- Collapsible dashboard rows with P(win) + per-component EV per stage
-
----
+## Phase 3e — Expert intelligence pipeline
+Pre-stage intelligence from 5 sources:
+  Emil Axelgaard / TV2 Sport (weight 1.5) — primary
+  VeloNews (1.0), CyclingNews (1.0) — secondary
+  ProCyclingStats (0.8), FirstCycling (0.8) — tertiary
+Signal extraction via Anthropic API with signal_type field:
+  form, tactics, team_strategy, terrain_fit, injury_risk, crash, illness,
+  dns_risk, saving_legs, gc_protection, stage_hunter.
+Weighted signal merge: agreement ×1.2, conflict ×0.5.
+Signal-type-dependent caps (SOFT_CAP_BY_TYPE):
+  crash/injury/illness/dns_risk → uncapped (±1.0, [UNCAPPED] flagged in output)
+  saving_legs/gc_protection → ±0.40
+  form/tactics → ±0.25
+  terrain_fit → ±0.20
+Overrides written with stage_last_applicable=N — expire silently after target stage.
+Dashboard §9 Intelligence Panel: signal table with adjustment, sources, consensus.
 
 ## Operating model
-
-Handoffs are written in the Claude.ai session (this interface).
-Programming is done by Claude Code.
-The human operator is the integration layer and decision maker.
-
-Session continuity: start each new session with the briefing block
-at the top of this repo's README (or the session briefing template).
-Read contracts/v2.0/ and competition/roadmap.md before doing anything.
-
----
+Handoffs written in Claude.ai session. Programming done by Claude Code.
+Human operator is integration layer and final decision maker.
 
 ## Key files for next session
+- competition/roadmap.md — current phase status and corrections log
+- notes/reviews/phase3_summary.md — this file
+- data/API_NOTES.md — all confirmed Holdet endpoints and cookie requirements
+- data/overrides/rider_attribute_overrides.yaml — all attribute corrections
+- data/intelligence/ — per-stage expert intel artifacts (gather before each stage)
+- interface/early/stage1_dashboard.html — current dashboard
+- decisions/stage1_system_b.yaml — Stage 1 decision record
 
-| File | Purpose |
-|------|---------|
-| competition/roadmap.md | Current phase status |
-| notes/reviews/phase3_summary.md | This file |
-| data/API_NOTES.md | All confirmed Holdet API endpoints |
-| data/overrides/rider_attribute_overrides.yaml | Rider attribute corrections |
-| HANDOFF_phase3d_probability_and_risk.md | Next Claude Code task |
-| interface/early/stage1_dashboard.html | Current dashboard |
-| decisions/stage1_system_b.yaml | Stage 1 decision record |
+## Pre-stage checklist (run before every stage)
+1. python3 scripts/gather_expert_intel.py --stage N
+2. python3 scripts/apply_corrections_and_rebuild.py
+3. Review dashboard §9 intelligence panel
+4. Add manual overrides if needed (crashes, insider knowledge, lineup changes)
+5. python3 scripts/apply_corrections_and_rebuild.py (if changes made)
+6. Review team, confirm captain, submit before window closes

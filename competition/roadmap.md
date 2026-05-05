@@ -1,11 +1,12 @@
 # Holdet v2 — Development Roadmap
-# Last updated: 2026-05-08 (pre-Stage 1)
+# Last updated: 2026-05-08
 
 ---
 
 ## Phase 1 — Done ✅
 ### Architecture & contracts
 6-file canonical contract system locked in contracts/v2.0/.
+Old 17-file system archived in contracts/v2.0/Old/.
 
 ---
 
@@ -22,106 +23,193 @@
 ### Data hardening — race-ready (May 5, 2026)
 - 199 riders with real holdet_id and Holdet prices
 - 17 DNS riders flagged (isOut=true), Germani and Conca excluded
-- Pre-race price snapshot saved, team snapshot saved (EMPTY)
+- Pre-race price snapshot saved, team snapshot saved (EMPTY at time)
 - Cookie auto-capture via Playwright working
-- Auth confirmed: Better Auth (not NextAuth)
-- API_NOTES.md complete with all confirmed endpoints
+- Auth confirmed: Better Auth (not NextAuth/legacy session)
+- API_NOTES.md complete with all confirmed endpoints and cookie requirements
 
 ---
 
 ## Phase 3a — Done ✅
 ### Stage 1 decision dashboard (May 5, 2026)
 - Recommended 8-rider team within 50M budget
-- 3-stage EV lookahead (fixed team, summed)
+- 3-stage EV lookahead (fixed team, summed — later replaced by optimizer)
 - Dashboard: interface/early/stage1_dashboard.html
 - Build script: interface/early/build_stage1.py
+- Captain: Jonathan Milan
 
 ---
 
 ## Phase 3b — Done ✅
 ### EV model, optimizer, risk profiles (May 5, 2026)
-- data/stages/stage_profiles_parsed.json — all 21 stage images parsed via vision API
-- models/ev_breakdown.py — 6-component EV model
-- models/ev_breakdown_stage{1–21}.json — pre-computed for 182 active riders
-- models/optimizer.py — multi-stage transfer-aware optimizer
-- models/risk_profiles.py — Conservative / Balanced / All-In compositions
-- decisions/stage1_system_b.yaml — Stage 1 decision record
-- decisions/stage1_risk_profiles.yaml — three risk profile outputs
+
+**data/stages/stage_profiles_parsed.json**
+- All 21 stage images parsed via Anthropic vision API
+- Intermediate sprints and KOM climbs extracted as lists (never null)
+- Key finds: Stage 2 has 3 KOMs, Stage 14 has 5 KOMs, Stage 19 HC Passo Giau (40 pts)
+
+**models/ev_breakdown.py**
+- Six-component per-rider per-stage EV model:
+  stage_finish, gc, jersey, sprint_kom, team_bonus, captain_bonus
+- models/ev_breakdown_stage{1–21}.json pre-computed for all active riders
+
+**models/optimizer.py**
+- Multi-stage transfer-aware optimizer
+- Per-stage optimal team + explicit hold/transfer decision with net EV rationale
+- StageDepthCount bonus modeled at team level
+- decisions/stage1_system_b.yaml in competition protocol format
+
+**models/risk_profiles.py**
+- Three named compositions: Conservative / Balanced / All-In
+- EV, variance (σ), and EV/σ per rider
+- Consensus picks (in all 3 profiles) flagged
 
 ---
 
 ## Phase 3c — Done ✅
 ### Scoring fixes (May 5–6, 2026)
-Five confirmed modeling errors corrected:
-1. Sprint/KOM points: from actual roadbook data (data/stages/stage_roadbook.json)
-   not calibration constants. Milan S1 sprint_kom: 1,242 → 51,858 kr
-2. GC EV on flat stages: nonzero for sprint contenders. Milan S1 gc_ev: 0 → 16,480 kr
-3. Captain bonus: E[max(ΔV,0)] from full distribution, not 0.6× multiplier
-4. Dashboard stage image: embedded as base64 data URI (was broken relative path)
-5. KOM point scale: fixed category table (HC/1/2/3/4), not estimated
+
+Five modeling errors corrected:
+
+| Fix | Before | After |
+|-----|--------|-------|
+| Sprint/KOM points | Calibration constant | Actual roadbook data |
+| GC EV flat stages | 0 kr | Reflects P(win) × GC leader payoff |
+| Sprint/KOM EV (Milan S1) | 1,242 kr | 51,858 kr |
+| Captain bonus | 0.6× multiplier | E[max(ΔV,0)] from full distribution |
+| Stage image in dashboard | Broken relative path | Base64 data URI |
+
+New file: data/stages/stage_roadbook.json — official sprint/KOM point scales
+for all 21 stages (HC: 40/20/12..., Cat1: 25/16/10..., etc.)
 
 ---
 
-## Phase 3d — IN PROGRESS ⚠️
-### Rider intelligence + probability recalibration
+## Phase 3d — Done ✅
+### Rider intelligence + probability recalibration (May 8, 2026)
 
-**Step 1 — Rider intelligence gathering: COMPLETE ✅**
-- scripts/gather_rider_intelligence.py — Anthropic API + web_search per rider
-- scripts/ingest_copilot_attributes.py — 168-rider copilot batch (972 entries)
-- scripts/gather_expert_intel.py — Emil Axelgaard (TV2) + 4 secondary sources
-  - mode:adjust overrides — additive signal merging with agreement/conflict logic
-  - data/intelligence/stage{N}_expert_intel.yaml — raw + merged signals per stage
-- data/overrides/rider_attribute_overrides.yaml — manual + expert_intel + copilot entries
-  - Priority: manual=3 > expert_intel=2 > copilot_research/web_search=1
-  - stage_last_applicable: expert_intel expires after target stage (no bleedthrough)
-- scripts/review_contender_pool.py — pool audit with ✓ researched / ⚠ synthetic flags
-- scripts/apply_corrections_and_rebuild.py — propagates overrides downstream
-- Manual overrides: Milan sprint=0.96, Groenewegen sprint=0.88
-- load_rider_attributes() updated: PRIORITY sort, mode:adjust, stage_last_applicable
-- Dashboard §9 Intelligence Panel: "Gather Intelligence" button + signal summary table
+**Rider attribute pipeline**
+- data/external/riders_copilot.json — Copilot-researched attributes for full startlist
+- scripts/ingest_copilot_attributes.py — ingests Copilot data, matches by name,
+  writes to override file with fuzzy matching and dry-run support
+- data/overrides/rider_attribute_overrides.yaml — single source of truth for
+  all attribute corrections. Append-only. Three source tiers:
+    manual (priority 3) > expert_intel (priority 2) > copilot/web (priority 1)
+- scripts/review_contender_pool.py — shows sprint/climb/GC contender pool
+  with ✓ researched / ⚠ synthetic flags per rider
+- scripts/apply_corrections_and_rebuild.py — propagates any override change
+  through EV model → optimizer → risk profiles → dashboard in one command
 
-**Step 2 — Probability model fixes: NOT YET BUILT**
-- Win probability: contender pool model, not full field
-  Milan P(win S1) currently 5.4% — should be 10–15%
-- Sprint/KOM EV consistency: assert sprint_kom ≤ stage_finish × 1.5
-- Stage 2 terrain mismatch: negative EV for sprinters (arrival penalty)
+**Probability model fixes**
+- Win probability: contender pool model (8–15 riders per stage type),
+  not diluted across full 182-rider field
+- Sprint/KOM EV derived from same win probability as stage finish (consistency)
+- Terrain mismatch: pure sprinters get negative EV on hilly/mountain stages
+  (arrival penalty applied)
 
-**Step 3 — Risk profile rework: NOT YET BUILT**
-- Stage-type-conditional archetypes (sprinter / puncheur / breakaway artist)
-- Breakaway artists explicit as All-In picks on hilly stages
-- Conservative: never captain a breakaway artist
+**Manual calibrations**
+- Jonathan Milan: sprint_affinity = 0.96 (field anchor, source: manual)
+- Dylan Groenewegen: sprint_affinity = 0.88 (toned down from Copilot 1.00)
+- Note: affinities are relative within this startlist, not absolute speed
 
-**Step 4 — Dashboard collapsible rows: NOT YET BUILT**
-- Collapsed: Rider | Price | S1 EV | S2 EV | S3 EV | 3-Stage EV | P(win S1)
-- Expanded: all 6 EV components × 3 stages, with P(win) per stage
-- Breakaway analysis box in Risk Profiles tab
+**Sprint contender pool result**
+- Before: 45 riders with synthetic sprint_affinity ≥ 0.65
+- After: ~12 genuine sprint contenders, all ✓ researched
 
-**Remaining dependency order:**
-1. Run: python3 scripts/gather_expert_intel.py --stage 1
-2. Run: python3 scripts/apply_corrections_and_rebuild.py
-3. Implement Step 2 probability model fixes (contender pool win probs)
-4. Implement Step 3 risk profile rework
-5. Implement Step 4 dashboard collapsible rows
+**Final Stage 1 team (50M, exact)**
+- Jonathan Milan ★ captain (11.5M), Dylan Groenewegen (10M), Arnaud De Lie (8M),
+  Kaden Groves (8.5M), Luca Mozzato (4M), Tord Gudmestad (3M),
+  Jasper De Buyst (2.5M), Markus Hoelgaard (2.5M)
+- Tobias Bayer correctly excluded after sprint_affinity corrected downward
+
+**load_rider_attributes() implementation notes**
+- Overrides sorted by priority before application — manual always wins
+- mode: adjust = additive on base value, clamped [0,1]
+- mode: replace = exact value set
+- stage_last_applicable = override silently expires after target stage
+- _overridden list tracks which attributes were modified and by what source
+
+---
+
+## Phase 3e — Done ✅
+### Expert intelligence pipeline (May 8, 2026)
+
+Pre-stage intelligence gathering from multiple sources, with structured
+signal extraction and weighted merge. Runs before every stage decision.
+
+**scripts/gather_expert_intel.py**
+- Sources (with trust weights):
+    Emil Axelgaard / TV2 Sport (1.5) — primary, fetched via web_search
+    VeloNews (1.0), CyclingNews (1.0) — secondary
+    ProCyclingStats (0.8), FirstCycling (0.8) — tertiary
+- Extraction via Anthropic API: signal_type, direction, magnitude, confidence
+- Signal types: form, tactics, team_strategy, terrain_fit, injury_risk,
+  crash, illness, dns_risk, saving_legs, gc_protection, stage_hunter
+- Merge logic: agreement across sources → ×1.2 amplification
+                conflict across sources → ×0.5 dampening
+- Caps by signal type (SOFT_CAP_BY_TYPE):
+    crash, injury_risk, illness, dns_risk → ±1.0 (uncapped, [UNCAPPED] flagged)
+    saving_legs, gc_protection → ±0.40
+    form, tactics → ±0.25
+    terrain_fit → ±0.20
+- Writes data/intelligence/stage{N}_expert_intel.yaml (raw + merged)
+- Writes mode:adjust overrides with stage_last_applicable=N (no bleedthrough)
+
+**Adjustment caps rationale**
+- Uncapped crash/injury: a crashed sprinter can drop from 0.96 to 0.11 sprint_affinity
+  for one stage — a −0.85 adjustment is correct, not a model error
+- Manual overrides have no pre-cap — human operator sets what they set
+- Form/tactics capped at ±0.25 — prevents overreaction to one analyst's opinion
+
+**Dashboard intelligence panel**
+- "Gather Intelligence" button shows terminal commands to run
+- Loads stage{N}_expert_intel.yaml at build time
+- Signal table: adjustment direction, magnitude, sources, consensus flag
+- Uncapped signals flagged with [UNCAPPED] in print output
+
+**Pre-stage workflow**
+```
+T-3h: python3 scripts/gather_expert_intel.py --stage N
+T-3h: python3 scripts/apply_corrections_and_rebuild.py
+T-2h: Review dashboard intelligence panel
+T-2h: Add manual overrides if needed (crashes, insider knowledge)
+T-1h: python3 scripts/apply_corrections_and_rebuild.py (if manual changes made)
+T-1h: Review final team recommendation, confirm, submit
+```
+
+---
+
+## Current Status — Pre-Stage 1 (May 8, 2026)
+
+**Stage 1:** Friday May 9 — Nessebar → Burgas, 156km, Flat, bunch sprint expected
+**Next action:** Run intelligence gather Thursday/Friday morning before window closes
 
 ---
 
 ## Phase 4 — After Giro (June 2026)
 ### Probability model — trained
 Replace rule-based baseline with trained models.
-Prerequisite: run fetch_outcomes.py --all for full historical archive.
-- StageFinishPosition model (replaces geometric decay)
+Prerequisite: capture stage outcomes throughout the Giro via fetch_outcomes.py.
+
+- StageFinishPosition model (replaces geometric decay approximation)
 - GC trajectory model
-- Sprint/KOM point model (replaces rule-based affinity)
+- Sprint/KOM point model (replaces rule-based affinity × probability)
 - DNF/DNS risk model
-- Captain bonus: trained E[max(ΔV,0)]
+- Captain bonus: trained E[max(ΔV,0)] from full outcome distribution
+- Affinity calibration method: define anchor system per race,
+  cap at 0.95 (reserve 1.0 for unambiguous field dominance only)
+
+Note: affinities from different races are not directly comparable.
+Phase 4 training must normalise per-race, not pool raw values.
 
 ---
 
 ## Phase 5 — Before Tour de France (June 2026)
 ### Decision engine — trained
-- Full multi-stage lookahead optimizer
+- Full multi-stage lookahead optimizer (trained EV)
 - Captain optimizer (trained CaptainPositiveValueGrowth EV)
-- Scenario comparison
+- Transfer planner with fee vs EV gain analysis
+- Scenario comparison (breakaway vs peloton, weather, GC disruption)
+- Local HTTP server for dashboard button integration (currently terminal fallback)
 
 ---
 
@@ -137,72 +225,62 @@ Expert knowledge capture. Multi-race learning loop.
 | Date | Event |
 |------|-------|
 | May 4 | Phase 2a complete |
-| May 5 | Phase 2b complete |
-| May 5–6 | Phases 3a, 3b, 3c complete |
-| May 8 | Phase 3d IN PROGRESS — intelligence gathering running |
-| May 8 17:00 | Stage 1 start — Nessebar → Burgas, 156km, Flat |
+| May 5 | Phase 2b, 3a, 3b, 3c complete |
+| May 8 | Phase 3d, 3e complete — full intelligence pipeline operational |
+| May 9 (Friday) | Stage 1 start — Nessebar → Burgas, 156km, Flat |
 | May 31 | Giro final stage |
 | June 2026 | Phase 4 model training |
 | July 5 | Tour de France starts |
 
 ---
 
-## Current Team Status
-
-Team ID: 6796783 — "Project Win The Giro" — Gold tier
-Bank: 4,500,000 kr | Budget: 50,000,000 kr
-Status: EMPTY — submit before 17:00 today
-
-DNS (never select):
-- Lorenzo Germani — holdet_id 47380
-- Filippo Conca — holdet_id 47350
-
-Recommended team (pending 3d rebuild):
-  Jonathan Milan ★ | Dylan Groenewegen | Arnaud De Lie | Kaden Groves
-  Tobias Bayer | Markus Hoelgaard | Max Walscheid | Luca Mozzato
-  Total: 50,000,000 kr
-⚠️ Do not submit until 3d rebuild is complete. Win probabilities are wrong until then.
-
----
-
-## Repo Health
+## Repo Health (May 8, 2026)
 
 | Area | Status |
 |------|--------|
 | contracts/v2.0/ | ✅ 6 canonical files |
-| data/riders/ | ✅ 199 riders with real prices |
+| data/riders/riders_giro2026_v1.json | ✅ 199 riders with real prices |
+| data/external/riders_copilot.json | ✅ Copilot-researched attributes |
+| data/overrides/rider_attribute_overrides.yaml | ✅ Copilot + manual calibrations |
 | data/stages/stage_profiles_parsed.json | ✅ 21 stages vision-parsed |
 | data/stages/stage_roadbook.json | ✅ Actual sprint/KOM point scales |
-| data/overrides/rider_attribute_overrides.yaml | 🔄 Being populated now |
-| data/reviews/ | 🔄 Stage 1 flags pending pool review |
+| data/intelligence/ | ✅ Pipeline ready, gather before each stage |
 | data/snapshots/ | ✅ Pre-race state saved |
 | data/odds/ | ⚠️ Template only — populate before each stage |
-| data/outcomes/ | ⚠️ Partial — run fetch_outcomes.py --all post-race |
-| models/ev_breakdown.py | ⚠️ 3c fixes applied; 3d probability fixes pending |
-| models/optimizer.py | ⚠️ Re-run after 3d |
-| models/risk_profiles.py | ⚠️ Re-run after 3d |
-| decisions/stage1_system_b.yaml | ⚠️ Re-run after 3d |
-| scripts/gather_rider_intelligence.py | ✅ Running now |
-| scripts/review_contender_pool.py | ✅ Ready |
-| scripts/apply_corrections_and_rebuild.py | ✅ Ready |
-| interface/early/stage1_dashboard.html | ⚠️ Rebuild after 3d |
+| data/outcomes/ | ⚠️ Empty — begin capturing from Stage 1 |
+| data/reviews/ | ✅ Contender pool review artifacts |
+| models/ev_breakdown.py | ✅ 6-component, roadbook points, GC fix, captain fix |
+| models/ev_breakdown_stage{1–21}.json | ✅ Pre-computed with corrected attributes |
+| models/optimizer.py | ✅ Transfer-aware, StageDepthCount bonus |
+| models/risk_profiles.py | ✅ Conservative/Balanced/All-In |
+| scripts/gather_expert_intel.py | ✅ 5 sources, weighted merge, uncapped crash |
+| scripts/ingest_copilot_attributes.py | ✅ Full field attribute ingestion |
+| scripts/review_contender_pool.py | ✅ Researched/synthetic flags |
+| scripts/apply_corrections_and_rebuild.py | ✅ One-command rebuild |
+| decisions/stage1_system_b.yaml | ✅ Stage 1 decision record |
+| decisions/stage1_risk_profiles.yaml | ✅ Three risk profiles |
+| interface/early/stage1_dashboard.html | ✅ Intelligence panel, base64 image |
+| interface/early/build_stage1.py | ✅ Base64 image, intel panel |
+| engine/siv/capture_cookie.py | ✅ Playwright login working |
+| engine/siv/fetch_riders.py | ✅ Ready |
 | competition/roadmap.md | ✅ This file |
-| notes/reviews/ | ⚠️ phase3_summary.md needs writing (see Step 2) |
+| notes/reviews/phase3_summary.md | ✅ Full Phase 3 account |
 
 ---
 
 ## Corrections log
 1. Odds: benchmark/sanity check only — never model input or calibration target
 2. Interaction outputs: terrain fit diagnostics, not rankable scores
-3. Transfer cost: 1% buy fee only (round-trip = fee on buy, no separate exit fee)
-4. Phase 3 split: 3a minimal, 3b iterative, 3c scoring fixes, 3d probability
-5. GC EV: nonzero on flat stages (stage win = GC lead)
-6. Captain bonus: E[max(ΔV,0)] from full distribution, not multiplier
-7. Sprint/KOM points: deterministic from roadbook, not calibration constants
-8. Win probability: contender pool only (~10 riders on sprint stage), not full field
-9. Sprint/KOM EV: must derive from same win probability — assert consistency
-10. Terrain mismatch: pure sprinters have negative EV on hilly/mountain stages
-11. Risk profiles: stage-type-conditional; breakaway artists are explicit variance picks
-12. Rider attributes: synthetic Phase 2a attributes replaced by web search intelligence
-13. Override priority: manual > copilot_research > web_search — load_rider_attributes()
-    sorts by source so manual calibrations always win. Implemented May 8 pre-Stage 1.
+3. Transfer cost: 1% buy fee only (no separate exit fee)
+4. GC EV: nonzero on flat stages — stage win = GC lead on bunch sprint stages
+5. Captain bonus: E[max(ΔV,0)] from full distribution, not a multiplier
+6. Sprint/KOM points: deterministic from roadbook, not calibration constants
+7. Win probability: contender pool only (~10 riders on sprint stage), not full field
+8. Sprint/KOM EV: must derive from same win probability as stage finish
+9. Terrain mismatch: pure sprinters have negative EV on hilly/mountain stages
+10. Rider attributes: synthetic Phase 2a replaced by Copilot web research
+11. Affinity values: relative within this startlist, not absolute speed measurements
+12. Affinity cap at 0.95 for future ingestion — reserve higher values for clear dominance
+13. Override priority: manual > expert_intel > copilot — sort guaranteed in load_rider_attributes()
+14. Crash/injury signals: uncapped (±1.0) — a crashed sprinter correctly drops to 0.11
+15. stage_last_applicable: expert_intel overrides expire silently — no bleedthrough
