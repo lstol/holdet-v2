@@ -1,126 +1,150 @@
-# Holdet v2 — Development Roadmap
-# Corrected version — all phases contract-compliant
+# Holdet v2 — Development Roadmap (Updated May 5, 2026)
 
 ---
 
-## Phase 1 — Done
+## Phase 1 — Done ✅
 ### Architecture & contracts
-
-6-file contract system, outcome space, governance. Foundation is locked.
-
----
-
-## Phase 2 — Now
-### Data foundation
-
-Build the raw inputs that feed the model. No modeling yet — just clean, versioned data.
-
-**Rider-Intrinsic dataset**
-Physiological proxies from power data, terrain affinity, consistency — all outside exclusion window. Sources: ProCyclingStats, FirstCycling, training load APIs.
-
-**Race-State schema**
-Stage profiles, elevation, course classification, TTT flag, weather snapshots per stage.
-
-**Odds snapshot pipeline** *(corrected)*
-Stage win and top-k odds from bookmakers. Versioned and snapshotted pre-race. Used as an external benchmark and divergence signal only. May trigger human review. Must not be used as model features, labels, parameters, or automatic calibration targets.
-
-**Historical outcome archive**
-Past race results for all Outcome Space events: StageFinishPosition, GCPosition, JerseyHold, SprintPoint, KOMPoint. Used for parameter training only.
+6-file contract system, outcome space, governance. Locked in contracts/v2.0/.
 
 ---
 
-## Phase 3 — Key milestone
-### Early test interface
-
-Visible logic before the model is correct. You inspect, challenge, and correct the system early.
-
-**Rider card view**
-All Layer 0 attributes for each rider — visible values, provenance, data age. You can flag suspect inputs.
-
-**Stage profile viewer**
-Elevation, classification, TTT flag, weather. Race-State rendered visually per stage.
-
-**Interaction output inspector** *(corrected)*
-Layer 2 outputs per rider per stage shown as terrain fit diagnostics, fatigue condition indicators, and capability-condition mismatches. No cross-rider scalar scores — each diagnostic describes one rider's relationship to one race condition.
-
-**Naive probability baseline**
-Simple rule-based probabilities from historical base rates + terrain affinity. Not ML — but produces real Outcome Space distributions you can inspect and override.
-
-**EV table per rider per stage**
-Full EV breakdown: stage win, GC, jersey, sprint/KOM, team bonus, captain bonus. Transparent line items, not a black box score.
-
-**Your override layer**
-You can adjust probability weights based on race strategy knowledge, form signals, team orders. Overrides are logged and versioned — not merged into the model.
+## Phase 2a — Done ✅ (but incomplete)
+### Data foundation — structural
+- 179 rider stubs created (synthetic — missing holdet_id and real prices)
+- 21 stage profiles created (missing sprint/KOM km positions)
+- Historical outcome archive schema + fetch script ready
+- Odds snapshot pipeline template ready
 
 ---
 
-## Phase 4
+## Phase 2b — URGENT (Must complete before May 8, 17:00)
+### Data hardening — race-ready
+
+**Why urgent:** Stage 1 starts May 8. Trading window closes at stage start.
+Without real holdet_id and prices, EV computation and transfer fees are wrong.
+
+**Step 1 — Enrich rider data with real API data**
+Replace synthetic rider data with live data from:
+GET /api/games/612/players
+Map holdet_id, real prices, isOut/isInjured flags, captainPopularity.
+File: data/riders/riders_giro2026_v1.json — update in place.
+
+**Step 2 — Add sprint/KOM positions to stage profiles**
+Source: Official Giro 2026 roadbooks (user has downloaded visually).
+Add exact km positions to data/stages/stages_giro2026.json.
+Critical for: SprintPoint and KOMPoint EV computation.
+
+**Step 3 — Build live price update pipeline**
+Script: engine/siv/fetch_riders.py
+Runs after each stage to snapshot current prices.
+Uses confirmed Python ingestion code from data/API_NOTES.md.
+
+**Step 4 — Verify .env and cookie auth**
+Confirm HOLDET_COOKIE, HOLDET_GAME_ID=612, HOLDET_FANTASY_TEAM_ID=6796783.
+Test fetch_riders() returns 179 riders with real prices.
+Never commit .env to git.
+
+---
+
+## Phase 3a — URGENT (Must complete before May 8, 20:30)
+### Minimal Stage 1 interface — trading window ready
+
+**Why urgent:** Trading window opens ~20:30 May 8 (after Stage 1 finish).
+Need EV table and captain recommendation before window closes.
+
+**Deliverable: Single-page Stage 1 decision dashboard**
+- Rider list with real prices and holdet_id
+- Stage 1 EV table (stage finish, sprint, team bonus, captain bonus)
+- Captain recommendation (CaptainPositiveValueGrowth EV)
+- Transfer suggestions vs current team (id: 6796783)
+- Bank balance and budget remaining
+
+This is a minimal working tool — not a polished UI.
+Probability model is rule-based baseline only.
+
+---
+
+## Phase 3b — During race (Stages 1-21)
+### Iterative interface improvement
+
+After each stage:
+- Update rider prices from API
+- Update EV table for next stage
+- Track actual vs predicted outcomes
+- Refine rule-based probability baseline
+
+Interface additions (prioritized):
+- Rider card view
+- Stage profile viewer
+- Interaction output inspector (terrain fit diagnostics)
+- Override panel (log manual adjustments with reason + source)
+- Post-stage review
+
+---
+
+## Phase 4 — After Giro (June 2026)
 ### Probability model
-
-Replace the rule-based baseline with trained models. Built on Layer 3 contract constraints.
-
-**Stage-type classifier**
-Predict stage type outcome distribution (sprint, climber, breakaway, TTT). First real model — narrow scope, verifiable.
-
-**StageFinishPosition model**
-Core model. P(position ≤ k) per rider per stage. Trained on historical outcome data only. Odds used as a human-facing divergence check after training — not as a feature or label.
-
-**GC trajectory model**
-P(GCPosition) as a function of cumulative stage outcomes. Multi-stage dependency handled explicitly.
-
-**Sprint/KOM point model**
-Expected points per rider based on terrain affinity and specialist profile. High variance — treat as distribution, not point estimate.
-
-**DNF/DNS risk model**
-P(FinishStatus ≠ FINISH) per rider per stage. Fatigue accumulation, crash history, team role. Critical for avoiding DNS cascade losses.
-
-**Odds divergence review**
-After model is trained and fixed, compare output to bookmaker implied probabilities. Large divergence surfaces for human review. You determine: model error or genuine edge. No automatic parameter adjustment allowed.
+Trained models replacing rule-based baseline.
+- Stage-type classifier
+- StageFinishPosition model
+- GC trajectory model
+- Sprint/KOM point model
+- DNF/DNS risk model
+- Odds divergence review (human-facing benchmark only)
 
 ---
 
-## Phase 5
+## Phase 5 — Before Tour de France (June 2026)
 ### Decision engine
-
-Convert EV into actionable transfer and captain decisions under budget constraints.
-
-**Captain optimizer**
-Rank riders by CaptainPositiveValueGrowth EV per stage. Account for captain bonus doubling asymmetry — positive-only.
-
-**Transfer planner**
-Multi-stage lookahead. Models transfer fee cost against expected EV gain. Bank interest opportunity cost included.
-
-**Team composition optimizer**
-8-rider selection under budget + 2-per-team constraints. Optimize for StageDepthCount bonus alongside individual EV.
-
-**Scenario comparison**
-Side-by-side EV for alternative team lineups and captain choices. You pick — the system explains the tradeoff.
+- Captain optimizer
+- Transfer planner (multi-stage lookahead)
+- Team composition optimizer
+- Scenario comparison
 
 ---
 
-## Phase 6
+## Phase 6 — Tour de France (July 2026)
 ### Operational UI
-
-Full interface for live race management. Pre-stage briefing → decision → post-stage review.
-
-**Pre-stage briefing dashboard**
-Stage profile, top EV riders, captain recommendation, transfer suggestions, odds divergence panel, your override input. Everything needed before the trading window opens.
-
-**Live race diagnostic mode** *(corrected)*
-Runs diagnostic re-executions from fresh Race-State snapshots as the race unfolds. Each re-execution has its own execution boundary and GBC reference. Outputs are informational only — they do not trigger decisions unless explicitly authorized by governance rules aligned with the trading window.
-
-**Post-stage review**
-Actual vs predicted outcome breakdown. Where did the model miss? Probability calibration log. Feeds decision governance — not the model directly.
-
-**Expert knowledge capture**
-Structured input for race strategy signals: team orders, protected rider declarations, form notes from race radio. Versioned. Feeds your override layer, not Layer 0.
-
-**Multi-race learning loop**
-Aggregate post-race reviews across multiple races. Pattern analysis for governance-controlled model updates. Single-run changes prohibited by contract.
+Full pre-stage briefing, live diagnostic mode, post-stage review.
+Expert knowledge capture. Multi-race learning loop.
 
 ---
 
-*Three corrections applied from initial version:*
-*1. Odds pipeline: "calibration" removed — odds may not feed Layer 3 directly or indirectly*
-*2. Interaction inspector: "scores" replaced — rankable scalars prohibited at Layer 2*
-*3. Live tracker: separate execution boundary per re-run; outputs informational unless governance pre-authorizes*
+## Key dates
+| Date | Event |
+|------|-------|
+| May 5 (today) | Phase 2b + 3a handoffs written |
+| May 7 | Phase 2b complete — real prices + roadbook data in repo |
+| May 8 17:00 | Stage 1 start (Nessebar - Burgas, 156km, Flat) |
+| May 8 ~20:30 | Trading window opens — Stage 1 decision needed |
+| May 31 | Giro final stage |
+| June 2026 | Phase 4 model training |
+| July 5 | Tour de France starts |
+
+---
+
+## Current team (pre-race)
+Team ID: 6796783 — "Project Win The Giro" — Gold tier
+Bank: 4,500,000 kr
+
+| Rider | Holdet ID | Value |
+|-------|-----------|-------|
+| Lorenzo Germani | 47380 | 2,500,000 |
+| Liam Slock | 47378 | 2,500,000 |
+| Manuele Tarozzi (captain) | 47382 | 2,500,000 |
+| Jonas Vingegaard | 47372 | 17,500,000 |
+| Filippo Conca | 47350 | 2,500,000 |
+| Dion Smith | 47341 | 2,500,000 |
+| Lennert Van Eetvelt | 47377 | 7,500,000 |
+| Jay Vine | 47368 | 8,000,000 |
+
+Captain is a dummy pick — needs updating before Stage 1.
+
+---
+
+Corrections applied from initial roadmap:
+1. Odds: benchmark/divergence signal only — not model input
+2. Interaction outputs: terrain fit diagnostics, not rankable scores
+3. Live tracker: separate execution boundary per re-run, informational only
+4. Phase 2 split into 2a (done) and 2b (urgent — race-ready hardening)
+5. Phase 3 split into 3a (minimal Stage 1 tool) and 3b (iterative during race)
