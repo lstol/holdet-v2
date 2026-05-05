@@ -191,7 +191,12 @@ Real ID mapping for known riders:
 Person objects in `_embedded.persons` have an `appearance` sub-object (empty pre-race).
 Team objects in `_embedded.teams` have numeric keys in the API.
 
-Total roster: **91 riders**, 23 teams.
+Total roster: **~179 riders**, 23 teams.
+
+NOTE: An earlier probe (April 2026, pre-race) returned only 91 riders because the
+full startlist had not yet been confirmed in the Holdet system. This was a timing
+artifact, not the real market size. The full Giro d'Italia roster is ~179 tradeable
+players across 23 teams. Always re-fetch after official startlist confirmation.
 
 ---
 
