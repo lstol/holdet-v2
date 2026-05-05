@@ -34,6 +34,45 @@ load_rider_attributes() updated: PRIORITY-sorted application, mode:adjust (addit
 clamped [0,1]), mode:replace (exact), stage_last_applicable scoping, _overridden tracking.
 One-command rebuild: python3 scripts/apply_corrections_and_rebuild.py.
 
+## Phase 3f — Multi-stage optimizer + risk profiles (May 8, 2026)
+True multi-stage optimizer with transfer cost vs EV gain decisions per stage.
+StageDepthCount bonus modeled at team level via independence approximation over P(top-15).
+Three archetype risk profiles: Conservative / Balanced / All-In.
+decisions/stage1_system_b.yaml in competition protocol format.
+decisions/stage1_risk_profiles.yaml with EV, variance, EV/σ per rider.
+
+## Phase 3h — Point scales, power weighting, scenario sliders (May 9, 2026)
+
+**Four model fixes:**
+- Fix A: P(win) recomputed per-stage using stage's scenario weights (not cached from stage 1)
+- Fix B: sprint_kom_ev ≤ stage_finish_ev × 1.5 assertion + conservation check (Σ ≈ contender_mass)
+- Fix C: Team bonus = Σ P(teammate at pos k) × bonus(k) — proper expectation, not approximation
+- Fix D: Optimizer recomputes team_bonus per proposed team during swap evaluation
+
+**Official 2026 Holdet point scales (scripts/update_roadbook_points.py):**
+- flat: [50, 35, 25, 18, 14, 12, 10, 8, 7, 6, 5, 4, 3, 2, 1]
+- hilly: [25, 18, 12, 8, 6, 5, 4, 3, 2, 1]
+- mountain: [15, 12, 9, 7, 6, 5, 4, 3, 2, 1]
+- One intermediate sprint per non-TT stage: [12, 8, 5, 3, 1]
+- stage_group field added to every roadbook entry; ITT stages (8, 14) have no sprint
+
+**Scenario-based EV model (models/ev_breakdown.py):**
+- AFFINITY_POWER = 8 — power-weighting amplifies elite/journeyman gap
+- 4 scenarios: bunch_sprint, reduced_sprint, breakaway, gc_day
+- Each has threshold (who can win) + contender_mass (what fraction of probability pool is shared)
+- bunch_sprint threshold=0.85, contender_mass=0.95 → only elite GT sprinters in pool
+- Milan P(win|bunch_sprint) = 25.6%; blended S1 EV (flat defaults 70/20/10/0) = 73,944 kr
+- STAGE_TYPE_DEFAULTS: flat 70/20/10/0, hilly 15/35/35/15, mountain 0/5/25/70
+- build_rider_scenario_data() generates pure-scenario EV + P(win) for dashboard sliders
+- All 21 stage JSONs regenerated with scenario_ev and scenario_p_win fields
+
+**Scenario sliders (interface/early/build_stage1.py):**
+- 4 sliders with sum locked to 100%; 6 presets (pure_sprint, sprint_risk, breakaway, mountain, open, default)
+- Scenario mix color bar shows relative probability by scenario
+- JavaScript team selection updates in real time as sliders move
+- Collapsible per-rider detail rows with per-scenario EV (S1 + S2 + S3)
+- Stage 2 and 3 EVs pre-blended at build time using stage-type defaults
+
 ## Phase 3e — Expert intelligence pipeline
 Pre-stage intelligence from 5 sources:
   Emil Axelgaard / TV2 Sport (weight 1.5) — primary

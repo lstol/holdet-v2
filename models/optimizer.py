@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 """
-Multi-stage optimizer for Giro 2026 — Phase 3f.
+Multi-stage optimizer for Giro 2026 — Phase 3h (Fix D).
 
 True multi-stage optimization: per-stage optimal team selection with
 transfer cost vs EV gain decision for each stage transition.
 
+Fix D: team bonus recomputed per proposed team during swap evaluation
+       (not cached standalone EV).
+
 Outputs: decisions/stage1_system_b.yaml
 """
 
-import json, yaml
+import json, yaml, sys
 from pathlib import Path
+
+# allow importing ev_breakdown from models/
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ev_breakdown import compute_team_bonus_ev, STAGE_TYPE_DEFAULTS
 
 BASE = Path(__file__).resolve().parent.parent
 
@@ -49,6 +56,12 @@ def load_ev_by_stage(stage_ns: list[int]) -> dict:
         for rider_id, bd in json.loads(path.read_text())["riders"].items():
             result.setdefault(rider_id, {})[n] = bd
     return result
+
+
+def load_stage_roadbook() -> dict:
+    """Returns {stage_n: roadbook_entry} for looking up stage_group."""
+    data = json.loads((BASE / "data/stages/stage_roadbook.json").read_text())
+    return {e["stage"]: e for e in data}
 
 
 # ── Core computation ──────────────────────────────────────────────────────────
@@ -129,6 +142,20 @@ def select_optimal_team(
     return team
 
 
+def rider_ev_in_team(
+    rider: dict,
+    proposed_team: list[dict],
+    ev_by_stage: dict,
+    stage_n: int,
+    all_riders: list[dict],
+    scenario_weights: dict,
+) -> int:
+    """EV for rider in proposed_team: cached base (stage_finish+sprint_kom) + fresh team bonus."""
+    base_ev = ev_by_stage.get(rider["rider_id"], {}).get(stage_n, {}).get("total", 0)
+    team_bonus = compute_team_bonus_ev(rider, proposed_team, all_riders, scenario_weights)
+    return base_ev + team_bonus
+
+
 def optimize_transfers(
     current_team: list[dict],
     riders: list[dict],
@@ -136,10 +163,13 @@ def optimize_transfers(
     stage_n: int,
     budget: int,
     bank: int,
+    all_riders: list[dict],
+    scenario_weights: dict,
 ) -> tuple:
     """
     For each rider in current_team, find the best swap.
     Execute greedily from highest net_gain (ev_gain − fee), stop at net_gain ≤ 0.
+    Fix D: in_ev computed with team bonus for proposed team, not cached standalone EV.
     Returns: (new_team, transfers_in, transfers_out, total_fee)
     """
     team = list(current_team)
@@ -167,7 +197,8 @@ def optimize_transfers(
             if sum(r["price"] for r in temp) > budget:
                 continue
 
-            in_ev = ev_by_stage.get(in_rider["rider_id"], {}).get(stage_n, {}).get("total", 0)
+            in_ev = rider_ev_in_team(in_rider, temp, ev_by_stage, stage_n,
+                                      all_riders, scenario_weights)
             swap_candidates.append({
                 "out": out_rider, "in": in_rider,
                 "net_gain": in_ev - out_ev - fee,
@@ -202,6 +233,7 @@ def optimize_multistage(
     stage_numbers: list[int],
     riders: list[dict],
     ev_by_stage: dict,
+    roadbook: dict,
     budget: int = BUDGET,
     bank: int = BANK,
 ) -> dict:
@@ -237,12 +269,16 @@ def optimize_multistage(
     current_bank = bank
 
     for i, stage_n in enumerate(stage_numbers):
+        stage_group = roadbook.get(stage_n, {}).get("stage_group", "hilly")
+        scenario_weights = STAGE_TYPE_DEFAULTS.get(stage_group, STAGE_TYPE_DEFAULTS["hilly"])
+
         if i == 0:
             team = select_optimal_team(riders, ev_by_stage, stage_n, current_budget)
             transfers_in, transfers_out, fee = team, [], 0
         else:
             team, transfers_in, transfers_out, fee = optimize_transfers(
-                current_team, riders, ev_by_stage, stage_n, current_budget, current_bank
+                current_team, riders, ev_by_stage, stage_n, current_budget, current_bank,
+                riders, scenario_weights,
             )
 
         stage_ev     = compute_team_ev(team, ev_by_stage, stage_n)
@@ -354,7 +390,8 @@ def build_yaml(result: dict, ev_by_stage: dict) -> dict:
 def main():
     riders      = load_riders()
     ev_by_stage = load_ev_by_stage(LOOKAHEAD)
-    result      = optimize_multistage(LOOKAHEAD, riders, ev_by_stage)
+    roadbook    = load_stage_roadbook()
+    result      = optimize_multistage(LOOKAHEAD, riders, ev_by_stage, roadbook)
     out_data    = build_yaml(result, ev_by_stage)
 
     out_path = BASE / "decisions" / "stage1_system_b.yaml"

@@ -3,46 +3,32 @@
     "stage": 1,
     "stage_type": "flat",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 72.0,
-        "label": "Intermediate sprint (Burgas Lake area)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [],
-    "finish_sprint": {
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 72.0,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -51,29 +37,6 @@
     "stage": 2,
     "stage_type": "hilly",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 78.5,
-        "label": "Intermediate sprint (Bulgaria)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 117.0,
@@ -113,22 +76,26 @@
         ]
       }
     ],
-    "finish_sprint": {
+    "stage_group": "hilly",
+    "finish_points": [
+      25,
+      18,
+      12,
+      8,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 78.5,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -137,29 +104,6 @@
     "stage": 3,
     "stage_type": "hilly",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 88.0,
-        "label": "Intermediate sprint (before climb)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 103.5,
@@ -175,22 +119,31 @@
         ]
       }
     ],
-    "finish_sprint": {
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 88.0,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -199,29 +152,6 @@
     "stage": 4,
     "stage_type": "hilly",
     "finish_type": "uphill",
-    "intermediate_sprints": [
-      {
-        "km": 62.0,
-        "label": "Intermediate sprint (coast)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 100.0,
@@ -237,35 +167,39 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 62.0,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ]
+    }
   },
   {
     "stage": 5,
     "stage_type": "hilly",
     "finish_type": "uphill",
-    "intermediate_sprints": [
-      {
-        "km": 85.0,
-        "label": "Intermediate sprint",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 23.5,
@@ -292,35 +226,34 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "hilly",
+    "finish_points": [
+      25,
+      18,
+      12,
+      8,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 85.0,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ]
+    }
   },
   {
     "stage": 6,
     "stage_type": "flat",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 41.5,
-        "label": "Intermediate sprint",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 153.0,
@@ -333,22 +266,31 @@
         ]
       }
     ],
-    "finish_sprint": {
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 41.5,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -357,29 +299,6 @@
     "stage": 7,
     "stage_type": "mountain",
     "finish_type": "summit",
-    "intermediate_sprints": [
-      {
-        "km": 119.0,
-        "label": "Intermediate sprint",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 157.5,
@@ -410,35 +329,34 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "mountain",
+    "finish_points": [
+      15,
+      12,
+      9,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 119.0,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ]
+    }
   },
   {
     "stage": 8,
     "stage_type": "hilly",
     "finish_type": "uphill",
-    "intermediate_sprints": [
-      {
-        "km": 92.5,
-        "label": "Intermediate sprint",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 105.0,
@@ -472,35 +390,24 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "hilly",
+    "finish_points": [
+      25,
+      18,
+      12,
+      8,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ]
   },
   {
     "stage": 9,
     "stage_type": "hilly",
     "finish_type": "summit",
-    "intermediate_sprints": [
-      {
-        "km": 131.5,
-        "label": "Intermediate sprint",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 168.0,
@@ -529,43 +436,64 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "hilly",
+    "finish_points": [
+      25,
+      18,
+      12,
+      8,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 131.5,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ]
+    }
   },
   {
     "stage": 10,
     "stage_type": "itt",
     "finish_type": "tt",
-    "intermediate_sprints": [],
     "kom_climbs": [],
-    "finish_sprint": null
+    "stage_group": "mountain",
+    "finish_points": [
+      15,
+      12,
+      9,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": null,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ],
+      "note": "km location not parsed from image"
+    }
   },
   {
     "stage": 11,
     "stage_type": "hilly",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 80.0,
-        "label": "Intermediate sprint",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 106.0,
@@ -603,22 +531,26 @@
         ]
       }
     ],
-    "finish_sprint": {
+    "stage_group": "hilly",
+    "finish_points": [
+      25,
+      18,
+      12,
+      8,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 80.0,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -627,29 +559,6 @@
     "stage": 12,
     "stage_type": "flat",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 30.5,
-        "label": "Intermediate sprint (Ligure coast)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 108.5,
@@ -674,22 +583,31 @@
         ]
       }
     ],
-    "finish_sprint": {
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 30.5,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -698,50 +616,6 @@
     "stage": 13,
     "stage_type": "flat",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 28.5,
-        "label": "Intermediate sprint (Po plain)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      },
-      {
-        "km": 81.5,
-        "label": "Intermediate sprint (Piedmont)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 162.5,
@@ -765,22 +639,26 @@
         ]
       }
     ],
-    "finish_sprint": {
+    "stage_group": "hilly",
+    "finish_points": [
+      25,
+      18,
+      12,
+      8,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 28.5,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -789,29 +667,6 @@
     "stage": 14,
     "stage_type": "mountain",
     "finish_type": "summit",
-    "intermediate_sprints": [
-      {
-        "km": 51.0,
-        "label": "Intermediate sprint (Aosta valley)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 20.0,
@@ -883,52 +738,50 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "mountain",
+    "finish_points": [
+      15,
+      12,
+      9,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ]
   },
   {
     "stage": 15,
     "stage_type": "flat",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 109.0,
-        "label": "Intermediate sprint (Milano circuit)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [],
-    "finish_sprint": {
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 109.0,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -937,7 +790,6 @@
     "stage": 16,
     "stage_type": "mountain",
     "finish_type": "summit",
-    "intermediate_sprints": [],
     "kom_climbs": [
       {
         "km": 32.5,
@@ -992,35 +844,35 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "mountain",
+    "finish_points": [
+      15,
+      12,
+      9,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": null,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ],
+      "note": "km location not parsed from image"
+    }
   },
   {
     "stage": 17,
     "stage_type": "hilly",
     "finish_type": "uphill",
-    "intermediate_sprints": [
-      {
-        "km": 35.0,
-        "label": "Intermediate sprint (Lombardy plain)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 62.5,
@@ -1056,35 +908,34 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "hilly",
+    "finish_points": [
+      25,
+      18,
+      12,
+      8,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 35.0,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ]
+    }
   },
   {
     "stage": 18,
     "stage_type": "flat",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 19.0,
-        "label": "Intermediate sprint",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 81.5,
@@ -1108,22 +959,31 @@
         ]
       }
     ],
-    "finish_sprint": {
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 19.0,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }
@@ -1132,7 +992,6 @@
     "stage": 19,
     "stage_type": "mountain",
     "finish_type": "summit",
-    "intermediate_sprints": [],
     "kom_climbs": [
       {
         "km": 59.0,
@@ -1217,35 +1076,35 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "mountain",
+    "finish_points": [
+      15,
+      12,
+      9,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": null,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ],
+      "note": "km location not parsed from image"
+    }
   },
   {
     "stage": 20,
     "stage_type": "mountain",
     "finish_type": "summit",
-    "intermediate_sprints": [
-      {
-        "km": 48.0,
-        "label": "Intermediate sprint (Friuli plain)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [
       {
         "km": 80.5,
@@ -1273,73 +1132,60 @@
         ]
       }
     ],
-    "finish_sprint": null
+    "stage_group": "mountain",
+    "finish_points": [
+      15,
+      12,
+      9,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 48.0,
+      "points": [
+        12,
+        8,
+        5,
+        3,
+        1
+      ]
+    }
   },
   {
     "stage": 21,
     "stage_type": "flat",
     "finish_type": "sprint",
-    "intermediate_sprints": [
-      {
-        "km": 41.5,
-        "label": "Intermediate sprint (Rome circuit lap 1)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      },
-      {
-        "km": 99.0,
-        "label": "Intermediate sprint (Rome circuit lap 5)",
-        "points": [
-          20,
-          17,
-          15,
-          13,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1
-        ]
-      }
-    ],
     "kom_climbs": [],
-    "finish_sprint": {
+    "stage_group": "flat",
+    "finish_points": [
+      50,
+      35,
+      25,
+      18,
+      14,
+      12,
+      10,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "intermediate_sprint": {
+      "km": 41.5,
       "points": [
-        50,
-        30,
-        20,
-        14,
         12,
-        10,
         8,
-        7,
-        6,
         5,
-        4,
         3,
-        2,
-        1,
         1
       ]
     }

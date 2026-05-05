@@ -1,1827 +1,3288 @@
 {
   "stage": 9,
-  "finish_type": "summit",
-  "stage_type": "hilly",
+  "stage_group": "hilly",
+  "default_weights": {
+    "bunch_sprint": 0.15,
+    "reduced_sprint": 0.35,
+    "breakaway": 0.35,
+    "gc_day": 0.15
+  },
   "riders": {
     "andresen_tobias": {
-      "stage_finish": 82,
-      "gc": 0,
-      "jersey": 339,
-      "sprint_kom": 21665,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22086,
-      "variance": 11767118
+      "name": "Tobias Lund Andresen",
+      "stage_finish": 3537,
+      "sprint_kom": 1260,
+      "total": 4797,
+      "scenario_ev": {
+        "bunch_sprint": 28364,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0966,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "gall_felix": {
-      "stage_finish": 18780,
-      "gc": 8103,
-      "jersey": 2738,
-      "sprint_kom": 14759,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 44380,
-      "variance": 2330737894
+      "name": "Felix Gall",
+      "stage_finish": 5774,
+      "sprint_kom": 2101,
+      "total": 7875,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 13919,
+        "breakaway": 0,
+        "gc_day": 18068
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.044,
+        "breakaway": 0.0,
+        "gc_day": 0.0583
+      }
     },
     "gudmestad_tord": {
-      "stage_finish": 115,
-      "gc": 0,
-      "jersey": 341,
-      "sprint_kom": 18589,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19045,
-      "variance": 16470162
+      "name": "Tord Gudmestad",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "muhlberger_gregor": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 1729,
-      "sprint_kom": 15398,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 35730,
-      "variance": 1740472910
+      "name": "Gregor Mühlberger",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "naesen_oliver": {
-      "stage_finish": 117,
-      "gc": 0,
-      "jersey": 340,
-      "sprint_kom": 12438,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12895,
-      "variance": 16758832
+      "name": "Oliver Naesen",
+      "stage_finish": 6149,
+      "sprint_kom": 2245,
+      "total": 8394,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 22342,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0737,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "pedersen_rasmus": {
-      "stage_finish": 111,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10305,
-      "variance": 15865887
+      "name": "Rasmus Søjberg Pedersen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "scotson_callum": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 6287,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 6697,
-      "variance": 10298500
+      "name": "Callum Scotson",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "staunemittet_johannes": {
-      "stage_finish": 14273,
-      "gc": 5474,
-      "jersey": 3737,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 36831,
-      "variance": 1835746799
+      "name": "Johannes Staune-Mittet",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "arensman_thymen": {
-      "stage_finish": 15780,
-      "gc": 6431,
-      "jersey": 2483,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 38747,
-      "variance": 2005801317
+      "name": "Thymen Arensman",
+      "stage_finish": 752,
+      "sprint_kom": 261,
+      "total": 1013,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 6578
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.02
+      }
     },
     "bernal_egan": {
-      "stage_finish": 18301,
-      "gc": 7897,
-      "jersey": 2718,
-      "sprint_kom": 14759,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 43675,
-      "variance": 2280114770
+      "name": "Egan Bernal",
+      "stage_finish": 5531,
+      "sprint_kom": 2007,
+      "total": 7538,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 27887
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0947
+      }
     },
     "ganna_filippo": {
-      "stage_finish": 1981,
-      "gc": 0,
-      "jersey": 1074,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12804,
-      "variance": 279139414
+      "name": "Filippo Ganna",
+      "stage_finish": 3163,
+      "sprint_kom": 1123,
+      "total": 4286,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "haig_jack": {
-      "stage_finish": 15780,
-      "gc": 6431,
-      "jersey": 1933,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 38197,
-      "variance": 2005801317
+      "name": "Jack Haig",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "svestadbardseng_embret": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 2490,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 23992,
-      "variance": 972244452
+      "name": "Embret Svestad-Bårdseng",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "swift_connor": {
-      "stage_finish": 137,
-      "gc": 0,
-      "jersey": 446,
-      "sprint_kom": 11800,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12383,
-      "variance": 19583938
+      "name": "Connor Swift",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "turner_ben": {
-      "stage_finish": 93,
-      "gc": 0,
-      "jersey": 339,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8769,
-      "variance": 13333409
+      "name": "Ben Turner",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "barta_will": {
-      "stage_finish": 274,
-      "gc": 0,
-      "jersey": 845,
-      "sprint_kom": 13279,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14398,
-      "variance": 39035648
+      "name": "Will Barta",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "froideveaux_robin": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Robin Froideveaux",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "mozzato_luca": {
-      "stage_finish": 47,
-      "gc": 0,
-      "jersey": 275,
-      "sprint_kom": 19510,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19832,
-      "variance": 6706350
+      "name": "Luca Mozzato",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "rondel_mathys": {
-      "stage_finish": 2890,
-      "gc": 161,
-      "jersey": 1879,
-      "sprint_kom": 16802,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 21732,
-      "variance": 404627637
+      "name": "Mathys Rondel",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "storer_michael": {
-      "stage_finish": 309,
-      "gc": 0,
-      "jersey": 907,
-      "sprint_kom": 14728,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15944,
-      "variance": 44010927
+      "name": "Michael Storer",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "stork_florian": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Florian Stork",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "warbasse_larry": {
-      "stage_finish": 280,
-      "gc": 0,
-      "jersey": 846,
-      "sprint_kom": 14305,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15431,
-      "variance": 39867492
+      "name": "Larry Warbasse",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "bais_mattia": {
-      "stage_finish": 159,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 9111,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 9852,
-      "variance": 22628304
+      "name": "Mattia Bais",
+      "stage_finish": 7773,
+      "sprint_kom": 2882,
+      "total": 10655,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 27868,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0946,
+        "gc_day": 0.0
+      }
     },
     "crescioli_ludovico": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Ludovico Crescioli",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "lonardi_giovanni": {
-      "stage_finish": 15,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 13715,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13946,
-      "variance": 2075231
+      "name": "Giovanni Lonardi",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "maestri_mirco": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8747,
-      "variance": 10298500
+      "name": "Mirco Maestri",
+      "stage_finish": 3163,
+      "sprint_kom": 1123,
+      "total": 4286,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "mifsud_andrea": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Andrea Mifsud",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "pesenti_thomas": {
-      "stage_finish": 174,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 9111,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 9867,
-      "variance": 24779595
+      "name": "Thomas Pesenti",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "sevilla_diego": {
-      "stage_finish": 174,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 9111,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 9867,
-      "variance": 24779595
+      "name": "Diego Pablo Sevilla",
+      "stage_finish": 3163,
+      "sprint_kom": 1123,
+      "total": 4286,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "tonelli_alessandro": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Alessandro Tonelli",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "buitrago_santiago": {
-      "stage_finish": 18301,
-      "gc": 7897,
-      "jersey": 2718,
-      "sprint_kom": 14759,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 43675,
-      "variance": 2280114770
+      "name": "Santiago Buitrago",
+      "stage_finish": 5234,
+      "sprint_kom": 1894,
+      "total": 7128,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "caruso_damiano": {
-      "stage_finish": 14273,
-      "gc": 5474,
-      "jersey": 1747,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 34841,
-      "variance": 1835746799
+      "name": "Damiano Caruso",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "eulalia_afonso": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 2490,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 23992,
-      "variance": 972244452
+      "name": "Afonso Eulálio",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "govekar_matevz": {
-      "stage_finish": 280,
-      "gc": 0,
-      "jersey": 846,
-      "sprint_kom": 14305,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15431,
-      "variance": 39867492
+      "name": "Matevž Govekar",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "miholjevic_fran": {
-      "stage_finish": 250,
-      "gc": 0,
-      "jersey": 751,
-      "sprint_kom": 12573,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13574,
-      "variance": 35663515
+      "name": "Fran Miholjević",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "paasschens_mathijs": {
-      "stage_finish": 174,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 13212,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13969,
-      "variance": 24779595
+      "name": "Mathijs Paasschens",
+      "stage_finish": 3163,
+      "sprint_kom": 1123,
+      "total": 4286,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "segaert_alec": {
-      "stage_finish": 2778,
-      "gc": 0,
-      "jersey": 1239,
-      "sprint_kom": 9111,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13128,
-      "variance": 389238098
+      "name": "Alec Segaert",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "zambanini_edoardo": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1238,
-      "sprint_kom": 13985,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 24790,
-      "variance": 972244452
+      "name": "Edoardo Zambanini",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "blikra_erlend": {
-      "stage_finish": 15,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 15765,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15996,
-      "variance": 2075231
+      "name": "Erlend Blikra",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "dversnes_fredrik": {
-      "stage_finish": 214,
-      "gc": 0,
-      "jersey": 749,
-      "sprint_kom": 10523,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11486,
-      "variance": 30583362
+      "name": "Fredrik Dversnes",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "hoelgaard_markus": {
-      "stage_finish": 137,
-      "gc": 0,
-      "jersey": 446,
-      "sprint_kom": 15901,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 16484,
-      "variance": 19583938
+      "name": "Markus Hoelgaard",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "holter_adne": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Ådne Holter",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "kulset_johannes": {
-      "stage_finish": 214,
-      "gc": 0,
-      "jersey": 749,
-      "sprint_kom": 10523,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11486,
-      "variance": 30583362
+      "name": "Johannes Kulset",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "leknessund_andreas": {
-      "stage_finish": 14273,
-      "gc": 5474,
-      "jersey": 2297,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 35391,
-      "variance": 1835746799
+      "name": "Andreas Leknessund",
+      "stage_finish": 752,
+      "sprint_kom": 261,
+      "total": 1013,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 6578
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.02
+      }
     },
     "loland_sakarias": {
-      "stage_finish": 111,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10305,
-      "variance": 15865887
+      "name": "Sakarias Koller Løland",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "tjotta_martin": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Martin Tjøtta",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "hirt_jan": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 1713,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 33663,
-      "variance": 1740472910
+      "name": "Jan Hirt",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "mullen_ryan": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 261,
-      "sprint_kom": 4875,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 5170,
-      "variance": 4899513
+      "name": "Ryan Mullen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "pinarello_alessandro": {
-      "stage_finish": 111,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10305,
-      "variance": 15865887
+      "name": "Alessandro Pinarello",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "schultz_nick": {
-      "stage_finish": 264,
-      "gc": 0,
-      "jersey": 845,
-      "sprint_kom": 11229,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12338,
-      "variance": 37668620
+      "name": "Nick Schultz",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "smith_dion": {
-      "stage_finish": 124,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 11800,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12369,
-      "variance": 17676160
+      "name": "Dion Smith",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "stewart_jake": {
-      "stage_finish": 147,
-      "gc": 0,
-      "jersey": 342,
-      "sprint_kom": 18589,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19078,
-      "variance": 20990084
+      "name": "Jake Stewart",
+      "stage_finish": 2191,
+      "sprint_kom": 771,
+      "total": 2962,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "strong_corbin": {
-      "stage_finish": 131,
-      "gc": 0,
-      "jersey": 341,
-      "sprint_kom": 18589,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19061,
-      "variance": 18661890
+      "name": "Corbin Strong",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vernon_ethan": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 19228,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19524,
-      "variance": 4899513
+      "name": "Ethan Vernon",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "bax_sjoerd": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Sjoerd Bax",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "christen_fabio": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Fabio Christen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "delacruz_david": {
-      "stage_finish": 280,
-      "gc": 0,
-      "jersey": 846,
-      "sprint_kom": 14305,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15431,
-      "variance": 39867492
+      "name": "David De La Cruz",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "donovan_mark": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Mark Donovan",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "gonzalez_david": {
-      "stage_finish": 274,
-      "gc": 0,
-      "jersey": 845,
-      "sprint_kom": 13279,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14398,
-      "variance": 39035648
+      "name": "David González",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "harper_chris": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Chris Harper",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "moschetti_matteo": {
-      "stage_finish": 47,
-      "gc": 0,
-      "jersey": 275,
-      "sprint_kom": 19920,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 20242,
-      "variance": 6706350
+      "name": "Matteo Moschetti",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "zukowsky_nick": {
-      "stage_finish": 177,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 14237,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14997,
-      "variance": 25221531
+      "name": "Nick Zukowsky",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "ciccone_giulio": {
-      "stage_finish": 16675,
-      "gc": 6795,
-      "jersey": 1990,
-      "sprint_kom": 16104,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 41564,
-      "variance": 2104656137
+      "name": "Giulio Ciccone",
+      "stage_finish": 9674,
+      "sprint_kom": 3653,
+      "total": 13327,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 27868,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0946,
+        "gc_day": 0.0
+      }
     },
     "consonni_simone": {
-      "stage_finish": 115,
-      "gc": 0,
-      "jersey": 341,
-      "sprint_kom": 18589,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19045,
-      "variance": 16470162
+      "name": "Simone Consonni",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "ghebreigzabhier_amanuel": {
-      "stage_finish": 6686,
-      "gc": 2244,
-      "jersey": 1210,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22075,
-      "variance": 910638771
+      "name": "Amanuel Ghebreigzabhier",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "milan_jonathan": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 22509,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22805,
-      "variance": 4899513
+      "name": "Jonathan Milan",
+      "stage_finish": 8903,
+      "sprint_kom": 3337,
+      "total": 12240,
+      "scenario_ev": {
+        "bunch_sprint": 62627,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.2557,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "sobrero_matteo": {
-      "stage_finish": 232,
-      "gc": 0,
-      "jersey": 750,
-      "sprint_kom": 10523,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11505,
-      "variance": 33074908
+      "name": "Matteo Sobrero",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "teutenberg_tim": {
-      "stage_finish": 10,
-      "gc": 0,
-      "jersey": 215,
-      "sprint_kom": 11664,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11889,
-      "variance": 1482351
+      "name": "Tim Torn Teutenberg",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "walscheid_max": {
-      "stage_finish": 15,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 13715,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13946,
-      "variance": 2075231
+      "name": "Max Walscheid",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "bayer_tobias": {
-      "stage_finish": 2273,
-      "gc": 109,
-      "jersey": 1577,
-      "sprint_kom": 15262,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19221,
-      "variance": 319602693
+      "name": "Tobias Bayer",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "busatto_francesco": {
-      "stage_finish": 269,
-      "gc": 0,
-      "jersey": 752,
-      "sprint_kom": 14624,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15645,
-      "variance": 38349105
+      "name": "Francesco Busatto",
+      "stage_finish": 2191,
+      "sprint_kom": 771,
+      "total": 2962,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "geens_jonas": {
-      "stage_finish": 137,
-      "gc": 0,
-      "jersey": 446,
-      "sprint_kom": 15901,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 16484,
-      "variance": 19583938
+      "name": "Jonas Geens",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "groves_kaden": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 339,
-      "sprint_kom": 23716,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 24127,
-      "variance": 10298500
+      "name": "Kaden Groves",
+      "stage_finish": 8240,
+      "sprint_kom": 3069,
+      "total": 11309,
+      "scenario_ev": {
+        "bunch_sprint": 58771,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.2351,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "planckaert_edward": {
-      "stage_finish": 115,
-      "gc": 0,
-      "jersey": 341,
-      "sprint_kom": 18589,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19045,
-      "variance": 16470162
+      "name": "Edward Planckaert",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "plowright_jensen": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 19228,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19524,
-      "variance": 4899513
+      "name": "Jensen Plowright",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "pricepejtersen_johan": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 261,
-      "sprint_kom": 4875,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 5170,
-      "variance": 4899513
+      "name": "Johan Price-Pejtersen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vergallito_luca": {
-      "stage_finish": 7657,
-      "gc": 2570,
-      "jersey": 2510,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 24672,
-      "variance": 1035494758
+      "name": "Luca Vergallito",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "ackermann_pascal": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 19228,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19524,
-      "variance": 4899513
+      "name": "Pascal Ackermann",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "bouwman_koen": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1230,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22732,
-      "variance": 972244452
+      "name": "Koen Bouwman",
+      "stage_finish": 3163,
+      "sprint_kom": 1123,
+      "total": 4286,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "donaldson_robert": {
-      "stage_finish": 214,
-      "gc": 0,
-      "jersey": 749,
-      "sprint_kom": 10523,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11486,
-      "variance": 30583362
+      "name": "Robert Donaldson",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "engelhardt_felix": {
-      "stage_finish": 137,
-      "gc": 0,
-      "jersey": 446,
-      "sprint_kom": 15901,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 16484,
-      "variance": 19583938
+      "name": "Felix Engelhardt",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "hatherly_alan": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8747,
-      "variance": 10298500
+      "name": "Alan Hatherly",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "oconnor_ben": {
-      "stage_finish": 15780,
-      "gc": 6431,
-      "jersey": 2483,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 38747,
-      "variance": 2005801317
+      "name": "Ben O'Connor",
+      "stage_finish": 2163,
+      "sprint_kom": 761,
+      "total": 2924,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 18068
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0583
+      }
     },
     "vendrame_andrea": {
-      "stage_finish": 212,
-      "gc": 0,
-      "jersey": 450,
-      "sprint_kom": 17951,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 18613,
-      "variance": 30212020
+      "name": "Andrea Vendrame",
+      "stage_finish": 2191,
+      "sprint_kom": 771,
+      "total": 2962,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "aleotti_giovanni": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1230,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22732,
-      "variance": 972244452
+      "name": "Giovanni Aleotti",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vandijke_mick": {
-      "stage_finish": 159,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 11161,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11902,
-      "variance": 22628304
+      "name": "Mick van Dijke",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "hindley_jai": {
-      "stage_finish": 17363,
-      "gc": 7492,
-      "jersey": 2680,
-      "sprint_kom": 14759,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 42294,
-      "variance": 2179498610
+      "name": "Jai Hindley",
+      "stage_finish": 2163,
+      "sprint_kom": 761,
+      "total": 2924,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 18068
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0583
+      }
     },
     "moscon_gianni": {
-      "stage_finish": 137,
-      "gc": 0,
-      "jersey": 446,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10332,
-      "variance": 19583938
+      "name": "Gianni Moscon",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "pellizzari_giulio": {
-      "stage_finish": 14910,
-      "gc": 6076,
-      "jersey": 3977,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 39016,
-      "variance": 1908136604
+      "name": "Giulio Pellizzari",
+      "stage_finish": 1300,
+      "sprint_kom": 454,
+      "total": 1754,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 11165
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0348
+      }
     },
     "vlasov_aleksandr": {
-      "stage_finish": 15780,
-      "gc": 6431,
-      "jersey": 2483,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 38747,
-      "variance": 2005801317
+      "name": "Aleksandr Vlasov",
+      "stage_finish": 1300,
+      "sprint_kom": 454,
+      "total": 1754,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 11165
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0348
+      }
     },
     "zwiehoff_ben": {
-      "stage_finish": 6686,
-      "gc": 2244,
-      "jersey": 1210,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22075,
-      "variance": 910638771
+      "name": "Ben Zwiehoff",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "ballerini_davide": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 19228,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19524,
-      "variance": 4899513
+      "name": "Davide Ballerini",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "bettiol_alberto": {
-      "stage_finish": 166,
-      "gc": 0,
-      "jersey": 448,
-      "sprint_kom": 15901,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 16515,
-      "variance": 23691783
+      "name": "Alberto Bettiol",
+      "stage_finish": 6149,
+      "sprint_kom": 2245,
+      "total": 8394,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 22342,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0737,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "livyns_arjen": {
-      "stage_finish": 41,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 8976,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 9279,
-      "variance": 5928112
+      "name": "Arjen Livyns",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "lopez_harold": {
-      "stage_finish": 7532,
-      "gc": 2708,
-      "jersey": 1354,
-      "sprint_kom": 12641,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 24235,
-      "variance": 1019530638
+      "name": "Harold Martin Lopez",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "malucelli_matteo": {
-      "stage_finish": 15,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 15765,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15996,
-      "variance": 2075231
+      "name": "Matteo Malucelli",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "scaroni_christian": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1230,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22732,
-      "variance": 972244452
+      "name": "Christian Scaroni",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "ulissi_diego": {
-      "stage_finish": 404,
-      "gc": 0,
-      "jersey": 759,
-      "sprint_kom": 20775,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 21938,
-      "variance": 57537653
+      "name": "Diego Ulissi",
+      "stage_finish": 8979,
+      "sprint_kom": 3368,
+      "total": 12347,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 22342,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0737,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "battistella_samuele": {
-      "stage_finish": 3227,
-      "gc": 186,
-      "jersey": 884,
-      "sprint_kom": 16674,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 20971,
-      "variance": 450645314
+      "name": "Samuele Battistella",
+      "stage_finish": 2191,
+      "sprint_kom": 771,
+      "total": 2962,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "quinn_sean": {
-      "stage_finish": 250,
-      "gc": 0,
-      "jersey": 751,
-      "sprint_kom": 14624,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15625,
-      "variance": 35663515
+      "name": "Sean Quinn",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "rafferty_darren": {
-      "stage_finish": 159,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 11161,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11902,
-      "variance": 22628304
+      "name": "Darren Rafferty",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "shaw_james": {
-      "stage_finish": 232,
-      "gc": 0,
-      "jersey": 750,
-      "sprint_kom": 12573,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13555,
-      "variance": 33074908
+      "name": "James Shaw",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "valgren_michael": {
-      "stage_finish": 232,
-      "gc": 0,
-      "jersey": 451,
-      "sprint_kom": 17951,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 18634,
-      "variance": 33153065
+      "name": "Michael Valgren",
+      "stage_finish": 6149,
+      "sprint_kom": 2245,
+      "total": 8394,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 22342,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0737,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vandenbroek_frank": {
-      "stage_finish": 14273,
-      "gc": 5474,
-      "jersey": 1764,
-      "sprint_kom": 15398,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 36909,
-      "variance": 1835746799
+      "name": "Frank van den Broek",
+      "stage_finish": 752,
+      "sprint_kom": 261,
+      "total": 1013,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 6578
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.02
+      }
     },
     "flynn_sean": {
-      "stage_finish": 124,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10318,
-      "variance": 17676160
+      "name": "Sean Flynn",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "hamilton_chris": {
-      "stage_finish": 6686,
-      "gc": 2244,
-      "jersey": 1210,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22075,
-      "variance": 910638771
+      "name": "Chris Hamilton",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "dejong_timo": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8747,
-      "variance": 10298500
+      "name": "Timo de Jong",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "knox_james": {
-      "stage_finish": 7557,
-      "gc": 2536,
-      "jersey": 1260,
-      "sprint_kom": 15011,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 26364,
-      "variance": 1022715446
+      "name": "James Knox",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "leemreize_gijs": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 1713,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 33663,
-      "variance": 1740472910
+      "name": "Gijs Leemreize",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "naberman_tim": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Tim Naberman",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vanuden_casper": {
-      "stage_finish": 15,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 15765,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15996,
-      "variance": 2075231
+      "name": "Casper van Uden",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "aerts_toon": {
-      "stage_finish": 310,
-      "gc": 0,
-      "jersey": 620,
-      "sprint_kom": 20056,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 20986,
-      "variance": 44168241
+      "name": "Toon Aerts",
+      "stage_finish": 2732,
+      "sprint_kom": 966,
+      "total": 3698,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 10230,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0317,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "debuyst_jasper": {
-      "stage_finish": 69,
-      "gc": 0,
-      "jersey": 263,
-      "sprint_kom": 15127,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15459,
-      "variance": 9875010
+      "name": "Jasper De Buyst",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vaneetvelt_lennert": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 3703,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 35653,
-      "variance": 1740472910
+      "name": "Lennert Van Eetvelt",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "gualdi_simone": {
-      "stage_finish": 174,
-      "gc": 0,
-      "jersey": 583,
-      "sprint_kom": 13212,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13969,
-      "variance": 24779595
+      "name": "Simone Gualdi",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "delie_arnaud": {
-      "stage_finish": 105,
-      "gc": 0,
-      "jersey": 340,
-      "sprint_kom": 23716,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 24161,
-      "variance": 14997330
+      "name": "Arnaud De Lie",
+      "stage_finish": 10123,
+      "sprint_kom": 3840,
+      "total": 13963,
+      "scenario_ev": {
+        "bunch_sprint": 58771,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.2351,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "rota_lorenzo": {
-      "stage_finish": 3461,
-      "gc": 199,
-      "jersey": 899,
-      "sprint_kom": 18725,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 23284,
-      "variance": 482597069
+      "name": "Lorenzo Rota",
+      "stage_finish": 8979,
+      "sprint_kom": 3368,
+      "total": 12347,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 22342,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0737,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "rutsch_jonas": {
-      "stage_finish": 124,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 11800,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12369,
-      "variance": 17676160
+      "name": "Jonas Rutsch",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "slock_liam": {
-      "stage_finish": 274,
-      "gc": 0,
-      "jersey": 845,
-      "sprint_kom": 13279,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14398,
-      "variance": 39035648
+      "name": "Liam Slock",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "campenaerts_victor": {
-      "stage_finish": 549,
-      "gc": 0,
-      "jersey": 833,
-      "sprint_kom": 6925,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8307,
-      "variance": 78109901
+      "name": "Victor Campenaerts",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "kelderman_wilco": {
-      "stage_finish": 15780,
-      "gc": 6431,
-      "jersey": 1933,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 38197,
-      "variance": 2005801317
+      "name": "Wilco Kelderman",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "kielich_timo": {
-      "stage_finish": 93,
-      "gc": 0,
-      "jersey": 339,
-      "sprint_kom": 14489,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14921,
-      "variance": 13333409
+      "name": "Timo Kielich",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "kuss_sepp": {
-      "stage_finish": 17363,
-      "gc": 7492,
-      "jersey": 2680,
-      "sprint_kom": 14759,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 42294,
-      "variance": 2179498610
+      "name": "Sepp Kuss",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "lemmen_bart": {
-      "stage_finish": 111,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10305,
-      "variance": 15865887
+      "name": "Bart Lemmen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "piganzoli_davide": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 2490,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 23992,
-      "variance": 972244452
+      "name": "Davide Piganzoli",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "rex_tim": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Tim Rex",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vingegaard_jonas": {
-      "stage_finish": 21780,
-      "gc": 10442,
-      "jersey": 3146,
-      "sprint_kom": 16171,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 51539,
-      "variance": 2637756356
+      "name": "Jonas Vingegaard",
+      "stage_finish": 13519,
+      "sprint_kom": 5307,
+      "total": 18826,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 78518
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.3476
+      }
     },
     "bastiaens_ayco": {
-      "stage_finish": 124,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10318,
-      "variance": 17676160
+      "name": "Ayco Bastiaens",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vangestel_dries": {
-      "stage_finish": 82,
-      "gc": 0,
-      "jersey": 339,
-      "sprint_kom": 12438,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12859,
-      "variance": 11767118
+      "name": "Dries Van Gestel",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "magnier_paul": {
-      "stage_finish": 198,
-      "gc": 0,
-      "jersey": 584,
-      "sprint_kom": 13212,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13994,
-      "variance": 28188946
+      "name": "Paul Magnier",
+      "stage_finish": 1222,
+      "sprint_kom": 426,
+      "total": 1648,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 4640,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.014,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "stuyven_jasper": {
-      "stage_finish": 164,
-      "gc": 0,
-      "jersey": 343,
-      "sprint_kom": 18589,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19096,
-      "variance": 23454649
+      "name": "Jasper Stuyven",
+      "stage_finish": 6149,
+      "sprint_kom": 2245,
+      "total": 8394,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 22342,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0737,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "zana_filippo": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 2279,
-      "sprint_kom": 15398,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 36280,
-      "variance": 1740472910
+      "name": "Filippo Zana",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "arrieta_igor": {
-      "stage_finish": 245,
-      "gc": 0,
-      "jersey": 844,
-      "sprint_kom": 11229,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12318,
-      "variance": 35007268
+      "name": "Igor Arrieta",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "christen_jan": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Jan Christen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "morgado_antonio": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 2490,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 23992,
-      "variance": 972244452
+      "name": "António Morgado",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "soler_marc": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1238,
-      "sprint_kom": 13985,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 24790,
-      "variance": 972244452
+      "name": "Marc Soler",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "vine_jay": {
-      "stage_finish": 14910,
-      "gc": 6076,
-      "jersey": 2447,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 37486,
-      "variance": 1908136604
+      "name": "Jay Vine",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "yates_adam": {
-      "stage_finish": 15780,
-      "gc": 6431,
-      "jersey": 2483,
-      "sprint_kom": 14053,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 38747,
-      "variance": 2005801317
+      "name": "Adam Yates",
+      "stage_finish": 2163,
+      "sprint_kom": 761,
+      "total": 2924,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 18068
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0583
+      }
     },
     "barthe_cyril": {
-      "stage_finish": 82,
-      "gc": 0,
-      "jersey": 339,
-      "sprint_kom": 12438,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12859,
-      "variance": 11767118
+      "name": "Cyril Barthe",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "cavagna_remi": {
-      "stage_finish": 82,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 6287,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 6707,
-      "variance": 11767118
+      "name": "Rémi Cavagna",
+      "stage_finish": 3163,
+      "sprint_kom": 1123,
+      "total": 4286,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "huens_axel": {
-      "stage_finish": 41,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 13076,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13379,
-      "variance": 5928112
+      "name": "Axel Huens",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "jacobs_johan": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8747,
-      "variance": 10298500
+      "name": "Johan Jacobs",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "kench_josh": {
-      "stage_finish": 111,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10305,
-      "variance": 15865887
+      "name": "Josh Kench",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "penhoet_paul": {
-      "stage_finish": 34,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 19228,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19524,
-      "variance": 4899513
+      "name": "Paul Penhoët",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "rochas_remy": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1230,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22732,
-      "variance": 972244452
+      "name": "Rémy Rochas",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "rolland_brieuc": {
-      "stage_finish": 174,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 11161,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11917,
-      "variance": 24779595
+      "name": "Brieuc Rolland",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "magli_filippo": {
-      "stage_finish": 124,
-      "gc": 0,
-      "jersey": 446,
-      "sprint_kom": 15901,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 16471,
-      "variance": 17676160
+      "name": "Filippo Magli",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "marcellusi_martin": {
-      "stage_finish": 304,
-      "gc": 0,
-      "jersey": 847,
-      "sprint_kom": 15330,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 16481,
-      "variance": 43282023
+      "name": "Martin Marcellusi",
+      "stage_finish": 4028,
+      "sprint_kom": 1442,
+      "total": 5470,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 7203,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.022,
+        "gc_day": 0.0
+      }
     },
     "paletti_luca": {
-      "stage_finish": 124,
-      "gc": 0,
-      "jersey": 446,
-      "sprint_kom": 13850,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14420,
-      "variance": 17676160
+      "name": "Luca Paletti",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "rojas_vicente": {
-      "stage_finish": 274,
-      "gc": 0,
-      "jersey": 845,
-      "sprint_kom": 13279,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14398,
-      "variance": 39035648
+      "name": "Vicente Rojas",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "tarozzi_manuele": {
-      "stage_finish": 7657,
-      "gc": 2570,
-      "jersey": 2519,
-      "sprint_kom": 13985,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 26731,
-      "variance": 1035494758
+      "name": "Manuele Tarozzi",
+      "stage_finish": 3163,
+      "sprint_kom": 1123,
+      "total": 4286,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 11797,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0369,
+        "gc_day": 0.0
+      }
     },
     "tsvetkov_nikita": {
-      "stage_finish": 274,
-      "gc": 0,
-      "jersey": 845,
-      "sprint_kom": 13279,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14398,
-      "variance": 39035648
+      "name": "Nikita Tsvetkov",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "turconi_filippo": {
-      "stage_finish": 259,
-      "gc": 0,
-      "jersey": 751,
-      "sprint_kom": 14624,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15634,
-      "variance": 36994192
+      "name": "Filippo Turconi",
+      "stage_finish": 1222,
+      "sprint_kom": 426,
+      "total": 1648,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 4640,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.014,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "zanoncello_enrico": {
-      "stage_finish": 20,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 13715,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13951,
-      "variance": 2898346
+      "name": "Enrico Zanoncello",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "aular_orluis": {
-      "stage_finish": 48,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 17177,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 17487,
-      "variance": 6858660
+      "name": "Orluis Aular",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "garciacortina_ivan": {
-      "stage_finish": 147,
-      "gc": 0,
-      "jersey": 342,
-      "sprint_kom": 19615,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 20104,
-      "variance": 20990084
+      "name": "Iván García Cortina",
+      "stage_finish": 2191,
+      "sprint_kom": 771,
+      "total": 2962,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "lopez_juanpe": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 1713,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 33663,
-      "variance": 1740472910
+      "name": "Juanpe Lopez",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "milesi_lorenzo": {
-      "stage_finish": 159,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 9111,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 9852,
-      "variance": 22628304
+      "name": "Lorenzo Milesi",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "oliveira_nelson": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 6287,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 6697,
-      "variance": 10298500
+      "name": "Nelson Oliveira",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "romo_javier": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1230,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22732,
-      "variance": 972244452
+      "name": "Javier Romo",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "feldmann_karsten": {
-      "stage_finish": 274,
-      "gc": 0,
-      "jersey": 845,
-      "sprint_kom": 13279,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 14398,
-      "variance": 39035648
+      "name": "Karsten Larsen Feldmann",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "groenewegen_dylan": {
-      "stage_finish": 10,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 19456,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 19682,
-      "variance": 1482351
+      "name": "Dylan Groenewegen",
+      "stage_finish": 4622,
+      "sprint_kom": 1663,
+      "total": 6285,
+      "scenario_ev": {
+        "bunch_sprint": 35963,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.1275,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "kopecky_tomas": {
-      "stage_finish": 72,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8747,
-      "variance": 10298500
+      "name": "Tomáš Kopecký",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "kubis_lukas": {
-      "stage_finish": 10,
-      "gc": 0,
-      "jersey": 215,
-      "sprint_kom": 11664,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11889,
-      "variance": 1482351
+      "name": "Lukáš Kubiš",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "larsen_niklas": {
-      "stage_finish": 15,
-      "gc": 0,
-      "jersey": 216,
-      "sprint_kom": 15765,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15996,
-      "variance": 2075231
+      "name": "Niklas Larsen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "poels_wout": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 1713,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 33663,
-      "variance": 1740472910
+      "name": "Wout Poels",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "reinders_elmar": {
-      "stage_finish": 48,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 15127,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 15437,
-      "variance": 6858660
+      "name": "Elmar Reinders",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "devries_hartthijs": {
-      "stage_finish": 174,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 11161,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11917,
-      "variance": 24779595
+      "name": "Hartthijs de Vries",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "guillermo_thomas_silva": {
-      "stage_finish": 63,
-      "gc": 0,
-      "jersey": 338,
-      "sprint_kom": 8337,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 8738,
-      "variance": 8927600
+      "name": "Guillermo Thomas Silva",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "jardi_christiaan_van_der_lee": {
-      "stage_finish": 111,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10305,
-      "variance": 15865887
+      "name": "Jardi Christiaan van der Lee",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "jefferson_alexander_cepeda": {
-      "stage_finish": 13446,
-      "gc": 5157,
-      "jersey": 1713,
-      "sprint_kom": 13347,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 33663,
-      "variance": 1740472910
+      "name": "Jefferson Alexander Cepeda",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "andrea_raccagni_noviero": {
-      "stage_finish": 111,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10305,
-      "variance": 15865887
+      "name": "Andrea Raccagni Noviero",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "gianmarco_garofoli": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1230,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22732,
-      "variance": 972244452
+      "name": "Gianmarco Garofoli",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "mathieu_kockelmann": {
-      "stage_finish": 7163,
-      "gc": 2404,
-      "jersey": 1230,
-      "sprint_kom": 11935,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22732,
-      "variance": 972244452
+      "name": "Mathieu Kockelmann",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "milan_menten": {
-      "stage_finish": 48,
-      "gc": 0,
-      "jersey": 262,
-      "sprint_kom": 17177,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 17487,
-      "variance": 6858660
+      "name": "Milan Menten",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "derek_gee": {
-      "stage_finish": 3000,
-      "gc": 173,
-      "jersey": 874,
-      "sprint_kom": 16674,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 20721,
-      "variance": 419710330
+      "name": "Derek Gee",
+      "stage_finish": 16520,
+      "sprint_kom": 6695,
+      "total": 23215,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 55814,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.2199,
+        "gc_day": 0.0
+      }
     },
     "magnus_sheffield": {
-      "stage_finish": 2470,
-      "gc": 118,
-      "jersey": 686,
-      "sprint_kom": 15262,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 18536,
-      "variance": 346893608
+      "name": "Magnus Sheffield",
+      "stage_finish": 2191,
+      "sprint_kom": 771,
+      "total": 2962,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 8247,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0253,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "einer_augusto_rubio": {
-      "stage_finish": 8038,
-      "gc": 2890,
-      "jersey": 1375,
-      "sprint_kom": 12641,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 24944,
-      "variance": 1083982488
+      "name": "Einer Augusto Rubio",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "enric_mas_nicolau": {
-      "stage_finish": 17363,
-      "gc": 7492,
-      "jersey": 2130,
-      "sprint_kom": 14759,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 41744,
-      "variance": 2179498610
+      "name": "Enric Mas Nicolau",
+      "stage_finish": 3471,
+      "sprint_kom": 1236,
+      "total": 4707,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 27887
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0947
+      }
     },
     "christopher_juul_jensen": {
-      "stage_finish": 124,
-      "gc": 0,
-      "jersey": 445,
-      "sprint_kom": 9749,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 10318,
-      "variance": 17676160
+      "name": "Christopher Juul Jensen",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "luke_tuckwell": {
+      "name": "Luke Tuckwell",
       "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
       "sprint_kom": 0,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     },
     "jhonatan_manuel_narvaez_prado": {
-      "stage_finish": 174,
-      "gc": 0,
-      "jersey": 582,
-      "sprint_kom": 11161,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11917,
-      "variance": 24779595
+      "name": "Jhonatan Manuel Narvaez Prado",
+      "stage_finish": 0,
+      "sprint_kom": 0,
+      "total": 0,
+      "scenario_ev": {
+        "bunch_sprint": 0,
+        "reduced_sprint": 0,
+        "breakaway": 0,
+        "gc_day": 0
+      },
+      "scenario_p_win": {
+        "bunch_sprint": 0.0,
+        "reduced_sprint": 0.0,
+        "breakaway": 0.0,
+        "gc_day": 0.0
+      }
     }
   }
 }

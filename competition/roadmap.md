@@ -178,10 +178,58 @@ T-1h: Review final team recommendation, confirm, submit
 
 ---
 
-## Current Status — Pre-Stage 1 (May 8, 2026)
+## Phase 3f — Done ✅
+### Multi-stage optimizer + archetype risk profiles + dashboard overhaul (May 8, 2026)
+
+- True multi-stage optimizer with transfer cost vs EV gain decisions
+- StageDepthCount bonus modeled at team level
+- Three archetype risk profiles (Conservative / Balanced / All-In)
+
+---
+
+## Phase 3h — Done ✅
+### Point scales, power weighting, scenario sliders (May 9, 2026)
+
+**Part 0 — Model fixes**
+- Fix A: P(win) recomputed per-stage from stage_group (not cached from stage 1 defaults)
+- Fix B: sprint_kom_ev ≤ stage_finish_ev × 1.5 assertion + conservation check
+- Fix C: Team bonus as proper expectation Σ P(teammate at pos k) × bonus(k)
+- Fix D: Optimizer recomputes team bonus per proposed team during swap evaluation
+
+**Part 1 — Official Giro 2026 Holdet point scales (scripts/update_roadbook_points.py)**
+- flat: [50, 35, 25, 18, 14, 12, 10, 8, 7, 6, 5, 4, 3, 2, 1]
+- hilly: [25, 18, 12, 8, 6, 5, 4, 3, 2, 1]
+- mountain: [15, 12, 9, 7, 6, 5, 4, 3, 2, 1]
+- Single intermediate sprint per non-TT stage: [12, 8, 5, 3, 1]
+- stage_group field added to each roadbook entry
+
+**Part 2 — Scenario-based EV model (models/ev_breakdown.py)**
+- AFFINITY_POWER = 8: amplifies elite/journeyman gap in win probability
+- 4 scenarios: bunch_sprint, reduced_sprint, breakaway, gc_day
+- Per-scenario threshold + contender_mass → Milan P(win|bunch_sprint) = 25.6%
+- STAGE_TYPE_DEFAULTS: flat 70/20/10/0, hilly 15/35/35/15, mountain 0/5/25/70
+- PURE_SCENARIOS for per-scenario dashboard data
+- build_rider_scenario_data() generates per-scenario EV + P(win) for all active riders
+
+**Part 3 — Scenario sliders in dashboard (interface/early/build_stage1.py)**
+- 4 sliders (Bunch Sprint / Reduced Sprint / Breakaway / GC Day), sum locked to 100%
+- 6 presets: pure_sprint, sprint_risk, breakaway, mountain, open, default
+- Scenario mix color bar (visual weight indicator)
+- JavaScript team selection updates in real time with slider changes
+- Collapsible per-rider detail rows with per-scenario EV breakdown (S1+S2+S3)
+- Stage 2 and 3 EVs pre-blended at build time using stage-type defaults
+
+**Key numbers (Stage 1 flat, default weights 70/20/10/0)**
+- Jonathan Milan: P(win|bunch_sprint) = 25.6%, blended S1 EV = 73,944 kr
+- Top-5 by blended EV: De Lie > Milan > Groves > Groenewegen > Andresen
+- Recommended team: Milan★, De Lie, Groves, Groenewegen + 4 budget fillers (50M exact)
+
+---
+
+## Current Status — Pre-Stage 1 (May 9, 2026)
 
 **Stage 1:** Friday May 9 — Nessebar → Burgas, 156km, Flat, bunch sprint expected
-**Next action:** Run intelligence gather Thursday/Friday morning before window closes
+**Next action:** Run intelligence gather before window closes
 
 ---
 
@@ -249,18 +297,19 @@ Expert knowledge capture. Multi-race learning loop.
 | data/odds/ | ⚠️ Template only — populate before each stage |
 | data/outcomes/ | ⚠️ Empty — begin capturing from Stage 1 |
 | data/reviews/ | ✅ Contender pool review artifacts |
-| models/ev_breakdown.py | ✅ 6-component, roadbook points, GC fix, captain fix |
-| models/ev_breakdown_stage{1–21}.json | ✅ Pre-computed with corrected attributes |
-| models/optimizer.py | ✅ Transfer-aware, StageDepthCount bonus |
+| models/ev_breakdown.py | ✅ Scenario-based, AFFINITY_POWER=8, Fix A/B/C |
+| models/ev_breakdown_stage{1–21}.json | ✅ Re-generated with scenario_ev + scenario_p_win |
+| models/optimizer.py | ✅ Fix D: team bonus per proposed team |
 | models/risk_profiles.py | ✅ Conservative/Balanced/All-In |
+| scripts/update_roadbook_points.py | ✅ Official 2026 Holdet point scales |
 | scripts/gather_expert_intel.py | ✅ 5 sources, weighted merge, uncapped crash |
 | scripts/ingest_copilot_attributes.py | ✅ Full field attribute ingestion |
 | scripts/review_contender_pool.py | ✅ Researched/synthetic flags |
 | scripts/apply_corrections_and_rebuild.py | ✅ One-command rebuild |
 | decisions/stage1_system_b.yaml | ✅ Stage 1 decision record |
 | decisions/stage1_risk_profiles.yaml | ✅ Three risk profiles |
-| interface/early/stage1_dashboard.html | ✅ Intelligence panel, base64 image |
-| interface/early/build_stage1.py | ✅ Base64 image, intel panel |
+| interface/early/stage1_dashboard.html | ✅ Scenario sliders, collapsible rows, intel panel |
+| interface/early/build_stage1.py | ✅ Scenario sliders, 6 presets, JS team selection |
 | engine/siv/capture_cookie.py | ✅ Playwright login working |
 | engine/siv/fetch_riders.py | ✅ Ready |
 | competition/roadmap.md | ✅ This file |
@@ -284,3 +333,7 @@ Expert knowledge capture. Multi-race learning loop.
 13. Override priority: manual > expert_intel > copilot — sort guaranteed in load_rider_attributes()
 14. Crash/injury signals: uncapped (±1.0) — a crashed sprinter correctly drops to 0.11
 15. stage_last_applicable: expert_intel overrides expire silently — no bleedthrough
+16. AFFINITY_POWER=8: power-weighting to separate elite from journeyman (Milan 25.6% vs field 2%)
+17. Scenario contender_mass: non-contenders in a scenario genuinely cannot win (return 0, not 0.002)
+18. Sprint EV: p_win × total_sprint_pts × POINT_VALUE (no division by n_contenders)
+19. Team bonus Fix D: computed per proposed team during swap evaluation, not cached standalone
