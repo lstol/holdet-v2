@@ -1,210 +1,210 @@
 conservative:
   profile: Conservative
   budget_spent: 50000000
-  team_ev_stage1: 675216
-  team_ev_lookahead: 2073018
+  team_ev_stage1: 666462
+  team_ev_lookahead: 2046754
   riders:
-  - name: Dylan Groenewegen
-    rider_id: groenewegen_dylan
-    holdet_id: 47342
-    team: Unibet Rose Rockets
-    price: 10000000
-    ev_stage1: 122509
-    ev_lookahead: 369817
-    stddev_s1: 99146
-  - name: Kaden Groves
-    rider_id: groves_kaden
-    holdet_id: 47375
-    team: Alpecin-Premier Tech
-    price: 8500000
-    ev_stage1: 113096
-    ev_lookahead: 346339
-    stddev_s1: 95956
-  - name: Arnaud De Lie
-    rider_id: delie_arnaud
-    holdet_id: 48650
-    team: Lotto-Intermarché
-    price: 8000000
-    ev_stage1: 113096
-    ev_lookahead: 346339
-    stddev_s1: 95956
   - name: Jonathan Milan
     rider_id: milan_jonathan
     holdet_id: 47373
     team: Lidl-Trek
     price: 11500000
-    ev_stage1: 104049
-    ev_lookahead: 316788
-    stddev_s1: 92467
+    ev_stage1: 115410
+    ev_lookahead: 350871
+    stddev_s1: 96858
+  - name: Kaden Groves
+    rider_id: groves_kaden
+    holdet_id: 47375
+    team: Alpecin-Premier Tech
+    price: 8500000
+    ev_stage1: 113547
+    ev_lookahead: 347692
+    stddev_s1: 96197
+  - name: Arnaud De Lie
+    rider_id: delie_arnaud
+    holdet_id: 48650
+    team: Lotto-Intermarché
+    price: 8000000
+    ev_stage1: 113547
+    ev_lookahead: 347692
+    stddev_s1: 96197
+  - name: Dylan Groenewegen
+    rider_id: groenewegen_dylan
+    holdet_id: 47342
+    team: Unibet Rose Rockets
+    price: 10000000
+    ev_stage1: 100919
+    ev_lookahead: 305047
+    stddev_s1: 91242
   - name: Luca Mozzato
     rider_id: mozzato_luca
     holdet_id: 48600
     team: Tudor Pro Cycling
     price: 4000000
-    ev_stage1: 87044
-    ev_lookahead: 266252
-    stddev_s1: 84683
+    ev_stage1: 87362
+    ev_lookahead: 267204
+    stddev_s1: 84934
   - name: Tord Gudmestad
     rider_id: gudmestad_tord
     holdet_id: 47406
     team: Decathlon CMA CGM
     price: 3000000
-    ev_stage1: 58741
-    ev_lookahead: 183275
-    stddev_s1: 60686
+    ev_stage1: 58887
+    ev_lookahead: 183713
+    stddev_s1: 60896
   - name: Jasper De Buyst
     rider_id: debuyst_jasper
     holdet_id: 48651
     team: Lotto-Intermarché
     price: 2500000
-    ev_stage1: 47976
-    ev_lookahead: 148569
-    stddev_s1: 52631
+    ev_stage1: 48083
+    ev_lookahead: 148890
+    stddev_s1: 52818
   - name: Markus Hoelgaard
     rider_id: hoelgaard_markus
     holdet_id: 48629
     team: Uno-X Mobility
     price: 2500000
-    ev_stage1: 28705
-    ev_lookahead: 95639
-    stddev_s1: 8255
+    ev_stage1: 28707
+    ev_lookahead: 95645
+    stddev_s1: 8287
 balanced:
   profile: Balanced
   budget_spent: 50000000
-  team_ev_stage1: 675216
-  team_ev_lookahead: 2073018
+  team_ev_stage1: 666462
+  team_ev_lookahead: 2046754
   riders:
-  - name: Dylan Groenewegen
-    rider_id: groenewegen_dylan
-    holdet_id: 47342
-    team: Unibet Rose Rockets
-    price: 10000000
-    ev_stage1: 122509
-    ev_lookahead: 369817
-    stddev_s1: 99146
-  - name: Kaden Groves
-    rider_id: groves_kaden
-    holdet_id: 47375
-    team: Alpecin-Premier Tech
-    price: 8500000
-    ev_stage1: 113096
-    ev_lookahead: 346339
-    stddev_s1: 95956
-  - name: Arnaud De Lie
-    rider_id: delie_arnaud
-    holdet_id: 48650
-    team: Lotto-Intermarché
-    price: 8000000
-    ev_stage1: 113096
-    ev_lookahead: 346339
-    stddev_s1: 95956
   - name: Jonathan Milan
     rider_id: milan_jonathan
     holdet_id: 47373
     team: Lidl-Trek
     price: 11500000
-    ev_stage1: 104049
-    ev_lookahead: 316788
-    stddev_s1: 92467
+    ev_stage1: 115410
+    ev_lookahead: 350871
+    stddev_s1: 96858
+  - name: Kaden Groves
+    rider_id: groves_kaden
+    holdet_id: 47375
+    team: Alpecin-Premier Tech
+    price: 8500000
+    ev_stage1: 113547
+    ev_lookahead: 347692
+    stddev_s1: 96197
+  - name: Arnaud De Lie
+    rider_id: delie_arnaud
+    holdet_id: 48650
+    team: Lotto-Intermarché
+    price: 8000000
+    ev_stage1: 113547
+    ev_lookahead: 347692
+    stddev_s1: 96197
+  - name: Dylan Groenewegen
+    rider_id: groenewegen_dylan
+    holdet_id: 47342
+    team: Unibet Rose Rockets
+    price: 10000000
+    ev_stage1: 100919
+    ev_lookahead: 305047
+    stddev_s1: 91242
   - name: Luca Mozzato
     rider_id: mozzato_luca
     holdet_id: 48600
     team: Tudor Pro Cycling
     price: 4000000
-    ev_stage1: 87044
-    ev_lookahead: 266252
-    stddev_s1: 84683
+    ev_stage1: 87362
+    ev_lookahead: 267204
+    stddev_s1: 84934
   - name: Tord Gudmestad
     rider_id: gudmestad_tord
     holdet_id: 47406
     team: Decathlon CMA CGM
     price: 3000000
-    ev_stage1: 58741
-    ev_lookahead: 183275
-    stddev_s1: 60686
+    ev_stage1: 58887
+    ev_lookahead: 183713
+    stddev_s1: 60896
   - name: Jasper De Buyst
     rider_id: debuyst_jasper
     holdet_id: 48651
     team: Lotto-Intermarché
     price: 2500000
-    ev_stage1: 47976
-    ev_lookahead: 148569
-    stddev_s1: 52631
+    ev_stage1: 48083
+    ev_lookahead: 148890
+    stddev_s1: 52818
   - name: Markus Hoelgaard
     rider_id: hoelgaard_markus
     holdet_id: 48629
     team: Uno-X Mobility
     price: 2500000
-    ev_stage1: 28705
-    ev_lookahead: 95639
-    stddev_s1: 8255
+    ev_stage1: 28707
+    ev_lookahead: 95645
+    stddev_s1: 8287
 all_in:
   profile: All-In
   budget_spent: 50000000
-  team_ev_stage1: 675216
-  team_ev_lookahead: 2073018
+  team_ev_stage1: 666462
+  team_ev_lookahead: 2046754
   riders:
-  - name: Dylan Groenewegen
-    rider_id: groenewegen_dylan
-    holdet_id: 47342
-    team: Unibet Rose Rockets
-    price: 10000000
-    ev_stage1: 122509
-    ev_lookahead: 369817
-    stddev_s1: 99146
-  - name: Kaden Groves
-    rider_id: groves_kaden
-    holdet_id: 47375
-    team: Alpecin-Premier Tech
-    price: 8500000
-    ev_stage1: 113096
-    ev_lookahead: 346339
-    stddev_s1: 95956
-  - name: Arnaud De Lie
-    rider_id: delie_arnaud
-    holdet_id: 48650
-    team: Lotto-Intermarché
-    price: 8000000
-    ev_stage1: 113096
-    ev_lookahead: 346339
-    stddev_s1: 95956
   - name: Jonathan Milan
     rider_id: milan_jonathan
     holdet_id: 47373
     team: Lidl-Trek
     price: 11500000
-    ev_stage1: 104049
-    ev_lookahead: 316788
-    stddev_s1: 92467
+    ev_stage1: 115410
+    ev_lookahead: 350871
+    stddev_s1: 96858
+  - name: Kaden Groves
+    rider_id: groves_kaden
+    holdet_id: 47375
+    team: Alpecin-Premier Tech
+    price: 8500000
+    ev_stage1: 113547
+    ev_lookahead: 347692
+    stddev_s1: 96197
+  - name: Arnaud De Lie
+    rider_id: delie_arnaud
+    holdet_id: 48650
+    team: Lotto-Intermarché
+    price: 8000000
+    ev_stage1: 113547
+    ev_lookahead: 347692
+    stddev_s1: 96197
+  - name: Dylan Groenewegen
+    rider_id: groenewegen_dylan
+    holdet_id: 47342
+    team: Unibet Rose Rockets
+    price: 10000000
+    ev_stage1: 100919
+    ev_lookahead: 305047
+    stddev_s1: 91242
   - name: Luca Mozzato
     rider_id: mozzato_luca
     holdet_id: 48600
     team: Tudor Pro Cycling
     price: 4000000
-    ev_stage1: 87044
-    ev_lookahead: 266252
-    stddev_s1: 84683
+    ev_stage1: 87362
+    ev_lookahead: 267204
+    stddev_s1: 84934
   - name: Tord Gudmestad
     rider_id: gudmestad_tord
     holdet_id: 47406
     team: Decathlon CMA CGM
     price: 3000000
-    ev_stage1: 58741
-    ev_lookahead: 183275
-    stddev_s1: 60686
+    ev_stage1: 58887
+    ev_lookahead: 183713
+    stddev_s1: 60896
   - name: Jasper De Buyst
     rider_id: debuyst_jasper
     holdet_id: 48651
     team: Lotto-Intermarché
     price: 2500000
-    ev_stage1: 47976
-    ev_lookahead: 148569
-    stddev_s1: 52631
+    ev_stage1: 48083
+    ev_lookahead: 148890
+    stddev_s1: 52818
   - name: Markus Hoelgaard
     rider_id: hoelgaard_markus
     holdet_id: 48629
     team: Uno-X Mobility
     price: 2500000
-    ev_stage1: 28705
-    ev_lookahead: 95639
-    stddev_s1: 8255
+    ev_stage1: 28707
+    ev_lookahead: 95645
+    stddev_s1: 8287

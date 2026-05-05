@@ -76,7 +76,9 @@ def load_rider_attributes(rider: dict, stage_n: int, overrides: list[dict]) -> d
 
     r  = copy.copy(rider)
     ta = dict(r.get("terrain_affinity", {}))
-    for ov in rider_ovs:
+    # Apply non-manual first, manual last — so manual always wins regardless of YAML order
+    sorted_ovs = sorted(rider_ovs, key=lambda o: 1 if o.get("source") == "manual" else 0)
+    for ov in sorted_ovs:
         mapped = _ATTR_MAP.get(ov["attribute"])
         if mapped:
             ta[mapped] = ov["value"]

@@ -8,32 +8,32 @@ meta:
   budget: 50000000
   budget_spent: 50000000
   budget_remaining: 0
-captain: Dylan Groenewegen
+captain: Jonathan Milan
 team:
-- name: Dylan Groenewegen
-  rider_id: groenewegen_dylan
-  holdet_id: 47342
-  team: Unibet Rose Rockets
-  price: 10000000
+- name: Jonathan Milan
+  rider_id: milan_jonathan
+  holdet_id: 47373
+  team: Lidl-Trek
+  price: 11500000
   terrain_type:
-    climbing: 0.18
+    climbing: 0.28
     sprint: 0.92
-    time_trial: 0.38
-    mixed: 0.38
+    time_trial: 0.82
+    mixed: 0.45
   is_captain: true
-  ev_stage1: 122509
-  ev_stage2: 124137
-  ev_stage3: 123171
-  ev_lookahead: 369817
+  ev_stage1: 115410
+  ev_stage2: 118697
+  ev_stage3: 116764
+  ev_lookahead: 350871
   ev_breakdown_s1:
-    stage_finish: 41460
-    gc: 20341
-    jersey: 4341
-    sprint_kom: 56367
+    stage_finish: 38501
+    gc: 18889
+    jersey: 3908
+    sprint_kom: 54112
     team_bonus: 0
     captain_bonus: 0
-    total: 122509
-    variance: 9829981611
+    total: 115410
+    variance: 9381448193
 - name: Kaden Groves
   rider_id: groves_kaden
   holdet_id: 47375
@@ -45,19 +45,19 @@ team:
     time_trial: 0.38
     mixed: 0.4
   is_captain: false
-  ev_stage1: 113096
-  ev_stage2: 118071
-  ev_stage3: 115172
-  ev_lookahead: 346339
+  ev_stage1: 113547
+  ev_stage2: 118522
+  ev_stage3: 115623
+  ev_lookahead: 347692
   ev_breakdown_s1:
-    stage_finish: 37418
-    gc: 18358
-    jersey: 3771
+    stage_finish: 37703
+    gc: 18497
+    jersey: 3798
     sprint_kom: 53549
     team_bonus: 0
     captain_bonus: 0
-    total: 113096
-    variance: 9207642665
+    total: 113547
+    variance: 9253863328
 - name: Arnaud De Lie
   rider_id: delie_arnaud
   holdet_id: 48650
@@ -69,43 +69,43 @@ team:
     time_trial: 0.38
     mixed: 0.38
   is_captain: false
-  ev_stage1: 113096
-  ev_stage2: 118071
-  ev_stage3: 115172
-  ev_lookahead: 346339
+  ev_stage1: 113547
+  ev_stage2: 118522
+  ev_stage3: 115623
+  ev_lookahead: 347692
   ev_breakdown_s1:
-    stage_finish: 37418
-    gc: 18358
-    jersey: 3771
+    stage_finish: 37703
+    gc: 18497
+    jersey: 3798
     sprint_kom: 53549
     team_bonus: 0
     captain_bonus: 0
-    total: 113096
-    variance: 9207642665
-- name: Jonathan Milan
-  rider_id: milan_jonathan
-  holdet_id: 47373
-  team: Lidl-Trek
-  price: 11500000
+    total: 113547
+    variance: 9253863328
+- name: Dylan Groenewegen
+  rider_id: groenewegen_dylan
+  holdet_id: 47342
+  team: Unibet Rose Rockets
+  price: 10000000
   terrain_type:
-    climbing: 0.28
+    climbing: 0.18
     sprint: 0.92
-    time_trial: 0.82
-    mixed: 0.45
+    time_trial: 0.38
+    mixed: 0.38
   is_captain: false
-  ev_stage1: 104049
-  ev_stage2: 107336
-  ev_stage3: 105403
-  ev_lookahead: 316788
+  ev_stage1: 100919
+  ev_stage2: 102547
+  ev_stage3: 101581
+  ev_lookahead: 305047
   ev_breakdown_s1:
-    stage_finish: 33583
-    gc: 16476
-    jersey: 3260
-    sprint_kom: 50730
+    stage_finish: 32351
+    gc: 15872
+    jersey: 3093
+    sprint_kom: 49603
     team_bonus: 0
     captain_bonus: 0
-    total: 104049
-    variance: 8550092396
+    total: 100919
+    variance: 8325055890
 - name: Luca Mozzato
   rider_id: mozzato_luca
   holdet_id: 48600
@@ -117,19 +117,19 @@ team:
     time_trial: 0.38
     mixed: 0.4
   is_captain: false
-  ev_stage1: 87044
-  ev_stage2: 90667
-  ev_stage3: 88541
-  ev_lookahead: 266252
+  ev_stage1: 87362
+  ev_stage2: 90984
+  ev_stage3: 88858
+  ev_lookahead: 267204
   ev_breakdown_s1:
-    stage_finish: 26535
-    gc: 13018
-    jersey: 2398
+    stage_finish: 26737
+    gc: 13117
+    jersey: 2415
     sprint_kom: 45093
     team_bonus: 0
     captain_bonus: 0
-    total: 87044
-    variance: 7171180432
+    total: 87362
+    variance: 7213761692
 - name: Tord Gudmestad
   rider_id: gudmestad_tord
   holdet_id: 47406
@@ -141,19 +141,19 @@ team:
     time_trial: 0.42
     mixed: 0.55
   is_captain: false
-  ev_stage1: 58741
-  ev_stage2: 63717
-  ev_stage3: 60817
-  ev_lookahead: 183275
+  ev_stage1: 58887
+  ev_stage2: 63863
+  ev_stage3: 60963
+  ev_lookahead: 183713
   ev_breakdown_s1:
-    stage_finish: 12189
-    gc: 5980
-    jersey: 1115
+    stage_finish: 12282
+    gc: 6026
+    jersey: 1122
     sprint_kom: 39457
     team_bonus: 0
     captain_bonus: 0
-    total: 58741
-    variance: 3682786734
+    total: 58887
+    variance: 3708283993
 - name: Jasper De Buyst
   rider_id: debuyst_jasper
   holdet_id: 48651
@@ -165,19 +165,19 @@ team:
     time_trial: 0.42
     mixed: 0.52
   is_captain: false
-  ev_stage1: 47976
-  ev_stage2: 51263
-  ev_stage3: 49330
-  ev_lookahead: 148569
+  ev_stage1: 48083
+  ev_stage2: 51370
+  ev_stage3: 49437
+  ev_lookahead: 148890
   ev_breakdown_s1:
-    stage_finish: 8955
-    gc: 4394
-    jersey: 807
+    stage_finish: 9024
+    gc: 4427
+    jersey: 812
     sprint_kom: 33820
     team_bonus: 0
     captain_bonus: 0
-    total: 47976
-    variance: 2770070296
+    total: 48083
+    variance: 2789786205
 - name: Markus Hoelgaard
   rider_id: hoelgaard_markus
   holdet_id: 48629
@@ -189,18 +189,18 @@ team:
     time_trial: 0.38
     mixed: 0.4
   is_captain: false
-  ev_stage1: 28705
-  ev_stage2: 35400
-  ev_stage3: 31534
-  ev_lookahead: 95639
+  ev_stage1: 28707
+  ev_stage2: 35402
+  ev_stage3: 31536
+  ev_lookahead: 95645
   ev_breakdown_s1:
-    stage_finish: 207
+    stage_finish: 209
     gc: 102
     jersey: 213
     sprint_kom: 28183
     team_bonus: 0
     captain_bonus: 0
-    total: 28705
-    variance: 68151476
-total_ev_stage1: 675216
-total_ev_lookahead: 2073018
+    total: 28707
+    variance: 68669431
+total_ev_stage1: 666462
+total_ev_lookahead: 2046754

@@ -61,6 +61,8 @@ def apply_overrides(rider: dict, stage_n: int, overrides: list[dict]) -> dict:
     r  = copy.copy(rider)
     ta = dict(r.get("terrain_affinity", {}))
 
+    # Apply non-manual first, manual last — manual always wins
+    rider_ovs = sorted(rider_ovs, key=lambda o: 1 if o.get("source") == "manual" else 0)
     for ov in rider_ovs:
         mapped = ATTR_MAP.get(ov["attribute"])
         if mapped:

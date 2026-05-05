@@ -1,4 +1,20 @@
 overrides:
+- holdet_id: 47373
+  name: Jonathan Milan
+  attribute: sprint_affinity
+  value: 0.96
+  reason: "Fastest pure sprinter in Giro 2026 field. Home favorite, won multiple sprint stages at 2024 Giro. Manually set as field anchor at 0.96, one tick above Groves/De Lie at 0.95."
+  source: manual
+  stage_first_applicable: 1
+  date: 2026-05-08
+- holdet_id: 47342
+  name: Dylan Groenewegen
+  attribute: sprint_affinity
+  value: 0.88
+  reason: "Toned down from Copilot 1.00. Milan assessed as faster in this field. 0.88 reflects strong but second-tier sprint contender status."
+  source: manual
+  stage_first_applicable: 1
+  date: 2026-05-08
 - holdet_id: 47375
   name: Kaden Groves
   attribute: sprint_affinity
