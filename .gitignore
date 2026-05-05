@@ -8,6 +8,7 @@ venv/
 
 # Data — large files and secrets
 data/snapshots/*.json
+!data/snapshots/*_pre_race.json
 data/odds/*.json
 *.csv
 *.parquet
