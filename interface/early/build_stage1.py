@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build Stage 1 Decision Dashboard for Giro 2026 — Phase 3d (with attribute overrides)."""
+"""Build Stage 1 Decision Dashboard for Giro 2026 — Phase 3f (collapsible rows, stage flipper)."""
 
-import base64, json, os, sys, yaml
+import base64, json, math, os, sys, yaml
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent.parent
@@ -39,13 +39,32 @@ if _overrides_path.exists():
     _raw = yaml.safe_load(_overrides_path.read_text()) or {}
     _overrides = _raw.get("overrides", [])
 
-# ── Embed stage 1 image as base64 data URI ───────────────────────────────────
-img_path = BASE / "data" / "stage_images" / "stage-1.jpg"
-if img_path.exists():
-    img_b64 = base64.b64encode(img_path.read_bytes()).decode("ascii")
-    stage1_img_src = f"data:image/jpeg;base64,{img_b64}"
-else:
-    stage1_img_src = ""
+# ── Load stage profiles for flipper ──────────────────────────────────────────
+_stage_profiles = json.loads((BASE / "data/stages/stage_profiles_parsed.json").read_text())
+_stage_profiles_by_n = {p["stage"]: p for p in _stage_profiles}
+
+def _embed_stages_js() -> str:
+    """Return JS array literal of all 21 stage objects (base64 images embedded if present)."""
+    stages_js = []
+    for p in sorted(_stage_profiles, key=lambda x: x["stage"]):
+        n = p["stage"]
+        img_path = BASE / f"data/stage_images/stage-{n}.jpg"
+        if img_path.exists():
+            img_uri = "data:image/jpeg;base64," + base64.b64encode(img_path.read_bytes()).decode()
+        else:
+            img_uri = ""
+        rb = roadbooks.get(n, {})
+        stages_js.append({
+            "number":      n,
+            "label":       f"Stage {n} — {p.get('distance_km','?')}km, {p.get('stage_type','?').title()}",
+            "image_b64":   img_uri,
+            "type":        p.get("stage_type", ""),
+            "finish_type": p.get("finish_type", ""),
+            "distance":    p.get("distance_km", 0),
+            "sprints":     len(rb.get("intermediate_sprints", [])),
+            "koms":        len(rb.get("kom_climbs", [])),
+        })
+    return json.dumps(stages_js, ensure_ascii=False)
 
 # ── Constants ────────────────────────────────────────────────────────────────
 BUDGET       = 50_000_000
@@ -70,6 +89,30 @@ active_riders = [
     and r.get("holdet_id")
     and r.get("holdet_id") not in DNS_IDS
 ]
+
+# ── Archetype classification (Phase 3f) ──────────────────────────────────────
+def get_archetype(rider: dict) -> str:
+    ta = rider.get("terrain_affinity", {})
+    s = ta.get("sprint", 0);  c = ta.get("climbing", 0)
+    p = ta.get("mixed",  0);  g = ta.get("gc", 0)
+    b = ta.get("breakaway", 0); t = ta.get("time_trial", 0)
+    if g >= 0.65 and (c >= 0.60 or t >= 0.55): return "gc_leader"
+    if b >= 0.65 and s < 0.55 and c < 0.55:    return "breakaway_artist"
+    if s >= 0.65:                                return "sprinter"
+    if c >= 0.65:                                return "climber"
+    if p >= 0.55:                                return "puncheur"
+    if t >= 0.65:                                return "tt_specialist"
+    return "all_rounder"
+
+_SPRINTER_ARCHETYPES = {"sprinter", "gc_leader"}
+
+def terrain_mismatch(archetype: str, stage_type: str) -> bool:
+    """True if rider archetype is structurally penalised on this stage type."""
+    if archetype in ("sprinter",) and stage_type in ("hilly", "mountain"):
+        return True
+    if archetype in ("climber",) and stage_type == "sprint":
+        return True
+    return False
 
 # ── Win probabilities per stage ──────────────────────────────────────────────
 def stage_win_probs(stage_n):
@@ -105,6 +148,15 @@ for r in active_riders:
     rb1      = roadbooks[1]
     cap_ev   = captain_bonus_ev(win_p1, rb1["finish_type"], bd1["jersey"], bd1["sprint_kom"])
 
+    arch = get_archetype(r)
+    var3s = (bd1.get("variance", 0) + bd2.get("variance", 0) + bd3.get("variance", 0))
+    sigma3s = round(math.sqrt(var3s)) if var3s > 0 else 0
+    ev_per_sigma = round(ev3s / max(sigma3s, 1), 3)
+
+    s1_type = roadbooks[1].get("stage_type", "flat")
+    s2_type = roadbooks[2].get("stage_type", "flat")
+    s3_type = roadbooks[3].get("stage_type", "flat")
+
     enriched.append({
         "rider_id":   rid,
         "name":       r["name"],
@@ -113,19 +165,37 @@ for r in active_riders:
         "price":      r.get("price", 0),
         "type":       rt,
         "type_label": TYPE_LABEL[rt],
+        "archetype":  arch,
         "wp1":        round(win_p1 * 100, 2),
+        "wp2":        round(wp2.get(rid, 0) * 100, 2),
+        "wp3":        round(wp3.get(rid, 0) * 100, 2),
         # Stage 1 breakdown
         "s1_finish":  bd1["stage_finish"],
         "s1_gc":      bd1["gc"],
         "s1_jersey":  bd1["jersey"],
         "s1_sk":      bd1["sprint_kom"],
         "ev1":        ev1,
-        # Other stages
+        "s1_mismatch": terrain_mismatch(arch, s1_type),
+        # Stage 2 breakdown
+        "s2_finish":  bd2["stage_finish"],
+        "s2_gc":      bd2["gc"],
+        "s2_jersey":  bd2["jersey"],
+        "s2_sk":      bd2["sprint_kom"],
         "ev2":        ev2,
+        "s2_mismatch": terrain_mismatch(arch, s2_type),
+        # Stage 3 breakdown
+        "s3_finish":  bd3["stage_finish"],
+        "s3_gc":      bd3["gc"],
+        "s3_jersey":  bd3["jersey"],
+        "s3_sk":      bd3["sprint_kom"],
         "ev3_stage":  bd3["total"],
+        "s3_mismatch": terrain_mismatch(arch, s3_type),
         "ev3s":       ev3s,
         # Captain EV
         "cap_ev":     cap_ev,
+        # Risk metrics
+        "sigma3s":    sigma3s,
+        "ev_per_sigma": ev_per_sigma,
         "sort_score": ev3s + cap_ev,
     })
 
@@ -353,6 +423,27 @@ html = f"""<!DOCTYPE html>
   .stage-meta{{display:flex;gap:20px;margin-top:6px;flex-wrap:wrap}}
   .stage-meta span{{background:var(--surface);border:1px solid var(--border);
     border-radius:4px;padding:3px 10px;font-size:12px;color:var(--muted)}}
+  .stage-flipper{{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}}
+  .flipper-btn{{padding:6px 14px;background:var(--surface);border:1px solid var(--border);
+    color:var(--blue-hi);border-radius:6px;cursor:pointer;font-size:13px}}
+  .flipper-btn:hover{{border-color:var(--blue-hi)}}
+  .flipper-btn:disabled{{opacity:.3;cursor:default}}
+  #stage-label{{flex:1;text-align:center;font-weight:600;color:#e6edf3;font-size:14px}}
+  .stage-img-placeholder{{background:var(--surface);border:1px solid var(--border);
+    border-radius:6px;padding:40px;text-align:center;color:var(--muted);
+    font-size:13px;max-width:1050px}}
+  .rider-detail-row{{display:none;background:#0d1117}}
+  .rider-detail-row td{{padding:0}}
+  .detail-box{{padding:10px 16px;border-bottom:1px solid var(--border);
+    font-size:12px;line-height:1.7}}
+  .detail-stage-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}}
+  .detail-stage{{background:var(--surface);border:1px solid var(--border);
+    border-radius:4px;padding:8px 10px}}
+  .detail-stage-hdr{{font-weight:600;color:var(--blue-hi);margin-bottom:4px;font-size:11px}}
+  .mismatch-warn{{color:#f0a030;font-weight:600}}
+  .expand-arrow{{color:var(--muted);margin-left:4px;font-size:11px}}
+  .rider-row-clickable{{cursor:pointer}}
+  .rider-row-clickable:hover td{{background:#1c2128 !important}}
   table.ev-table{{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:8px}}
   .ev-table th{{background:var(--surface);color:var(--muted);
     padding:7px 8px;text-align:left;font-weight:600;
@@ -445,16 +536,15 @@ html = f"""<!DOCTYPE html>
 </div>
 
 <div class="section">
-  <h2>Stage 1 Profile</h2>
+  <h2>Stage Profiles (1–21)</h2>
+  <div class="stage-flipper">
+    <button class="flipper-btn" id="prev-stage" onclick="flipStage(-1)">← Prev</button>
+    <span id="stage-label">Loading…</span>
+    <button class="flipper-btn" id="next-stage" onclick="flipStage(+1)">Next →</button>
+  </div>
   <div class="stage-profile">
-    {'<img src="' + stage1_img_src + '" alt="Stage 1 profile — Nessebar to Burgas" />' if stage1_img_src else '<p class="muted">Stage image not found at data/stage_images/stage-1.jpg</p>'}
-    <div class="stage-meta">
-      <span>Type: Flat</span>
-      <span>Sprints: 1 intermediate (km 72)</span>
-      <span>KOMs: 0</span>
-      <span>Finish: Bunch sprint</span>
-      <span>Source: stage_profiles_parsed.json (image-parsed)</span>
-    </div>
+    <div id="stage-image-wrap"></div>
+    <div id="stage-meta" class="stage-meta"></div>
   </div>
 </div>
 
@@ -506,6 +596,9 @@ html = f"""<!DOCTYPE html>
 
 <div class="section">
   <h2>§2 — Full EV Table (All Active Riders)</h2>
+  <p class="muted" style="margin-bottom:8px;font-size:12px;">
+    Click any row to expand 6-component EV breakdown × 3 stages + σ and terrain mismatch ⚠
+  </p>
   <div class="filter-row">
     <input class="search-bar" id="search" placeholder="Search rider or team…" />
     <select id="type-filter">
@@ -525,17 +618,17 @@ html = f"""<!DOCTYPE html>
       <th data-col="name">Rider</th>
       <th data-col="team">Team</th>
       <th data-col="price">Price</th>
-      <th data-col="s1_finish" class="bd-finish">S1 Finish</th>
-      <th data-col="s1_gc" class="bd-gc">S1 GC</th>
-      <th data-col="s1_jersey" class="bd-jer">S1 Jersey</th>
-      <th data-col="s1_sk" class="bd-sk">S1 Spr/KOM</th>
       <th data-col="ev1" class="ev-s1">S1 Total</th>
       <th data-col="ev2">S2 EV</th>
       <th data-col="ev3_stage">S3 EV</th>
       <th data-col="ev3s" class="sorted-desc">3-Stage EV</th>
-      <th data-col="cap_ev">Captain EV</th>
+      <th data-col="sigma3s">σ (3-stg)</th>
+      <th data-col="ev_per_sigma">EV/σ</th>
+      <th data-col="cap_ev">Capt EV</th>
       <th data-col="type_label">Type</th>
+      <th data-col="archetype">Archetype</th>
       <th data-col="wp1">P(win S1)%</th>
+      <th></th>
     </tr></thead>
     <tbody id="full-table-body"></tbody>
   </table>
@@ -612,31 +705,74 @@ html = f"""<!DOCTYPE html>
     Signals are merged with weighted agreement/conflict logic and applied as
     <code>mode:adjust</code> overrides — additive on top of base attributes, capped at [0,1].
   </p>
-  <button class="intel-btn" onclick="gatherIntelligence()">Gather Intelligence (Stage 1)</button>
-  <div id="intel-summary" class="intel-panel" style="margin-top:12px">
-    {_intel_panel_html(_intel_data) or '<p class="muted">No intelligence data gathered yet. Click the button above to run.</p>'}
+  <div class="intel-header" style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+    <button class="intel-btn" onclick="showIntelCommands()">🔍 Gather Intelligence</button>
+    <div id="intel-commands" style="display:none;font-size:12px">
+      <code>python3 scripts/gather_expert_intel.py --stage 1</code>
+      &nbsp; then &nbsp;
+      <code>python3 scripts/apply_corrections_and_rebuild.py</code>
+      &nbsp;
+      <button onclick="document.getElementById('intel-commands').style.display='none'"
+              style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:12px">✕</button>
+    </div>
+  </div>
+  <div id="intel-summary" class="intel-panel">
+    {_intel_panel_html(_intel_data) or '<p class="muted">No intelligence gathered yet. Click \'Gather Intelligence\' above.</p>'}
   </div>
 </div>
 
 <div class="footer">
-  <p>Snapshot: {snap_ts} &nbsp;|&nbsp; Phase 3c — official sprint/KOM scales, corrected GC + captain bonus</p>
+  <p>Snapshot: {snap_ts} &nbsp;|&nbsp; Phase 3f — collapsible rows, stage flipper, archetype risk profiles</p>
   <p style="margin-top:4px;">Submit team at <strong>holdet.dk</strong> before 17:00 May 8</p>
 </div>
 </div>
 
 <script>
 const ALL_RIDERS = {riders_js};
-const REC_IDS   = new Set({json.dumps(list(rec_ids))});
-const CAP_ID    = {json.dumps(cap_id)};
+const REC_IDS    = new Set({json.dumps(list(rec_ids))});
+const CAP_ID     = {json.dumps(cap_id)};
+const STAGES_JS  = {_embed_stages_js()};
 
-let sortCol  = "ev3s";
-let sortDesc = true;
+// ── Stage flipper ─────────────────────────────────────────────────────────────
+let currentStageIdx = 0;
+
+function renderStage(stage) {{
+  const wrap  = document.getElementById("stage-image-wrap");
+  const meta  = document.getElementById("stage-meta");
+  const label = document.getElementById("stage-label");
+  label.textContent = stage.label;
+  wrap.innerHTML = stage.image_b64
+    ? `<img src="${{stage.image_b64}}" alt="Stage ${{stage.number}} profile" style="width:100%;max-width:1050px;border-radius:6px;border:1px solid var(--border)">`
+    : `<div class="stage-img-placeholder">Stage ${{stage.number}} image not available — add to data/stage_images/stage-${{stage.number}}.jpg</div>`;
+  meta.innerHTML = [
+    `Type: ${{stage.type || "?"}}`,
+    `Distance: ${{stage.distance}} km`,
+    `Finish: ${{stage.finish_type || "?"}}`,
+    `Sprints: ${{stage.sprints}}`,
+    `KOMs: ${{stage.koms}}`,
+  ].map(t => `<span>${{t}}</span>`).join("");
+  document.getElementById("prev-stage").disabled = (currentStageIdx === 0);
+  document.getElementById("next-stage").disabled = (currentStageIdx === STAGES_JS.length - 1);
+}}
+
+function flipStage(delta) {{
+  currentStageIdx = Math.max(0, Math.min(STAGES_JS.length - 1, currentStageIdx + delta));
+  renderStage(STAGES_JS[currentStageIdx]);
+}}
+
+renderStage(STAGES_JS[currentStageIdx]);
+
+// ── Full rider table with collapsible rows ────────────────────────────────────
+let sortCol    = "ev3s";
+let sortDesc   = true;
 let filterText = "";
 let filterType = "";
+const openRows = new Set();
 
 function fmt(n) {{
   return Math.round(n).toLocaleString("da-DK") + " kr";
 }}
+
 function badge(type) {{
   const cls = {{
     "elite_sprinter":"badge-sprint","good_sprinter":"badge-sprint",
@@ -644,6 +780,40 @@ function badge(type) {{
     "breakaway":"badge-break","domestique":"badge-dom",
   }}[type] || "badge-dom";
   return `<span class="badge ${{cls}}">${{type}}</span>`;
+}}
+
+function stageDetail(r, n, evField, finField, gcField, jerField, skField, wpField, mmField) {{
+  const mismatch = r[mmField] ? `<span class="mismatch-warn"> ⚠ terrain mismatch</span>` : "";
+  return `
+    <div class="detail-stage">
+      <div class="detail-stage-hdr">Stage ${{n}} (P(win): ${{r[wpField]}}%)${{mismatch}}</div>
+      <div><span class="bd-finish">Finish:</span> ${{fmt(r[finField])}}</div>
+      <div><span class="bd-gc">GC:</span> ${{fmt(r[gcField])}}</div>
+      <div><span class="bd-jer">Jersey:</span> ${{fmt(r[jerField])}}</div>
+      <div><span class="bd-sk">Spr/KOM:</span> ${{fmt(r[skField])}}</div>
+      <div style="margin-top:4px;font-weight:600">Total: ${{fmt(r[evField])}}</div>
+    </div>`;
+}}
+
+function detailHtml(r) {{
+  const ev_per_s = r.sigma3s > 0 ? (r.ev3s / r.sigma3s).toFixed(2) : "—";
+  return `
+  <td colspan="14">
+    <div class="detail-box">
+      <div style="display:flex;gap:16px;margin-bottom:6px;font-size:11px;color:var(--muted)">
+        <span>Archetype: <strong style="color:var(--text)">${{r.archetype}}</strong></span>
+        <span>σ (3-stg): <strong>${{fmt(r.sigma3s)}}</strong></span>
+        <span>EV/σ: <strong>${{r.ev_per_sigma}}</strong></span>
+        <span>3-Stage EV: <strong class="ev-total">${{fmt(r.ev3s)}}</strong></span>
+        <span>Captain EV: <strong>${{fmt(r.cap_ev)}}</strong></span>
+      </div>
+      <div class="detail-stage-grid">
+        ${{stageDetail(r,1,"ev1","s1_finish","s1_gc","s1_jersey","s1_sk","wp1","s1_mismatch")}}
+        ${{stageDetail(r,2,"ev2","s2_finish","s2_gc","s2_jersey","s2_sk","wp2","s2_mismatch")}}
+        ${{stageDetail(r,3,"ev3_stage","s3_finish","s3_gc","s3_jersey","s3_sk","wp3","s3_mismatch")}}
+      </div>
+    </div>
+  </td>`;
 }}
 
 function renderTable() {{
@@ -662,27 +832,59 @@ function renderTable() {{
   }});
 
   const tbody = document.getElementById("full-table-body");
-  tbody.innerHTML = rows.map(r => {{
-    const isRec = REC_IDS.has(r.rider_id);
-    const isCap = r.rider_id === CAP_ID;
-    const cls   = isCap ? "captain-row" : (isRec ? "rec-row" : "");
-    return `<tr class="${{cls}}">
+  const frags = [];
+  rows.forEach(r => {{
+    const isRec  = REC_IDS.has(r.rider_id);
+    const isCap  = r.rider_id === CAP_ID;
+    const isOpen = openRows.has(r.rider_id);
+    const cls    = isCap ? "captain-row rider-row-clickable"
+                         : (isRec ? "rec-row rider-row-clickable" : "rider-row-clickable");
+    const arrow  = isOpen ? "▼" : "▶";
+
+    frags.push(`<tr class="${{cls}}" data-id="${{r.rider_id}}">
       <td>${{r.name}}${{isCap ? " ★" : ""}}</td>
       <td>${{r.team}}</td>
       <td>${{fmt(r.price)}}</td>
-      <td class="bd-finish">${{fmt(r.s1_finish)}}</td>
-      <td class="bd-gc">${{fmt(r.s1_gc)}}</td>
-      <td class="bd-jer">${{fmt(r.s1_jersey)}}</td>
-      <td class="bd-sk">${{fmt(r.s1_sk)}}</td>
       <td class="ev-s1">${{fmt(r.ev1)}}</td>
       <td>${{fmt(r.ev2)}}</td>
       <td>${{fmt(r.ev3_stage)}}</td>
       <td class="ev-total">${{fmt(r.ev3s)}}</td>
+      <td>${{fmt(r.sigma3s)}}</td>
+      <td>${{r.ev_per_sigma}}</td>
       <td>${{fmt(r.cap_ev)}}</td>
       <td>${{badge(r.type)}}</td>
+      <td style="color:var(--muted);font-size:11px">${{r.archetype}}</td>
       <td>${{r.wp1}}%</td>
-    </tr>`;
-  }}).join("");
+      <td class="expand-arrow">${{arrow}}</td>
+    </tr>`);
+
+    if (isOpen) {{
+      frags.push(`<tr class="rider-detail-row" style="display:table-row" data-detail="${{r.rider_id}}">${{detailHtml(r)}}</tr>`);
+    }} else {{
+      frags.push(`<tr class="rider-detail-row" data-detail="${{r.rider_id}}">${{detailHtml(r)}}</tr>`);
+    }}
+  }});
+
+  tbody.innerHTML = frags.join("");
+
+  tbody.querySelectorAll("tr.rider-row-clickable").forEach(row => {{
+    row.addEventListener("click", () => {{
+      const id     = row.dataset.id;
+      const detail = tbody.querySelector(`tr[data-detail="${{id}}"]`);
+      const arrow  = row.querySelector(".expand-arrow");
+      if (!detail) return;
+      const isNowOpen = detail.style.display === "table-row";
+      if (isNowOpen) {{
+        detail.style.display = "none";
+        arrow.textContent = "▶";
+        openRows.delete(id);
+      }} else {{
+        detail.style.display = "table-row";
+        arrow.textContent = "▼";
+        openRows.add(id);
+      }}
+    }});
+  }});
 
   document.getElementById("table-count").textContent =
     `Showing ${{rows.length}} of ${{ALL_RIDERS.length}} active riders`;
@@ -708,19 +910,10 @@ document.getElementById("type-filter").addEventListener("change", e => {{
 
 renderTable();
 
-function gatherIntelligence() {{
-  const panel = document.getElementById("intel-summary");
-  panel.innerHTML = `<p style="color:var(--blue-hi)">
-    Run in terminal:<br>
-    <code style="font-size:13px;display:block;margin:8px 0;padding:10px;background:#0d1117;border-radius:4px">
-      python3 scripts/gather_expert_intel.py --stage 1
-    </code>
-    Then rebuild the dashboard:<br>
-    <code style="font-size:13px;display:block;margin:8px 0;padding:10px;background:#0d1117;border-radius:4px">
-      python3 scripts/apply_corrections_and_rebuild.py
-    </code>
-    Reload this page after the rebuild completes to see updated adjustments.
-  </p>`;
+// ── Intelligence panel toggle ─────────────────────────────────────────────────
+function showIntelCommands() {{
+  const el = document.getElementById("intel-commands");
+  el.style.display = el.style.display === "none" ? "inline-flex" : "none";
 }}
 </script>
 </body>

@@ -1,5 +1,5 @@
 meta:
-  description: Stage 1 System B selection — Phase 3c optimizer
+  description: Phase 3f multi-stage optimizer — true per-stage optimization
   stage: 1
   lookahead_stages:
   - 1
@@ -7,200 +7,111 @@ meta:
   - 3
   budget: 50000000
   budget_spent: 50000000
-  budget_remaining: 0
 captain: Jonathan Milan
+captain_rationale: Highest E[max(ΔV,0)] on stage 1
 team:
 - name: Jonathan Milan
   rider_id: milan_jonathan
   holdet_id: 47373
   team: Lidl-Trek
   price: 11500000
-  terrain_type:
-    climbing: 0.28
-    sprint: 0.92
-    time_trial: 0.82
-    mixed: 0.45
-  is_captain: true
-  ev_stage1: 115410
-  ev_stage2: 118697
-  ev_stage3: 116764
-  ev_lookahead: 350871
-  ev_breakdown_s1:
-    stage_finish: 38501
-    gc: 18889
-    jersey: 3908
-    sprint_kom: 54112
-    team_bonus: 0
-    captain_bonus: 0
-    total: 115410
-    variance: 9381448193
+  captain: true
+  stage_1_ev: 115410
+  stage_2_ev: 118697
+  stage_3_ev: 116764
+  3stage_ev: 350871
 - name: Kaden Groves
   rider_id: groves_kaden
   holdet_id: 47375
   team: Alpecin-Premier Tech
   price: 8500000
-  terrain_type:
-    climbing: 0.22
-    sprint: 0.85
-    time_trial: 0.38
-    mixed: 0.4
-  is_captain: false
-  ev_stage1: 113547
-  ev_stage2: 118522
-  ev_stage3: 115623
-  ev_lookahead: 347692
-  ev_breakdown_s1:
-    stage_finish: 37703
-    gc: 18497
-    jersey: 3798
-    sprint_kom: 53549
-    team_bonus: 0
-    captain_bonus: 0
-    total: 113547
-    variance: 9253863328
+  captain: false
+  stage_1_ev: 113547
+  stage_2_ev: 118522
+  stage_3_ev: 115623
+  3stage_ev: 347692
 - name: Arnaud De Lie
   rider_id: delie_arnaud
   holdet_id: 48650
   team: Lotto-Intermarché
   price: 8000000
-  terrain_type:
-    climbing: 0.22
-    sprint: 0.88
-    time_trial: 0.38
-    mixed: 0.38
-  is_captain: false
-  ev_stage1: 113547
-  ev_stage2: 118522
-  ev_stage3: 115623
-  ev_lookahead: 347692
-  ev_breakdown_s1:
-    stage_finish: 37703
-    gc: 18497
-    jersey: 3798
-    sprint_kom: 53549
-    team_bonus: 0
-    captain_bonus: 0
-    total: 113547
-    variance: 9253863328
+  captain: false
+  stage_1_ev: 113547
+  stage_2_ev: 118522
+  stage_3_ev: 115623
+  3stage_ev: 347692
 - name: Dylan Groenewegen
   rider_id: groenewegen_dylan
   holdet_id: 47342
   team: Unibet Rose Rockets
   price: 10000000
-  terrain_type:
-    climbing: 0.18
-    sprint: 0.92
-    time_trial: 0.38
-    mixed: 0.38
-  is_captain: false
-  ev_stage1: 100919
-  ev_stage2: 102547
-  ev_stage3: 101581
-  ev_lookahead: 305047
-  ev_breakdown_s1:
-    stage_finish: 32351
-    gc: 15872
-    jersey: 3093
-    sprint_kom: 49603
-    team_bonus: 0
-    captain_bonus: 0
-    total: 100919
-    variance: 8325055890
+  captain: false
+  stage_1_ev: 100919
+  stage_2_ev: 102547
+  stage_3_ev: 101581
+  3stage_ev: 305047
 - name: Luca Mozzato
   rider_id: mozzato_luca
   holdet_id: 48600
   team: Tudor Pro Cycling
   price: 4000000
-  terrain_type:
-    climbing: 0.22
-    sprint: 0.8
-    time_trial: 0.38
-    mixed: 0.4
-  is_captain: false
-  ev_stage1: 87362
-  ev_stage2: 90984
-  ev_stage3: 88858
-  ev_lookahead: 267204
-  ev_breakdown_s1:
-    stage_finish: 26737
-    gc: 13117
-    jersey: 2415
-    sprint_kom: 45093
-    team_bonus: 0
-    captain_bonus: 0
-    total: 87362
-    variance: 7213761692
+  captain: false
+  stage_1_ev: 87362
+  stage_2_ev: 90984
+  stage_3_ev: 88858
+  3stage_ev: 267204
 - name: Tord Gudmestad
   rider_id: gudmestad_tord
   holdet_id: 47406
   team: Decathlon CMA CGM
   price: 3000000
-  terrain_type:
-    climbing: 0.65
-    sprint: 0.2
-    time_trial: 0.42
-    mixed: 0.55
-  is_captain: false
-  ev_stage1: 58887
-  ev_stage2: 63863
-  ev_stage3: 60963
-  ev_lookahead: 183713
-  ev_breakdown_s1:
-    stage_finish: 12282
-    gc: 6026
-    jersey: 1122
-    sprint_kom: 39457
-    team_bonus: 0
-    captain_bonus: 0
-    total: 58887
-    variance: 3708283993
+  captain: false
+  stage_1_ev: 58887
+  stage_2_ev: 63863
+  stage_3_ev: 60963
+  3stage_ev: 183713
 - name: Jasper De Buyst
   rider_id: debuyst_jasper
   holdet_id: 48651
   team: Lotto-Intermarché
   price: 2500000
-  terrain_type:
-    climbing: 0.5
-    sprint: 0.35
-    time_trial: 0.42
-    mixed: 0.52
-  is_captain: false
-  ev_stage1: 48083
-  ev_stage2: 51370
-  ev_stage3: 49437
-  ev_lookahead: 148890
-  ev_breakdown_s1:
-    stage_finish: 9024
-    gc: 4427
-    jersey: 812
-    sprint_kom: 33820
-    team_bonus: 0
-    captain_bonus: 0
-    total: 48083
-    variance: 2789786205
+  captain: false
+  stage_1_ev: 48083
+  stage_2_ev: 51370
+  stage_3_ev: 49437
+  3stage_ev: 148890
 - name: Markus Hoelgaard
   rider_id: hoelgaard_markus
   holdet_id: 48629
   team: Uno-X Mobility
   price: 2500000
-  terrain_type:
-    climbing: 0.22
-    sprint: 0.82
-    time_trial: 0.38
-    mixed: 0.4
-  is_captain: false
-  ev_stage1: 28707
-  ev_stage2: 35402
-  ev_stage3: 31536
-  ev_lookahead: 95645
-  ev_breakdown_s1:
-    stage_finish: 209
-    gc: 102
-    jersey: 213
-    sprint_kom: 28183
-    team_bonus: 0
-    captain_bonus: 0
-    total: 28707
-    variance: 68669431
-total_ev_stage1: 666462
-total_ev_lookahead: 2046754
+  captain: false
+  stage_1_ev: 28707
+  stage_2_ev: 35402
+  stage_3_ev: 31536
+  3stage_ev: 95645
+transfer_plan:
+  stage_2:
+    decision: HOLD
+    hold_rationale: Transfer cost exceeds EV gain for all candidate swaps
+    transfers_in: []
+    transfers_out: []
+    transfer_fee: 0
+    ev_gain_gross: 719289
+    ev_gain_net: 719289
+  stage_3:
+    decision: HOLD
+    hold_rationale: Transfer cost exceeds EV gain for all candidate swaps
+    transfers_in: []
+    transfers_out: []
+    transfer_fee: 0
+    ev_gain_gross: 699767
+    ev_gain_net: 699767
+team_ev_summary:
+  stage_1_gross: 685844
+  stage_2_gross: 719289
+  stage_3_gross: 699767
+  total_gross: 2104900
+  total_transfer_cost: 0
+  total_net: 2104900
+  depth_bonus_stage_1: 19382
