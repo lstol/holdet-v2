@@ -69,10 +69,13 @@ def load_rider_attributes(rider: dict, stage_n: int, overrides: list[dict]) -> d
 
     Override keys (sprint_affinity, climbing_affinity, ...) map to terrain_affinity subkeys.
     mode='replace' (default): sets the attribute to `value`.
-    mode='adjust': adds `adjustment` to the current value, clamped to [0, 1].
+    mode='adjust': adds `adjustment` (or fallback `value`) to the current value.
 
     Priority (lower applied first, so higher wins): manual=3 > expert_intel=2 > copilot/web=1.
     stage_last_applicable: override only applies up to and including that stage.
+
+    All results clamped to [0, 1]. Manual adjustments are never pre-capped before
+    reaching here — the caller (gather_expert_intel) is responsible for its own caps.
     """
     import copy
     rider_ovs = [
@@ -86,20 +89,28 @@ def load_rider_attributes(rider: dict, stage_n: int, overrides: list[dict]) -> d
 
     r  = copy.copy(rider)
     ta = dict(r.get("terrain_affinity", {}))
+    overridden: list[str] = []
+
     # Apply in ascending priority order — highest priority (manual) applied last and wins
     sorted_ovs = sorted(rider_ovs, key=lambda o: _PRIORITY.get(o.get("source", ""), 0))
     for ov in sorted_ovs:
         mapped = _ATTR_MAP.get(ov["attribute"])
         if mapped:
-            mode = ov.get("mode", "replace")
+            mode   = ov.get("mode", "replace")
+            source = ov.get("source", "")
             if mode == "adjust":
-                base = ta.get(mapped, 0.5)
-                ta[mapped] = round(min(1.0, max(0.0, base + ov.get("adjustment", 0.0))), 2)
+                base       = ta.get(mapped, 0.5)
+                adjustment = float(ov.get("adjustment", ov.get("value", 0.0)))
+                ta[mapped] = round(min(1.0, max(0.0, base + adjustment)), 3)
             else:
-                ta[mapped] = ov["value"]
+                ta[mapped] = round(min(1.0, max(0.0, float(ov["value"]))), 3)
+            overridden.append(f"{mapped}({source})")
         if ov.get("giro_role_2026"):
             r["_giro_role_2026"] = ov["giro_role_2026"]
+
     r["terrain_affinity"] = ta
+    if overridden:
+        r["_overridden"] = overridden
     return r
 
 

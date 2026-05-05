@@ -1,3 +1,29 @@
+# rider_attribute_overrides.yaml
+# Priority: manual=3 > expert_intel=2 > copilot_research/web_search=1
+# load_rider_attributes() applies in ascending priority order — manual always wins.
+#
+# IN-RACE EVENT OVERRIDES (crash, injury, illness)
+# These are the highest-priority corrections and override everything else.
+# Use mode: adjust with large negative values for sprint/climbing loss.
+# Set stage_last_applicable to the last affected stage — overrides auto-expire.
+#
+# Example: sprinter crashes on Stage 1, continues but won't sprint on Stage 3
+#
+# - holdet_id: 12345
+#   name: Jonathan Milan
+#   attribute: sprint_affinity
+#   mode: adjust
+#   adjustment: -0.85
+#   reason: "Crashed Stage 1 km 45, continued but heavily bandaged right knee.
+#            Unlikely to contest sprint Stage 3. Saving for Stage 5."
+#   source: manual
+#   confidence: high
+#   stage_first_applicable: 3
+#   stage_last_applicable: 3   # expires after Stage 3
+#   date: 2026-05-10
+#
+# After adding: python3 scripts/apply_corrections_and_rebuild.py
+#
 overrides:
 - holdet_id: 47373
   name: Jonathan Milan

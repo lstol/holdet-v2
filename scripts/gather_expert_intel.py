@@ -51,9 +51,26 @@ SOURCE_WEIGHTS = {
     "firstcycling":        0.8,
 }
 
-AGREEMENT_AMPLIFIER = 1.2  # cap amplification at this factor
-AGREEMENT_CAP       = 0.20  # max total adjustment magnitude
+AGREEMENT_AMPLIFIER = 1.2
 CONFLICT_DAMPENER   = 0.5
+
+# Signal types that are never soft-capped — use full magnitude for events like crashes
+UNCAPPED_SIGNAL_TYPES = {"injury_risk", "crash", "illness", "dns_risk"}
+
+# Soft caps by signal category (applied after agreement amplification)
+SOFT_CAP_BY_TYPE = {
+    "injury_risk":    1.0,   # uncapped (only valid-range clamp ±1.0)
+    "crash":          1.0,
+    "illness":        1.0,
+    "dns_risk":       1.0,
+    "saving_legs":    0.40,
+    "gc_protection":  0.40,
+    "form":           0.25,
+    "tactics":        0.25,
+    "team_strategy":  0.25,
+    "terrain_fit":    0.20,
+    "stage_hunter":   0.20,
+}
 
 
 # ── Name normalisation ────────────────────────────────────────────────────────
@@ -149,12 +166,25 @@ For each rider mentioned with a form or tactical note, output one JSON object pe
 {
   "rider_name": "Full Name",
   "attribute": "sprint_affinity|climbing_affinity|puncheur_affinity|breakaway_affinity|gc_affinity|tt_affinity",
+  "signal_type": "injury_risk|crash|illness|dns_risk|saving_legs|gc_protection|form|tactics|team_strategy|terrain_fit|stage_hunter",
   "direction": "up|down|neutral",
   "magnitude": 0.05,
   "confidence": "high|medium|low",
   "reason": "one-line reason"
 }
-magnitude: 0.03=minor, 0.05=moderate, 0.10=major, 0.15=very strong signal
+
+magnitude guidance:
+  0.03 = minor note   0.05 = moderate   0.10 = major   0.15 = very strong
+  For injury_risk/crash/illness/dns_risk: use full magnitude needed — 0.50–0.85 is valid
+    e.g. a crashed rider who continues but cannot sprint: magnitude 0.80 is correct
+  For form/tactics/terrain_fit: stay within 0.03–0.15
+
+Caps by signal_type (for your magnitude selection):
+  injury_risk, crash, illness, dns_risk  → no cap — use full magnitude
+  saving_legs, gc_protection             → 0.40 max
+  form, tactics, team_strategy           → 0.25 max
+  terrain_fit, stage_hunter              → 0.20 max
+
 Only output riders with clear directional signals. Do not invent signals.
 Output ONLY the JSON lines, no prose."""
 
@@ -234,35 +264,50 @@ def merge_signals(all_signals: list[dict]) -> dict[tuple[str, str], dict]:
 
         raw_adj = total_adj / total_w
 
-        # Check agreement: what fraction of sources agree on direction?
+        # Agreement/conflict multiplier
         directions = [s["direction"] for s in sigs if s["direction"] != "neutral"]
+        all_agree = False
         if directions:
             dominant = max(set(directions), key=directions.count)
             agree_frac = directions.count(dominant) / len(directions)
             if agree_frac >= 0.75 and len(sigs) >= 2:
                 raw_adj *= AGREEMENT_AMPLIFIER
+                all_agree = True
             elif agree_frac <= 0.5 and len(directions) >= 2:
                 raw_adj *= CONFLICT_DAMPENER
 
-        # Cap total magnitude
-        raw_adj = max(-AGREEMENT_CAP, min(AGREEMENT_CAP, raw_adj))
+        # Signal-type-dependent cap
+        signal_types = {s.get("signal_type", "form") for s in sigs}
+        is_uncapped = bool(signal_types & UNCAPPED_SIGNAL_TYPES)
+        if is_uncapped:
+            # Only clamp to valid affinity range
+            raw_adj = max(-1.0, min(1.0, raw_adj))
+        else:
+            # Soft cap: wider if all sources agree, tighter if mixed
+            soft_cap = 0.40 if all_agree else 0.30
+            # Further constrained by the most conservative type present
+            type_cap = min(
+                SOFT_CAP_BY_TYPE.get(st, 0.25) for st in signal_types
+            )
+            cap = min(soft_cap, type_cap)
+            raw_adj = max(-cap, min(cap, raw_adj))
 
-        # Round to 2dp
-        adjustment = round(raw_adj, 2)
+        adjustment = round(raw_adj, 3)
         if adjustment == 0.0:
             continue
 
-        rider_name = sigs[0]["rider_name"]  # use first occurrence's casing
+        rider_name = sigs[0]["rider_name"]
         reasons = list({s.get("reason", "") for s in sigs if s.get("reason")})
         sources = list({s["source"] for s in sigs})
 
         merged[(rider_norm, attr)] = {
-            "rider_name": rider_name,
-            "attribute":  attr,
-            "adjustment": adjustment,
-            "n_sources":  len(sigs),
-            "sources":    sources,
-            "reasons":    reasons,
+            "rider_name":   rider_name,
+            "attribute":    attr,
+            "adjustment":   adjustment,
+            "n_sources":    len(sigs),
+            "sources":      sources,
+            "signal_types": sorted(signal_types),
+            "reasons":      reasons,
         }
 
     return merged
@@ -332,16 +377,17 @@ def write_intel_overrides(
             "mode":                  "adjust",
             "adjustment":            sig["adjustment"],
             "source":                "expert_intel",
+            "signal_types":          sig.get("signal_types", []),
             "stage_first_applicable": stage_n,
             "stage_last_applicable": stage_n,
             "date":                  today,
             "sources":               sig["sources"],
-            "reasons":               sig["reasons"][:2],  # keep max 2 reasons
+            "reasons":               sig["reasons"][:2],
         }
         new_entries.append(entry)
-        direction = "+" if sig["adjustment"] > 0 else ""
-        print(f"  {rider['name']:<30} {attr:<20} {direction}{sig['adjustment']:+.2f}"
-              f"  ({', '.join(sig['sources'])})")
+        uncapped_marker = " [UNCAPPED]" if set(sig.get("signal_types", [])) & UNCAPPED_SIGNAL_TYPES else ""
+        print(f"  {rider['name']:<30} {attr:<20} {sig['adjustment']:+.3f}"
+              f"  ({', '.join(sig['sources'])}){uncapped_marker}")
 
     if dry_run:
         print(f"\n[DRY RUN] Would write {len(new_entries)} expert_intel entries for stage {stage_n}")
@@ -366,12 +412,13 @@ def save_intel_yaml(
         "raw_signals":   all_signals,
         "merged": [
             {
-                "rider":      v["rider_name"],
-                "attribute":  v["attribute"],
-                "adjustment": v["adjustment"],
-                "n_sources":  v["n_sources"],
-                "sources":    v["sources"],
-                "reasons":    v["reasons"],
+                "rider":        v["rider_name"],
+                "attribute":    v["attribute"],
+                "adjustment":   v["adjustment"],
+                "n_sources":    v["n_sources"],
+                "sources":      v["sources"],
+                "signal_types": v.get("signal_types", []),
+                "reasons":      v["reasons"],
             }
             for v in merged.values()
         ],
