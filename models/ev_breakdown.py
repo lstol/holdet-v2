@@ -49,6 +49,43 @@ WEIGHTS = [1.00, 0.72, 0.57, 0.46, 0.38,
            0.18, 0.15, 0.12, 0.10, 0.08]
 
 
+# ── Override application ──────────────────────────────────────────────────────
+_ATTR_MAP = {
+    "sprint_affinity":    "sprint",
+    "climbing_affinity":  "climbing",
+    "puncheur_affinity":  "mixed",
+    "gc_affinity":        "gc",
+    "breakaway_affinity": "breakaway",
+    "tt_affinity":        "time_trial",
+}
+
+def load_rider_attributes(rider: dict, stage_n: int, overrides: list[dict]) -> dict:
+    """
+    Apply attribute overrides to a rider dict.
+    Returns a copy with terrain_affinity updated for any matching overrides.
+    Override keys (sprint_affinity, climbing_affinity, ...) map to terrain_affinity subkeys.
+    """
+    import copy
+    rider_ovs = [
+        o for o in overrides
+        if o.get("holdet_id") == rider.get("holdet_id")
+        and o.get("stage_first_applicable", 1) <= stage_n
+    ]
+    if not rider_ovs:
+        return rider
+
+    r  = copy.copy(rider)
+    ta = dict(r.get("terrain_affinity", {}))
+    for ov in rider_ovs:
+        mapped = _ATTR_MAP.get(ov["attribute"])
+        if mapped:
+            ta[mapped] = ov["value"]
+        if ov.get("giro_role_2026"):
+            r["_giro_role_2026"] = ov["giro_role_2026"]
+    r["terrain_affinity"] = ta
+    return r
+
+
 # ── Rider helpers ─────────────────────────────────────────────────────────────
 def _ta(r: dict) -> dict:
     return r.get("terrain_affinity", {})
