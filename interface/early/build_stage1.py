@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build Stage 1 Decision Dashboard for Giro 2026 — Phase 3b with EV breakdown."""
+"""Build Stage 1 Decision Dashboard for Giro 2026 — Phase 3c (scoring fixes applied)."""
 
-import json, os, sys
+import base64, json, os, sys
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent.parent
@@ -18,8 +18,8 @@ OUT = Path(__file__).resolve().parent / "stage1_dashboard.html"
 riders_raw   = json.loads((BASE / "data/riders/riders_giro2026_v1.json").read_text())["riders"]
 stages_meta  = {s["stage_number"]: s
                 for s in json.loads((BASE / "data/stages/stages_giro2026.json").read_text())["stages"]}
-profiles     = {p["stage"]: p
-                for p in json.loads((BASE / "data/stages/stage_profiles_parsed.json").read_text())}
+roadbooks    = {r["stage"]: r
+                for r in json.loads((BASE / "data/stages/stage_roadbook.json").read_text())}
 prices_snap  = json.loads((BASE / "data/riders/prices_giro2026_stage0_pre.json").read_text())
 
 try:
@@ -31,6 +31,14 @@ except Exception:
     odds_probs = {}
 
 snap_ts = prices_snap.get("timestamp", "unknown")
+
+# ── Embed stage 1 image as base64 data URI ───────────────────────────────────
+img_path = BASE / "data" / "stage_images" / "stage-1.jpg"
+if img_path.exists():
+    img_b64 = base64.b64encode(img_path.read_bytes()).decode("ascii")
+    stage1_img_src = f"data:image/jpeg;base64,{img_b64}"
+else:
+    stage1_img_src = ""
 
 # ── Constants ────────────────────────────────────────────────────────────────
 BUDGET       = 50_000_000
@@ -57,60 +65,60 @@ active_riders = [
 
 # ── Win probabilities per stage ──────────────────────────────────────────────
 def stage_win_probs(stage_n):
-    p = profiles[stage_n]
-    return make_win_probs(active_riders, p["stage_type"], p["finish_type"])
+    rb = roadbooks[stage_n]
+    return make_win_probs(active_riders, rb["stage_type"], rb["finish_type"])
 
 wp1 = stage_win_probs(1)
 wp2 = stage_win_probs(2)
 wp3 = stage_win_probs(3)
 
-# ── Enrich riders with EV breakdown (no team_bonus at this stage — computed later) ──
+# ── Enrich riders with EV breakdown ──────────────────────────────────────────
 def stage_ev(stage_n, wp, rider):
-    p    = profiles[stage_n]
-    meta = dict(p)
-    meta["elevation_gain_m"] = stages_meta[stage_n].get("elevation_gain_m", 0)
-    bd   = rider_stage_ev_breakdown(rider, meta, wp.get(rider["rider_id"], 0))
-    return bd
+    rb      = roadbooks[stage_n]
+    meta    = stages_meta.get(stage_n, {})
+    win_p   = wp.get(rider["rider_id"], 0)
+    return rider_stage_ev_breakdown(rider, meta, rb, win_p, stage_n)
 
 enriched = []
 for r in active_riders:
-    rid  = r["rider_id"]
-    rt   = classify(r)
+    rid = r["rider_id"]
+    rt  = classify(r)
 
-    bd1  = stage_ev(1, wp1, r)
-    bd2  = stage_ev(2, wp2, r)
-    bd3  = stage_ev(3, wp3, r)
+    bd1 = stage_ev(1, wp1, r)
+    bd2 = stage_ev(2, wp2, r)
+    bd3 = stage_ev(3, wp3, r)
 
     ev1  = bd1["total"]
     ev2  = bd2["total"]
     ev3s = ev1 + ev2 + bd3["total"]
 
-    cap_ev = captain_bonus_ev(bd1["stage_finish"], bd1["gc"], bd1["jersey"], bd1["sprint_kom"])
+    # Captain bonus uses new signature: win_prob, finish_type, je, sk
+    win_p1   = wp1.get(rid, 0)
+    rb1      = roadbooks[1]
+    cap_ev   = captain_bonus_ev(win_p1, rb1["finish_type"], bd1["jersey"], bd1["sprint_kom"])
 
     enriched.append({
-        "rider_id":     rid,
-        "name":         r["name"],
-        "team":         r["team"],
-        "holdet_id":    r["holdet_id"],
-        "price":        r.get("price", 0),
-        "type":         rt,
-        "type_label":   TYPE_LABEL[rt],
-        "wp1":          round(wp1.get(rid, 0) * 100, 2),
+        "rider_id":   rid,
+        "name":       r["name"],
+        "team":       r["team"],
+        "holdet_id":  r["holdet_id"],
+        "price":      r.get("price", 0),
+        "type":       rt,
+        "type_label": TYPE_LABEL[rt],
+        "wp1":        round(win_p1 * 100, 2),
         # Stage 1 breakdown
-        "s1_finish":    bd1["stage_finish"],
-        "s1_gc":        bd1["gc"],
-        "s1_jersey":    bd1["jersey"],
-        "s1_sk":        bd1["sprint_kom"],
-        "ev1":          ev1,
-        # Stage 2 total (breakdown stored separately)
-        "ev2":          ev2,
-        # Stage 3 total
-        "ev3_stage":    bd3["total"],
-        # 3-stage total
-        "ev3s":         ev3s,
-        # Captain EV (Stage 1 positive upside)
-        "cap_ev":       cap_ev,
-        "sort_score":   ev3s + cap_ev,
+        "s1_finish":  bd1["stage_finish"],
+        "s1_gc":      bd1["gc"],
+        "s1_jersey":  bd1["jersey"],
+        "s1_sk":      bd1["sprint_kom"],
+        "ev1":        ev1,
+        # Other stages
+        "ev2":        ev2,
+        "ev3_stage":  bd3["total"],
+        "ev3s":       ev3s,
+        # Captain EV
+        "cap_ev":     cap_ev,
+        "sort_score": ev3s + cap_ev,
     })
 
 enriched.sort(key=lambda x: x["sort_score"], reverse=True)
@@ -135,27 +143,27 @@ recommended, total_cost = pick_team(enriched)
 remaining   = BUDGET - total_cost
 
 # ── Back-fill team_bonus into recommended team ────────────────────────────────
+from models.ev_breakdown import team_bonus_ev as _tb
+
 for r in recommended:
-    rid = r["rider_id"]
-    raw = next((x for x in active_riders if x["rider_id"] == rid), {})
+    rid      = r["rider_id"]
+    raw      = next((x for x in active_riders if x["rider_id"] == rid), {})
     same_team = [t for t in recommended if t["team"] == r["team"] and t["rider_id"] != rid]
     st_wp1    = {t["rider_id"]: wp1.get(t["rider_id"], 0) for t in same_team}
-    from models.ev_breakdown import team_bonus_ev as _tb
     raw_team  = [next(x for x in active_riders if x["rider_id"] == t["rider_id"]) for t in same_team]
-    tb        = _tb(raw, raw_team, st_wp1)
-    r["s1_team_bonus"] = tb
-    r["ev1_with_tb"]   = r["ev1"] + tb
+    r["s1_team_bonus"] = _tb(raw, raw_team, st_wp1)
+    r["ev1_with_tb"]   = r["ev1"] + r["s1_team_bonus"]
 
 # ── Captain ───────────────────────────────────────────────────────────────────
 if recommended:
-    cap_idx = max(range(len(recommended)), key=lambda i: recommended[i]["cap_ev"])
+    cap_idx = max(range(len(recommended)), key=lambda i: recommended[i]["ev1"])
     for i, r in enumerate(recommended):
         r["captain"] = (i == cap_idx)
 
 rec_ids = {r["rider_id"] for r in recommended}
 cap_id  = next((r["rider_id"] for r in recommended if r.get("captain")), None)
 
-cap_candidates = sorted(recommended, key=lambda x: x["cap_ev"], reverse=True)[:5]
+cap_candidates = sorted(recommended, key=lambda x: x["ev1"], reverse=True)[:5]
 
 # ── Alternative teams ─────────────────────────────────────────────────────────
 alt_teams = []
@@ -222,7 +230,8 @@ def cap_row(r, rank):
     return f"""<tr>
       <td>#{rank}</td><td><strong>{r['name']}</strong></td><td>{r['team']}</td>
       <td>{fmt(r['price'])}</td><td>{r['type_label']}</td>
-      <td>{fmt(r['cap_ev'])}</td><td>{reasons.get(r['type'], '')}</td>
+      <td>{fmt(r['cap_ev'])}</td><td>{fmt(r['ev1'])}</td>
+      <td>{reasons.get(r['type'], '')}</td>
     </tr>"""
 
 cap_rows  = "\n".join(cap_row(r, i + 1) for i, r in enumerate(cap_candidates))
@@ -259,9 +268,6 @@ odds_section = (
 
 riders_js = json.dumps(enriched, ensure_ascii=False)
 
-# ── Relative path to stage image from the HTML file ──────────────────────────
-stage1_img_rel = "../../data/stage_images/stage-1.jpg"
-
 html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -297,15 +303,13 @@ html = f"""<!DOCTYPE html>
     border-radius:6px;margin-bottom:16px;flex-wrap:wrap}}
   .budget-bar span{{color:var(--muted)}}
   .budget-bar strong{{color:var(--green-hi)}}
-  /* Stage image */
   .stage-profile{{margin:12px 0}}
   .stage-profile img{{width:100%;max-width:1050px;border-radius:6px;
                       border:1px solid var(--border)}}
   .stage-meta{{display:flex;gap:20px;margin-top:6px;flex-wrap:wrap}}
   .stage-meta span{{background:var(--surface);border:1px solid var(--border);
     border-radius:4px;padding:3px 10px;font-size:12px;color:var(--muted)}}
-  /* Tables */
-  table.ev-table{{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:8px;overflow-x:auto}}
+  table.ev-table{{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:8px}}
   .ev-table th{{background:var(--surface);color:var(--muted);
     padding:7px 8px;text-align:left;font-weight:600;
     border-bottom:1px solid var(--border);white-space:nowrap;
@@ -323,7 +327,6 @@ html = f"""<!DOCTYPE html>
   .flag-row td{{color:var(--warn)}}
   .ev-total{{font-weight:700;color:var(--green-hi)}}
   .ev-s1{{font-weight:600;color:#79c0ff}}
-  /* Breakdown column colours */
   .bd-finish{{color:#58a6ff}}
   .bd-gc{{color:var(--gold-hi)}}
   .bd-jer{{color:#d2a8ff}}
@@ -369,7 +372,6 @@ html = f"""<!DOCTYPE html>
 <body>
 <div class="container">
 
-<!-- Header -->
 <h1>Stage 1 Decision Dashboard — Giro d'Italia 2026</h1>
 <p class="subtitle">
   Nessebar → Burgas &nbsp;|&nbsp; 156 km &nbsp;|&nbsp; Flat sprint &nbsp;|&nbsp;
@@ -390,11 +392,10 @@ html = f"""<!DOCTYPE html>
   <div><span>Tier: </span><strong>Gold</strong></div>
 </div>
 
-<!-- Stage profile image -->
 <div class="section">
   <h2>Stage 1 Profile</h2>
   <div class="stage-profile">
-    <img src="{stage1_img_rel}" alt="Stage 1 profile — Nessebar to Burgas" />
+    {'<img src="' + stage1_img_src + '" alt="Stage 1 profile — Nessebar to Burgas" />' if stage1_img_src else '<p class="muted">Stage image not found at data/stage_images/stage-1.jpg</p>'}
     <div class="stage-meta">
       <span>Type: Flat</span>
       <span>Sprints: 1 intermediate (km 72)</span>
@@ -405,7 +406,6 @@ html = f"""<!DOCTYPE html>
   </div>
 </div>
 
-<!-- Section 1: Recommended Team with breakdown -->
 <div class="section">
   <h2>§1 — Recommended Team (8 Riders)</h2>
   <p class="muted" style="margin-bottom:10px;">
@@ -437,22 +437,21 @@ html = f"""<!DOCTYPE html>
   </table>
   </div>
   <p style="margin-top:6px;font-size:12px;color:var(--muted);">
-    Captain EV = 0.6 × (S1 stage_finish + gc + jersey + sprint_kom) — positive upside of doubling.
+    Captain EV = E[max(ΔV, 0)] from position distribution — positive value growth deposited to bank.
     Team Bonus = expected kr from same-team riders finishing top 3.
   </p>
 </div>
 
-<!-- Probability assumption callout — governance requirement -->
 <div class="prob-callout">
-  <strong>⚠️ Probability model: rule-based baseline (Phase 3a/3b)</strong><br>
-  Win probability for each stage is derived from <code>terrain_affinity</code> (Layer 0 rider attributes) only.<br>
-  Sprint/KOM point EV is estimated from stage profile image parsing (<code>stage_profiles_parsed.json</code>).<br>
-  Calibration constants: sprint = 0.15 × affinity × pts, KOM = 0.10 × affinity × pts — placeholder estimates.<br>
+  <strong>⚠️ Probability model: rule-based baseline (Phase 3c)</strong><br>
+  Win probability derived from <code>terrain_affinity</code> (Layer 0 rider attributes) only.<br>
+  Sprint/KOM point scales are OFFICIAL fixed Giro values (not estimated).<br>
+  GC EV on flat stages: peloton finishes same time → GC pos = stage finish pos.<br>
+  Captain bonus = E[max(ΔV, 0)] — positive upside only, negative days not amplified.<br>
   <strong>These are structural estimates, not trained model outputs.</strong>
   Replace in Phase 4 with trained StageFinishPosition model.
 </div>
 
-<!-- Section 2: Full EV Table (sortable, filterable) -->
 <div class="section">
   <h2>§2 — Full EV Table (All Active Riders)</h2>
   <div class="filter-row">
@@ -492,20 +491,18 @@ html = f"""<!DOCTYPE html>
   <p id="table-count"></p>
 </div>
 
-<!-- Section 3: Captain Recommendation -->
 <div class="section">
   <h2>§3 — Captain Recommendation</h2>
-  <p class="muted" style="margin-bottom:10px;">Top 5 candidates from recommended team</p>
+  <p class="muted" style="margin-bottom:10px;">Top 5 candidates from recommended team (ranked by S1 EV)</p>
   <table class="ev-table">
     <thead><tr>
       <th>#</th><th>Rider</th><th>Team</th><th>Price</th>
-      <th>Type</th><th>Captain EV</th><th>Rationale</th>
+      <th>Type</th><th>Captain EV</th><th>S1 Total EV</th><th>Rationale</th>
     </tr></thead>
     <tbody>{cap_rows}</tbody>
   </table>
 </div>
 
-<!-- Section 4: Stage 2 Warning -->
 <div class="section">
   <h2>§4 — Stage 2 Warning</h2>
   <div class="stage2-warn">
@@ -524,13 +521,11 @@ html = f"""<!DOCTYPE html>
   </table>
 </div>
 
-<!-- Section 5: Odds Divergence -->
 <div class="section">
   <h2>§5 — Odds Divergence Analysis</h2>
   {odds_section}
 </div>
 
-<!-- Section 6: DNS Riders -->
 <div class="section">
   <h2>§6 — DNS Riders (Excluded)</h2>
   <table class="ev-table">
@@ -539,13 +534,11 @@ html = f"""<!DOCTYPE html>
   </table>
 </div>
 
-<!-- Section 7: Alternative Teams -->
 <div class="section">
   <h2>§7 — Alternative Team Compositions</h2>
   {alt_html or '<p class="muted">No alternative teams computed.</p>'}
 </div>
 
-<!-- Section 8: Transfer Cost Formula -->
 <div class="section">
   <h2>§8 — Transfer Cost Formula (Future Reference)</h2>
   <div class="transfer-box">
@@ -561,7 +554,7 @@ html = f"""<!DOCTYPE html>
 </div>
 
 <div class="footer">
-  <p>Snapshot: {snap_ts} &nbsp;|&nbsp; Rule-based baseline — no ML model</p>
+  <p>Snapshot: {snap_ts} &nbsp;|&nbsp; Phase 3c — official sprint/KOM scales, corrected GC + captain bonus</p>
   <p style="margin-top:4px;">Submit team at <strong>holdet.dk</strong> before 17:00 May 8</p>
 </div>
 </div>

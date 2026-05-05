@@ -1,0 +1,210 @@
+conservative:
+  profile: Conservative
+  budget_spent: 50000000
+  team_ev_stage1: 737753
+  team_ev_lookahead: 2257123
+  riders:
+  - name: Jonathan Milan
+    rider_id: milan_jonathan
+    holdet_id: 47373
+    team: Lidl-Trek
+    price: 11500000
+    ev_stage1: 105248
+    ev_lookahead: 322309
+    stddev_s1: 92475
+  - name: Dylan Groenewegen
+    rider_id: groenewegen_dylan
+    holdet_id: 47342
+    team: Unibet Rose Rockets
+    price: 10000000
+    ev_stage1: 105248
+    ev_lookahead: 319910
+    stddev_s1: 92475
+  - name: Arnaud De Lie
+    rider_id: delie_arnaud
+    holdet_id: 48650
+    team: Lotto-Intermarché
+    price: 8000000
+    ev_stage1: 98364
+    ev_lookahead: 300211
+    stddev_s1: 89551
+  - name: Kaden Groves
+    rider_id: groves_kaden
+    holdet_id: 47375
+    team: Alpecin-Premier Tech
+    price: 8500000
+    ev_stage1: 93346
+    ev_lookahead: 285157
+    stddev_s1: 87253
+  - name: Tobias Bayer
+    rider_id: bayer_tobias
+    holdet_id: 48470
+    team: Alpecin-Premier Tech
+    price: 2500000
+    ev_stage1: 91702
+    ev_lookahead: 282647
+    stddev_s1: 86468
+  - name: Markus Hoelgaard
+    rider_id: hoelgaard_markus
+    holdet_id: 48629
+    team: Uno-X Mobility
+    price: 2500000
+    ev_stage1: 88453
+    ev_lookahead: 270476
+    stddev_s1: 84871
+  - name: Max Walscheid
+    rider_id: walscheid_max
+    holdet_id: 47388
+    team: Lidl-Trek
+    price: 3000000
+    ev_stage1: 88453
+    ev_lookahead: 270476
+    stddev_s1: 84871
+  - name: Jake Stewart
+    rider_id: stewart_jake
+    holdet_id: 48531
+    team: NSN Cycling
+    price: 4000000
+    ev_stage1: 66939
+    ev_lookahead: 205937
+    stddev_s1: 65599
+balanced:
+  profile: Balanced
+  budget_spent: 50000000
+  team_ev_stage1: 756073
+  team_ev_lookahead: 2312083
+  riders:
+  - name: Jonathan Milan
+    rider_id: milan_jonathan
+    holdet_id: 47373
+    team: Lidl-Trek
+    price: 11500000
+    ev_stage1: 105248
+    ev_lookahead: 322309
+    stddev_s1: 92475
+  - name: Dylan Groenewegen
+    rider_id: groenewegen_dylan
+    holdet_id: 47342
+    team: Unibet Rose Rockets
+    price: 10000000
+    ev_stage1: 105248
+    ev_lookahead: 319910
+    stddev_s1: 92475
+  - name: Arnaud De Lie
+    rider_id: delie_arnaud
+    holdet_id: 48650
+    team: Lotto-Intermarché
+    price: 8000000
+    ev_stage1: 98364
+    ev_lookahead: 300211
+    stddev_s1: 89551
+  - name: Kaden Groves
+    rider_id: groves_kaden
+    holdet_id: 47375
+    team: Alpecin-Premier Tech
+    price: 8500000
+    ev_stage1: 93346
+    ev_lookahead: 285157
+    stddev_s1: 87253
+  - name: Tobias Bayer
+    rider_id: bayer_tobias
+    holdet_id: 48470
+    team: Alpecin-Premier Tech
+    price: 2500000
+    ev_stage1: 91702
+    ev_lookahead: 282647
+    stddev_s1: 86468
+  - name: Markus Hoelgaard
+    rider_id: hoelgaard_markus
+    holdet_id: 48629
+    team: Uno-X Mobility
+    price: 2500000
+    ev_stage1: 88453
+    ev_lookahead: 270476
+    stddev_s1: 84871
+  - name: Max Walscheid
+    rider_id: walscheid_max
+    holdet_id: 47388
+    team: Lidl-Trek
+    price: 3000000
+    ev_stage1: 88453
+    ev_lookahead: 270476
+    stddev_s1: 84871
+  - name: Luca Mozzato
+    rider_id: mozzato_luca
+    holdet_id: 48600
+    team: Tudor Pro Cycling
+    price: 4000000
+    ev_stage1: 85259
+    ev_lookahead: 260897
+    stddev_s1: 83238
+all_in:
+  profile: All-In
+  budget_spent: 50000000
+  team_ev_stage1: 756073
+  team_ev_lookahead: 2312083
+  riders:
+  - name: Jonathan Milan
+    rider_id: milan_jonathan
+    holdet_id: 47373
+    team: Lidl-Trek
+    price: 11500000
+    ev_stage1: 105248
+    ev_lookahead: 322309
+    stddev_s1: 92475
+  - name: Dylan Groenewegen
+    rider_id: groenewegen_dylan
+    holdet_id: 47342
+    team: Unibet Rose Rockets
+    price: 10000000
+    ev_stage1: 105248
+    ev_lookahead: 319910
+    stddev_s1: 92475
+  - name: Arnaud De Lie
+    rider_id: delie_arnaud
+    holdet_id: 48650
+    team: Lotto-Intermarché
+    price: 8000000
+    ev_stage1: 98364
+    ev_lookahead: 300211
+    stddev_s1: 89551
+  - name: Kaden Groves
+    rider_id: groves_kaden
+    holdet_id: 47375
+    team: Alpecin-Premier Tech
+    price: 8500000
+    ev_stage1: 93346
+    ev_lookahead: 285157
+    stddev_s1: 87253
+  - name: Tobias Bayer
+    rider_id: bayer_tobias
+    holdet_id: 48470
+    team: Alpecin-Premier Tech
+    price: 2500000
+    ev_stage1: 91702
+    ev_lookahead: 282647
+    stddev_s1: 86468
+  - name: Markus Hoelgaard
+    rider_id: hoelgaard_markus
+    holdet_id: 48629
+    team: Uno-X Mobility
+    price: 2500000
+    ev_stage1: 88453
+    ev_lookahead: 270476
+    stddev_s1: 84871
+  - name: Max Walscheid
+    rider_id: walscheid_max
+    holdet_id: 47388
+    team: Lidl-Trek
+    price: 3000000
+    ev_stage1: 88453
+    ev_lookahead: 270476
+    stddev_s1: 84871
+  - name: Luca Mozzato
+    rider_id: mozzato_luca
+    holdet_id: 48600
+    team: Tudor Pro Cycling
+    price: 4000000
+    ev_stage1: 85259
+    ev_lookahead: 260897
+    stddev_s1: 83238

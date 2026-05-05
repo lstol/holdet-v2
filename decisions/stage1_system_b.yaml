@@ -1,0 +1,206 @@
+meta:
+  description: Stage 1 System B selection — Phase 3c optimizer
+  stage: 1
+  lookahead_stages:
+  - 1
+  - 2
+  - 3
+  budget: 50000000
+  budget_spent: 50000000
+  budget_remaining: 0
+captain: Jonathan Milan
+team:
+- name: Jonathan Milan
+  rider_id: milan_jonathan
+  holdet_id: 47373
+  team: Lidl-Trek
+  price: 11500000
+  terrain_type:
+    climbing: 0.28
+    sprint: 0.92
+    time_trial: 0.82
+    mixed: 0.45
+  is_captain: true
+  ev_stage1: 105248
+  ev_stage2: 109884
+  ev_stage3: 107177
+  ev_lookahead: 322309
+  ev_breakdown_s1:
+    stage_finish: 33592
+    gc: 16480
+    jersey: 3318
+    sprint_kom: 51858
+    team_bonus: 0
+    captain_bonus: 0
+    total: 105248
+    variance: 8551669155
+- name: Dylan Groenewegen
+  rider_id: groenewegen_dylan
+  holdet_id: 47342
+  team: Unibet Rose Rockets
+  price: 10000000
+  terrain_type:
+    climbing: 0.18
+    sprint: 0.92
+    time_trial: 0.38
+    mixed: 0.38
+  is_captain: false
+  ev_stage1: 105248
+  ev_stage2: 108201
+  ev_stage3: 106461
+  ev_lookahead: 319910
+  ev_breakdown_s1:
+    stage_finish: 33592
+    gc: 16480
+    jersey: 3318
+    sprint_kom: 51858
+    team_bonus: 0
+    captain_bonus: 0
+    total: 105248
+    variance: 8551669155
+- name: Arnaud De Lie
+  rider_id: delie_arnaud
+  holdet_id: 48650
+  team: Lotto-Intermarché
+  price: 8000000
+  terrain_type:
+    climbing: 0.22
+    sprint: 0.88
+    time_trial: 0.38
+    mixed: 0.38
+  is_captain: false
+  ev_stage1: 98364
+  ev_stage2: 101987
+  ev_stage3: 99860
+  ev_lookahead: 300211
+  ev_breakdown_s1:
+    stage_finish: 30734
+    gc: 15079
+    jersey: 2948
+    sprint_kom: 49603
+    team_bonus: 0
+    captain_bonus: 0
+    total: 98364
+    variance: 8019348422
+- name: Kaden Groves
+  rider_id: groves_kaden
+  holdet_id: 47375
+  team: Alpecin-Premier Tech
+  price: 8500000
+  terrain_type:
+    climbing: 0.22
+    sprint: 0.85
+    time_trial: 0.38
+    mixed: 0.4
+  is_captain: false
+  ev_stage1: 93346
+  ev_stage2: 96969
+  ev_stage3: 94842
+  ev_lookahead: 285157
+  ev_breakdown_s1:
+    stage_finish: 28674
+    gc: 14068
+    jersey: 2692
+    sprint_kom: 47912
+    team_bonus: 0
+    captain_bonus: 0
+    total: 93346
+    variance: 7613128826
+- name: Tobias Bayer
+  rider_id: bayer_tobias
+  holdet_id: 48470
+  team: Alpecin-Premier Tech
+  price: 2500000
+  terrain_type:
+    climbing: 0.32
+    sprint: 0.84
+    time_trial: 0.38
+    mixed: 0.4
+  is_captain: false
+  ev_stage1: 91702
+  ev_stage2: 97019
+  ev_stage3: 93926
+  ev_lookahead: 282647
+  ev_breakdown_s1:
+    stage_finish: 28004
+    gc: 13739
+    jersey: 2611
+    sprint_kom: 47348
+    team_bonus: 0
+    captain_bonus: 0
+    total: 91702
+    variance: 7476783808
+- name: Markus Hoelgaard
+  rider_id: hoelgaard_markus
+  holdet_id: 48629
+  team: Uno-X Mobility
+  price: 2500000
+  terrain_type:
+    climbing: 0.22
+    sprint: 0.82
+    time_trial: 0.38
+    mixed: 0.4
+  is_captain: false
+  ev_stage1: 88453
+  ev_stage2: 92075
+  ev_stage3: 89948
+  ev_lookahead: 270476
+  ev_breakdown_s1:
+    stage_finish: 26686
+    gc: 13092
+    jersey: 2454
+    sprint_kom: 46221
+    team_bonus: 0
+    captain_bonus: 0
+    total: 88453
+    variance: 7203113157
+- name: Max Walscheid
+  rider_id: walscheid_max
+  holdet_id: 47388
+  team: Lidl-Trek
+  price: 3000000
+  terrain_type:
+    climbing: 0.22
+    sprint: 0.82
+    time_trial: 0.38
+    mixed: 0.4
+  is_captain: false
+  ev_stage1: 88453
+  ev_stage2: 92075
+  ev_stage3: 89948
+  ev_lookahead: 270476
+  ev_breakdown_s1:
+    stage_finish: 26686
+    gc: 13092
+    jersey: 2454
+    sprint_kom: 46221
+    team_bonus: 0
+    captain_bonus: 0
+    total: 88453
+    variance: 7203113157
+- name: Luca Mozzato
+  rider_id: mozzato_luca
+  holdet_id: 48600
+  team: Tudor Pro Cycling
+  price: 4000000
+  terrain_type:
+    climbing: 0.22
+    sprint: 0.8
+    time_trial: 0.38
+    mixed: 0.4
+  is_captain: false
+  ev_stage1: 85259
+  ev_stage2: 88882
+  ev_stage3: 86756
+  ev_lookahead: 260897
+  ev_breakdown_s1:
+    stage_finish: 25400
+    gc: 12462
+    jersey: 2304
+    sprint_kom: 45093
+    team_bonus: 0
+    captain_bonus: 0
+    total: 85259
+    variance: 6928598392
+total_ev_stage1: 756073
+total_ev_lookahead: 2312083
