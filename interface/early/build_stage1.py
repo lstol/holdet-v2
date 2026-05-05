@@ -195,6 +195,42 @@ for r in enriched:
 dns_riders = [{"name": r["name"], "team": r["team"], "holdet_id": r.get("holdet_id", "—")}
               for r in riders_raw if r.get("status") == "dns"]
 
+# ── Expert intelligence (stage 1) ─────────────────────────────────────────────
+_intel_path = BASE / "data/intelligence/stage1_expert_intel.yaml"
+_intel_data: dict = {}
+if _intel_path.exists():
+    _intel_data = yaml.safe_load(_intel_path.read_text()) or {}
+
+def _intel_panel_html(intel: dict) -> str:
+    merged = intel.get("merged", [])
+    if not merged:
+        return ""
+    rows = []
+    for sig in sorted(merged, key=lambda s: abs(s.get("adjustment", 0)), reverse=True):
+        adj = sig.get("adjustment", 0)
+        direction = "▲" if adj > 0 else "▼"
+        color = "#2ea043" if adj > 0 else "#f85149"
+        sources = ", ".join(sig.get("sources", []))
+        reasons = " / ".join(sig.get("reasons", []))[:80]
+        rows.append(
+            f"<tr><td>{sig['rider']}</td>"
+            f"<td>{sig['attribute'].replace('_affinity','')}</td>"
+            f"<td style='color:{color}'>{direction} {adj:+.2f}</td>"
+            f"<td>{sources}</td>"
+            f"<td class='muted' style='font-size:11px'>{reasons}</td></tr>"
+        )
+    n = len(merged)
+    date_gathered = intel.get("date_gathered", "unknown")
+    return f"""<p class="muted" style="margin-bottom:8px">
+      {n} rider adjustments gathered {date_gathered} — applied as <code>mode:adjust</code> overrides.
+      Rebuild EVs after gathering: <code>python3 scripts/apply_corrections_and_rebuild.py</code>
+    </p>
+    <div style="overflow-x:auto">
+    <table class="ev-table">
+      <thead><tr><th>Rider</th><th>Attribute</th><th>Adjustment</th><th>Sources</th><th>Reason</th></tr></thead>
+      <tbody>{"".join(rows)}</tbody>
+    </table></div>"""
+
 
 # ── HTML helpers ─────────────────────────────────────────────────────────────
 def fmt(n):
@@ -375,6 +411,14 @@ html = f"""<!DOCTYPE html>
   .footer{{border-top:1px solid var(--border);padding-top:16px;
     color:var(--muted);font-size:12px;margin-top:32px}}
   #table-count{{color:var(--muted);font-size:12px;margin-top:4px}}
+  .intel-panel{{background:var(--surface);border:1px solid var(--border);
+    border-radius:6px;padding:14px;margin-top:10px}}
+  .intel-btn{{
+    padding:8px 16px;background:#1f3a5c;border:1px solid var(--blue);
+    color:var(--blue-hi);border-radius:6px;cursor:pointer;font-size:13px;font-weight:600}}
+  .intel-btn:hover{{background:#1a4a7a;border-color:#58a6ff}}
+  .intel-signal-up{{color:#2ea043;font-weight:600}}
+  .intel-signal-down{{color:#f85149;font-weight:600}}
 </style>
 </head>
 <body>
@@ -561,6 +605,19 @@ html = f"""<!DOCTYPE html>
   </div>
 </div>
 
+<div class="section">
+  <h2>§9 — Expert Intelligence (Stage 1)</h2>
+  <p class="muted" style="margin-bottom:10px;">
+    Gather Emil Axelgaard (TV2 Sport) + 4 secondary sources via Anthropic API.
+    Signals are merged with weighted agreement/conflict logic and applied as
+    <code>mode:adjust</code> overrides — additive on top of base attributes, capped at [0,1].
+  </p>
+  <button class="intel-btn" onclick="gatherIntelligence()">Gather Intelligence (Stage 1)</button>
+  <div id="intel-summary" class="intel-panel" style="margin-top:12px">
+    {_intel_panel_html(_intel_data) or '<p class="muted">No intelligence data gathered yet. Click the button above to run.</p>'}
+  </div>
+</div>
+
 <div class="footer">
   <p>Snapshot: {snap_ts} &nbsp;|&nbsp; Phase 3c — official sprint/KOM scales, corrected GC + captain bonus</p>
   <p style="margin-top:4px;">Submit team at <strong>holdet.dk</strong> before 17:00 May 8</p>
@@ -650,6 +707,21 @@ document.getElementById("type-filter").addEventListener("change", e => {{
 }});
 
 renderTable();
+
+function gatherIntelligence() {{
+  const panel = document.getElementById("intel-summary");
+  panel.innerHTML = `<p style="color:var(--blue-hi)">
+    Run in terminal:<br>
+    <code style="font-size:13px;display:block;margin:8px 0;padding:10px;background:#0d1117;border-radius:4px">
+      python3 scripts/gather_expert_intel.py --stage 1
+    </code>
+    Then rebuild the dashboard:<br>
+    <code style="font-size:13px;display:block;margin:8px 0;padding:10px;background:#0d1117;border-radius:4px">
+      python3 scripts/apply_corrections_and_rebuild.py
+    </code>
+    Reload this page after the rebuild completes to see updated adjustments.
+  </p>`;
+}}
 </script>
 </body>
 </html>"""

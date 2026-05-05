@@ -65,15 +65,22 @@ Five confirmed modeling errors corrected:
 ## Phase 3d — IN PROGRESS ⚠️
 ### Rider intelligence + probability recalibration
 
-**Step 1 — Rider intelligence gathering: RUNNING NOW**
+**Step 1 — Rider intelligence gathering: COMPLETE ✅**
 - scripts/gather_rider_intelligence.py — Anthropic API + web_search per rider
-- data/overrides/rider_attribute_overrides.yaml — human-editable override file
-- scripts/review_contender_pool.py — shows pool with ✓ researched / ⚠ synthetic flags
+- scripts/ingest_copilot_attributes.py — 168-rider copilot batch (972 entries)
+- scripts/gather_expert_intel.py — Emil Axelgaard (TV2) + 4 secondary sources
+  - mode:adjust overrides — additive signal merging with agreement/conflict logic
+  - data/intelligence/stage{N}_expert_intel.yaml — raw + merged signals per stage
+- data/overrides/rider_attribute_overrides.yaml — manual + expert_intel + copilot entries
+  - Priority: manual=3 > expert_intel=2 > copilot_research/web_search=1
+  - stage_last_applicable: expert_intel expires after target stage (no bleedthrough)
+- scripts/review_contender_pool.py — pool audit with ✓ researched / ⚠ synthetic flags
 - scripts/apply_corrections_and_rebuild.py — propagates overrides downstream
-- 45 sprint-relevant riders being researched (~11 minutes)
+- Manual overrides: Milan sprint=0.96, Groenewegen sprint=0.88
+- load_rider_attributes() updated: PRIORITY sort, mode:adjust, stage_last_applicable
+- Dashboard §9 Intelligence Panel: "Gather Intelligence" button + signal summary table
 
 **Step 2 — Probability model fixes: NOT YET BUILT**
-Handoff: HANDOFF_phase3d_probability_and_risk.md
 - Win probability: contender pool model, not full field
   Milan P(win S1) currently 5.4% — should be 10–15%
 - Sprint/KOM EV consistency: assert sprint_kom ≤ stage_finish × 1.5
@@ -89,12 +96,12 @@ Handoff: HANDOFF_phase3d_probability_and_risk.md
 - Expanded: all 6 EV components × 3 stages, with P(win) per stage
 - Breakaway analysis box in Risk Profiles tab
 
-**Dependency order for 3d completion:**
-1. gather_rider_intelligence.py finishes (running now)
-2. review_contender_pool.py 1 — confirm pool
-3. apply_corrections_and_rebuild.py — apply overrides
-4. Run HANDOFF_phase3d_probability_and_risk.md in Claude Code
-5. Rebuild dashboard with collapsible rows
+**Remaining dependency order:**
+1. Run: python3 scripts/gather_expert_intel.py --stage 1
+2. Run: python3 scripts/apply_corrections_and_rebuild.py
+3. Implement Step 2 probability model fixes (contender pool win probs)
+4. Implement Step 3 risk profile rework
+5. Implement Step 4 dashboard collapsible rows
 
 ---
 
@@ -197,3 +204,5 @@ Recommended team (pending 3d rebuild):
 10. Terrain mismatch: pure sprinters have negative EV on hilly/mountain stages
 11. Risk profiles: stage-type-conditional; breakaway artists are explicit variance picks
 12. Rider attributes: synthetic Phase 2a attributes replaced by web search intelligence
+13. Override priority: manual > copilot_research > web_search — load_rider_attributes()
+    sorts by source so manual calibrations always win. Implemented May 8 pre-Stage 1.

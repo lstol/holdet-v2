@@ -59,29 +59,44 @@ _ATTR_MAP = {
     "tt_affinity":        "time_trial",
 }
 
+_PRIORITY = {"manual": 3, "expert_intel": 2, "copilot_research": 1, "web_search": 1}
+
+
 def load_rider_attributes(rider: dict, stage_n: int, overrides: list[dict]) -> dict:
     """
     Apply attribute overrides to a rider dict.
     Returns a copy with terrain_affinity updated for any matching overrides.
+
     Override keys (sprint_affinity, climbing_affinity, ...) map to terrain_affinity subkeys.
+    mode='replace' (default): sets the attribute to `value`.
+    mode='adjust': adds `adjustment` to the current value, clamped to [0, 1].
+
+    Priority (lower applied first, so higher wins): manual=3 > expert_intel=2 > copilot/web=1.
+    stage_last_applicable: override only applies up to and including that stage.
     """
     import copy
     rider_ovs = [
         o for o in overrides
         if o.get("holdet_id") == rider.get("holdet_id")
         and o.get("stage_first_applicable", 1) <= stage_n
+        and o.get("stage_last_applicable", 99) >= stage_n
     ]
     if not rider_ovs:
         return rider
 
     r  = copy.copy(rider)
     ta = dict(r.get("terrain_affinity", {}))
-    # Apply non-manual first, manual last — so manual always wins regardless of YAML order
-    sorted_ovs = sorted(rider_ovs, key=lambda o: 1 if o.get("source") == "manual" else 0)
+    # Apply in ascending priority order — highest priority (manual) applied last and wins
+    sorted_ovs = sorted(rider_ovs, key=lambda o: _PRIORITY.get(o.get("source", ""), 0))
     for ov in sorted_ovs:
         mapped = _ATTR_MAP.get(ov["attribute"])
         if mapped:
-            ta[mapped] = ov["value"]
+            mode = ov.get("mode", "replace")
+            if mode == "adjust":
+                base = ta.get(mapped, 0.5)
+                ta[mapped] = round(min(1.0, max(0.0, base + ov.get("adjustment", 0.0))), 2)
+            else:
+                ta[mapped] = ov["value"]
         if ov.get("giro_role_2026"):
             r["_giro_role_2026"] = ov["giro_role_2026"]
     r["terrain_affinity"] = ta
