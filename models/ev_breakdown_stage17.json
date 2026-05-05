@@ -4,1804 +4,1804 @@
   "stage_type": "hilly",
   "riders": {
     "andresen_tobias": {
-      "stage_finish": 1115,
+      "stage_finish": 1377,
       "gc": 0,
-      "jersey": 328,
-      "sprint_kom": 18923,
+      "jersey": 404,
+      "sprint_kom": 20305,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20366,
-      "variance": 158020427
+      "total": 22086,
+      "variance": 194897740
     },
     "gall_felix": {
-      "stage_finish": 14027,
-      "gc": 5380,
-      "jersey": 2307,
-      "sprint_kom": 12179,
+      "stage_finish": 14573,
+      "gc": 6288,
+      "jersey": 2565,
+      "sprint_kom": 10677,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 33893,
-      "variance": 1807553408
+      "total": 34103,
+      "variance": 1869893869
     },
     "gudmestad_tord": {
-      "stage_finish": 450,
+      "stage_finish": 1772,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 421,
+      "sprint_kom": 17229,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 19422,
+      "variance": 250039690
     },
     "muhlberger_gregor": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "stage_finish": 10324,
+      "gc": 3960,
+      "jersey": 1597,
+      "sprint_kom": 11769,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 27650,
+      "variance": 1368601628
     },
     "naesen_oliver": {
-      "stage_finish": 3373,
+      "stage_finish": 401,
       "gc": 0,
-      "jersey": 765,
-      "sprint_kom": 17697,
+      "jersey": 353,
+      "sprint_kom": 11077,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21835,
-      "variance": 470550095
+      "total": 11831,
+      "variance": 57145449
     },
     "pedersen_rasmus": {
-      "stage_finish": 493,
+      "stage_finish": 197,
       "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
+      "jersey": 448,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 8580,
+      "variance": 28041465
     },
     "scotson_callum": {
-      "stage_finish": 393,
+      "stage_finish": 130,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 340,
+      "sprint_kom": 4926,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 5396,
+      "variance": 18601836
     },
     "staunemittet_johannes": {
-      "stage_finish": 11247,
-      "gc": 4098,
-      "jersey": 3463,
-      "sprint_kom": 11796,
+      "stage_finish": 10706,
+      "gc": 4106,
+      "jersey": 3591,
+      "sprint_kom": 9719,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 30604,
-      "variance": 1480581222
+      "total": 28122,
+      "variance": 1415192807
     },
     "arensman_thymen": {
-      "stage_finish": 11247,
-      "gc": 4098,
-      "jersey": 2095,
-      "sprint_kom": 11796,
+      "stage_finish": 11492,
+      "gc": 4683,
+      "jersey": 2307,
+      "sprint_kom": 10198,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29236,
-      "variance": 1480581222
+      "total": 28680,
+      "variance": 1509999091
     },
     "bernal_egan": {
-      "stage_finish": 16126,
-      "gc": 6649,
-      "jersey": 2542,
-      "sprint_kom": 12344,
+      "stage_finish": 13796,
+      "gc": 5953,
+      "jersey": 2533,
+      "sprint_kom": 10677,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 37661,
-      "variance": 2044141541
+      "total": 32959,
+      "variance": 1780904452
     },
     "ganna_filippo": {
-      "stage_finish": 2505,
+      "stage_finish": 4756,
       "gc": 0,
-      "jersey": 586,
-      "sprint_kom": 18789,
+      "jersey": 1191,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21880,
-      "variance": 351641885
+      "total": 13882,
+      "variance": 656921040
     },
     "haig_jack": {
-      "stage_finish": 493,
-      "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
+      "stage_finish": 11492,
+      "gc": 4683,
+      "jersey": 1757,
+      "sprint_kom": 10198,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 28130,
+      "variance": 1509999091
     },
     "svestadbardseng_embret": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 2474,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 20284,
+      "variance": 922329467
     },
     "swift_connor": {
-      "stage_finish": 393,
+      "stage_finish": 318,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 454,
+      "sprint_kom": 9986,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 10758,
+      "variance": 45291398
     },
     "turner_ben": {
-      "stage_finish": 493,
+      "stage_finish": 232,
       "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
+      "jersey": 345,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 7554,
+      "variance": 33046454
     },
     "barta_will": {
-      "stage_finish": 450,
+      "stage_finish": 405,
       "gc": 0,
-      "jersey": 853,
+      "jersey": 851,
       "sprint_kom": 10331,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 11587,
+      "variance": 57716703
     },
     "froideveaux_robin": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "mozzato_luca": {
-      "stage_finish": 1089,
+      "stage_finish": 980,
       "gc": 0,
-      "jersey": 327,
+      "jersey": 321,
       "sprint_kom": 18512,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 19928,
-      "variance": 154419936
+      "total": 19813,
+      "variance": 139008408
     },
     "rondel_mathys": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 2364,
+      "stage_finish": 12309,
+      "gc": 685,
+      "jersey": 2302,
       "sprint_kom": 14171,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 30980,
-      "variance": 1768065747
+      "total": 29467,
+      "variance": 1607308375
     },
     "storer_michael": {
-      "stage_finish": 542,
+      "stage_finish": 488,
       "gc": 0,
-      "jersey": 917,
+      "jersey": 915,
       "sprint_kom": 11644,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 13103,
-      "variance": 77214503
+      "total": 13047,
+      "variance": 69481280
     },
     "stork_florian": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "warbasse_larry": {
-      "stage_finish": 493,
+      "stage_finish": 443,
       "gc": 0,
-      "jersey": 855,
+      "jersey": 853,
       "sprint_kom": 11357,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 12653,
+      "variance": 63104335
     },
     "bais_mattia": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
+      "stage_finish": 214,
+      "gc": 0,
+      "jersey": 584,
+      "sprint_kom": 6843,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
+      "total": 7641,
+      "variance": 30492847
     },
     "crescioli_ludovico": {
-      "stage_finish": 450,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 7438,
+      "variance": 17320436
     },
     "lonardi_giovanni": {
-      "stage_finish": 1089,
+      "stage_finish": 542,
       "gc": 0,
-      "jersey": 327,
-      "sprint_kom": 18512,
+      "jersey": 241,
+      "sprint_kom": 13261,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 19928,
-      "variance": 154419936
+      "total": 14044,
+      "variance": 77184099
     },
     "maestri_mirco": {
-      "stage_finish": 450,
+      "stage_finish": 154,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 342,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 7473,
+      "variance": 22004773
     },
     "mifsud_andrea": {
-      "stage_finish": 393,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 7438,
+      "variance": 17320436
     },
     "pesenti_thomas": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
+      "stage_finish": 257,
+      "gc": 0,
+      "jersey": 586,
+      "sprint_kom": 6843,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
+      "total": 7686,
+      "variance": 36610146
     },
     "sevilla_diego": {
-      "stage_finish": 450,
+      "stage_finish": 257,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 586,
+      "sprint_kom": 6843,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 7686,
+      "variance": 36610146
     },
     "tonelli_alessandro": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "buitrago_santiago": {
-      "stage_finish": 14027,
-      "gc": 5380,
-      "jersey": 2307,
-      "sprint_kom": 12179,
+      "stage_finish": 13796,
+      "gc": 5953,
+      "jersey": 2533,
+      "sprint_kom": 10677,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 33893,
-      "variance": 1807553408
+      "total": 32959,
+      "variance": 1780904452
     },
     "caruso_damiano": {
-      "stage_finish": 515,
-      "gc": 0,
-      "jersey": 916,
-      "sprint_kom": 11644,
+      "stage_finish": 10706,
+      "gc": 4106,
+      "jersey": 1601,
+      "sprint_kom": 9719,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 13075,
-      "variance": 73358042
+      "total": 26132,
+      "variance": 1415192807
     },
     "eulalia_afonso": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 2474,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 20284,
+      "variance": 922329467
     },
     "govekar_matevz": {
-      "stage_finish": 493,
+      "stage_finish": 443,
       "gc": 0,
-      "jersey": 855,
+      "jersey": 853,
       "sprint_kom": 11357,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 12653,
+      "variance": 63104335
     },
     "miholjevic_fran": {
-      "stage_finish": 450,
+      "stage_finish": 401,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 757,
+      "sprint_kom": 9852,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 11010,
+      "variance": 57145449
     },
     "paasschens_mathijs": {
-      "stage_finish": 393,
+      "stage_finish": 325,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 589,
+      "sprint_kom": 10944,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 11858,
+      "variance": 46312568
     },
     "segaert_alec": {
-      "stage_finish": 8201,
+      "stage_finish": 5134,
       "gc": 0,
-      "jersey": 1372,
-      "sprint_kom": 15112,
+      "jersey": 1336,
+      "sprint_kom": 6843,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 24685,
-      "variance": 1104578568
+      "total": 13313,
+      "variance": 707167448
     },
     "zambanini_edoardo": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "stage_finish": 7501,
+      "gc": 2517,
+      "jersey": 1253,
+      "sprint_kom": 10811,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 22082,
+      "variance": 1015475251
     },
     "blikra_erlend": {
-      "stage_finish": 450,
+      "stage_finish": 652,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 246,
+      "sprint_kom": 15312,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 16210,
+      "variance": 92669602
     },
     "dversnes_fredrik": {
-      "stage_finish": 450,
+      "stage_finish": 263,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 751,
+      "sprint_kom": 7802,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 8816,
+      "variance": 37529421
     },
     "hoelgaard_markus": {
-      "stage_finish": 1115,
+      "stage_finish": 393,
       "gc": 0,
-      "jersey": 328,
-      "sprint_kom": 18923,
+      "jersey": 458,
+      "sprint_kom": 14086,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20366,
-      "variance": 158020427
+      "total": 14937,
+      "variance": 56011391
     },
     "holter_adne": {
-      "stage_finish": 450,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 7438,
+      "variance": 17320436
     },
     "kulset_johannes": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 2364,
-      "sprint_kom": 14171,
+      "stage_finish": 263,
+      "gc": 0,
+      "jersey": 751,
+      "sprint_kom": 7802,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 30980,
-      "variance": 1768065747
+      "total": 8816,
+      "variance": 37529421
     },
     "leknessund_andreas": {
-      "stage_finish": 10942,
-      "gc": 3882,
-      "jersey": 2037,
-      "sprint_kom": 11604,
+      "stage_finish": 10706,
+      "gc": 4106,
+      "jersey": 2151,
+      "sprint_kom": 9719,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 28465,
-      "variance": 1443800245
+      "total": 26682,
+      "variance": 1415192807
     },
     "loland_sakarias": {
-      "stage_finish": 450,
+      "stage_finish": 197,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 448,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 8580,
+      "variance": 28041465
     },
     "tjotta_martin": {
-      "stage_finish": 393,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 7438,
+      "variance": 17320436
     },
     "hirt_jan": {
-      "stage_finish": 10017,
-      "gc": 3458,
-      "jersey": 1408,
-      "sprint_kom": 12028,
+      "stage_finish": 9399,
+      "gc": 3605,
+      "jersey": 1547,
+      "sprint_kom": 9719,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 26911,
-      "variance": 1330977326
+      "total": 24270,
+      "variance": 1254619525
     },
     "mullen_ryan": {
-      "stage_finish": 393,
+      "stage_finish": 71,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 263,
+      "sprint_kom": 3968,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 4302,
+      "variance": 10103825
     },
     "pinarello_alessandro": {
-      "stage_finish": 450,
+      "stage_finish": 197,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 448,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 8580,
+      "variance": 28041465
     },
     "schultz_nick": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
+      "stage_finish": 339,
+      "gc": 0,
+      "jersey": 848,
+      "sprint_kom": 8281,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
+      "total": 9468,
+      "variance": 48388819
     },
     "smith_dion": {
-      "stage_finish": 393,
+      "stage_finish": 270,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 452,
+      "sprint_kom": 9986,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 10708,
+      "variance": 38460031
     },
     "stewart_jake": {
-      "stage_finish": 1596,
+      "stage_finish": 2339,
       "gc": 0,
-      "jersey": 351,
-      "sprint_kom": 18102,
+      "jersey": 448,
+      "sprint_kom": 17229,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20049,
-      "variance": 225441354
+      "total": 20016,
+      "variance": 328739559
     },
     "strong_corbin": {
-      "stage_finish": 1089,
+      "stage_finish": 2046,
       "gc": 0,
-      "jersey": 327,
-      "sprint_kom": 18512,
+      "jersey": 434,
+      "sprint_kom": 17229,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 19928,
-      "variance": 154419936
+      "total": 19709,
+      "variance": 288106315
     },
     "vernon_ethan": {
-      "stage_finish": 393,
+      "stage_finish": 793,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 299,
+      "sprint_kom": 18321,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 19413,
+      "variance": 112628092
     },
     "bax_sjoerd": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "christen_fabio": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "delacruz_david": {
-      "stage_finish": 493,
+      "stage_finish": 443,
       "gc": 0,
-      "jersey": 855,
+      "jersey": 853,
       "sprint_kom": 11357,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 12653,
+      "variance": 63104335
     },
     "donovan_mark": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "gonzalez_david": {
-      "stage_finish": 450,
+      "stage_finish": 405,
       "gc": 0,
-      "jersey": 853,
+      "jersey": 851,
       "sprint_kom": 10331,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 11587,
+      "variance": 57716703
     },
     "harper_chris": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "moschetti_matteo": {
-      "stage_finish": 1115,
+      "stage_finish": 1003,
       "gc": 0,
-      "jersey": 328,
+      "jersey": 323,
       "sprint_kom": 18923,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20366,
-      "variance": 158020427
+      "total": 20249,
+      "variance": 142252159
     },
     "zukowsky_nick": {
-      "stage_finish": 393,
+      "stage_finish": 354,
       "gc": 0,
-      "jersey": 592,
+      "jersey": 591,
       "sprint_kom": 11969,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 12914,
+      "variance": 50403117
     },
     "ciccone_giulio": {
-      "stage_finish": 11075,
-      "gc": 4035,
-      "jersey": 1549,
-      "sprint_kom": 13436,
+      "stage_finish": 14015,
+      "gc": 5711,
+      "jersey": 1877,
+      "sprint_kom": 12248,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 30095,
-      "variance": 1459852599
+      "total": 33851,
+      "variance": 1806203720
     },
     "consonni_simone": {
-      "stage_finish": 1089,
+      "stage_finish": 1772,
       "gc": 0,
-      "jersey": 327,
-      "sprint_kom": 18512,
+      "jersey": 421,
+      "sprint_kom": 17229,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 19928,
-      "variance": 154419936
+      "total": 19422,
+      "variance": 250039690
     },
     "ghebreigzabhier_amanuel": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "stage_finish": 5824,
+      "gc": 1955,
+      "jersey": 1175,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 17714,
+      "variance": 798272519
     },
     "milan_jonathan": {
-      "stage_finish": 1483,
+      "stage_finish": 899,
       "gc": 0,
-      "jersey": 393,
-      "sprint_kom": 21548,
+      "jersey": 306,
+      "sprint_kom": 20371,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 23424,
-      "variance": 209738266
+      "total": 21576,
+      "variance": 127634484
     },
     "sobrero_matteo": {
-      "stage_finish": 493,
+      "stage_finish": 311,
       "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
+      "jersey": 753,
+      "sprint_kom": 7802,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 8866,
+      "variance": 44281536
     },
     "teutenberg_tim": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 2364,
-      "sprint_kom": 14171,
+      "stage_finish": 89,
+      "gc": 0,
+      "jersey": 219,
+      "sprint_kom": 11211,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 30980,
-      "variance": 1768065747
+      "total": 11519,
+      "variance": 12651112
     },
     "walscheid_max": {
-      "stage_finish": 1115,
+      "stage_finish": 542,
       "gc": 0,
-      "jersey": 328,
-      "sprint_kom": 18923,
+      "jersey": 241,
+      "sprint_kom": 13261,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20366,
-      "variance": 158020427
+      "total": 14044,
+      "variance": 77184099
     },
     "bayer_tobias": {
-      "stage_finish": 1358,
-      "gc": 0,
-      "jersey": 422,
-      "sprint_kom": 20291,
+      "stage_finish": 10431,
+      "gc": 500,
+      "jersey": 1942,
+      "sprint_kom": 12995,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 22071,
-      "variance": 192241008
+      "total": 25868,
+      "variance": 1381720674
     },
     "busatto_francesco": {
-      "stage_finish": 393,
+      "stage_finish": 503,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 762,
+      "sprint_kom": 11903,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 13168,
+      "variance": 71631922
     },
     "geens_jonas": {
       "stage_finish": 393,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 458,
+      "sprint_kom": 14086,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 14937,
+      "variance": 56011391
     },
     "groves_kaden": {
-      "stage_finish": 1154,
+      "stage_finish": 1324,
       "gc": 0,
-      "jersey": 330,
-      "sprint_kom": 19538,
+      "jersey": 403,
+      "sprint_kom": 22355,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21022,
-      "variance": 163497059
+      "total": 24082,
+      "variance": 187363841
     },
     "planckaert_edward": {
-      "stage_finish": 1115,
+      "stage_finish": 1772,
       "gc": 0,
-      "jersey": 328,
-      "sprint_kom": 18923,
+      "jersey": 421,
+      "sprint_kom": 17229,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20366,
-      "variance": 158020427
+      "total": 19422,
+      "variance": 250039690
     },
     "plowright_jensen": {
-      "stage_finish": 450,
+      "stage_finish": 793,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 299,
+      "sprint_kom": 18321,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 19413,
+      "variance": 112628092
     },
     "pricepejtersen_johan": {
-      "stage_finish": 493,
+      "stage_finish": 71,
       "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
+      "jersey": 263,
+      "sprint_kom": 3968,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 4302,
+      "variance": 10103825
     },
     "vergallito_luca": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "stage_finish": 7800,
+      "gc": 2618,
+      "jersey": 2516,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 21694,
+      "variance": 1053750204
     },
     "ackermann_pascal": {
-      "stage_finish": 1154,
+      "stage_finish": 793,
       "gc": 0,
-      "jersey": 330,
-      "sprint_kom": 19538,
+      "jersey": 299,
+      "sprint_kom": 18321,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21022,
-      "variance": 163497059
+      "total": 19413,
+      "variance": 112628092
     },
     "bouwman_koen": {
-      "stage_finish": 15732,
-      "gc": 1026,
-      "jersey": 1601,
-      "sprint_kom": 15130,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 1214,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 33489,
-      "variance": 2000389957
+      "total": 19024,
+      "variance": 922329467
     },
     "donaldson_robert": {
-      "stage_finish": 450,
+      "stage_finish": 263,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 751,
+      "sprint_kom": 7802,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 8816,
+      "variance": 37529421
     },
     "engelhardt_felix": {
-      "stage_finish": 450,
+      "stage_finish": 393,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 458,
+      "sprint_kom": 14086,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 14937,
+      "variance": 56011391
     },
     "hatherly_alan": {
-      "stage_finish": 450,
+      "stage_finish": 154,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 342,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 7473,
+      "variance": 22004773
     },
     "oconnor_ben": {
-      "stage_finish": 14027,
-      "gc": 5380,
+      "stage_finish": 11492,
+      "gc": 4683,
       "jersey": 2307,
-      "sprint_kom": 12179,
+      "sprint_kom": 10198,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 33893,
-      "variance": 1807553408
+      "total": 28680,
+      "variance": 1509999091
     },
     "vendrame_andrea": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
+      "stage_finish": 2471,
+      "gc": 0,
+      "jersey": 556,
+      "sprint_kom": 16137,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
+      "total": 19164,
+      "variance": 346931015
     },
     "aleotti_giovanni": {
-      "stage_finish": 10017,
-      "gc": 3458,
-      "jersey": 1408,
-      "sprint_kom": 12028,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 1214,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 26911,
-      "variance": 1330977326
+      "total": 19024,
+      "variance": 922329467
     },
     "vandijke_mick": {
-      "stage_finish": 393,
+      "stage_finish": 244,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 585,
+      "sprint_kom": 8894,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 9723,
+      "variance": 34805613
     },
     "hindley_jai": {
-      "stage_finish": 14402,
-      "gc": 5662,
-      "jersey": 2372,
-      "sprint_kom": 12371,
+      "stage_finish": 12305,
+      "gc": 5310,
+      "jersey": 2471,
+      "sprint_kom": 10677,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 34807,
-      "variance": 1850473015
+      "total": 30763,
+      "variance": 1606860909
     },
     "moscon_gianni": {
-      "stage_finish": 3373,
+      "stage_finish": 283,
       "gc": 0,
-      "jersey": 765,
-      "sprint_kom": 17697,
+      "jersey": 452,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21835,
-      "variance": 470550095
+      "total": 8670,
+      "variance": 40355241
     },
     "pellizzari_giulio": {
-      "stage_finish": 16528,
-      "gc": 6973,
-      "jersey": 4196,
-      "sprint_kom": 12536,
+      "stage_finish": 10136,
+      "gc": 4130,
+      "jersey": 3781,
+      "sprint_kom": 10198,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 40233,
-      "variance": 2088441906
+      "total": 28245,
+      "variance": 1345516053
     },
     "vlasov_aleksandr": {
-      "stage_finish": 11247,
-      "gc": 4098,
-      "jersey": 2095,
-      "sprint_kom": 11796,
+      "stage_finish": 11492,
+      "gc": 4683,
+      "jersey": 2307,
+      "sprint_kom": 10198,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29236,
-      "variance": 1480581222
+      "total": 28680,
+      "variance": 1509999091
     },
     "zwiehoff_ben": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "stage_finish": 5824,
+      "gc": 1955,
+      "jersey": 1175,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 17714,
+      "variance": 798272519
     },
     "ballerini_davide": {
-      "stage_finish": 1373,
+      "stage_finish": 793,
       "gc": 0,
-      "jersey": 341,
-      "sprint_kom": 18512,
+      "jersey": 299,
+      "sprint_kom": 18321,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20226,
-      "variance": 194237603
+      "total": 19413,
+      "variance": 112628092
     },
     "bettiol_alberto": {
-      "stage_finish": 3373,
+      "stage_finish": 512,
       "gc": 0,
-      "jersey": 765,
-      "sprint_kom": 17697,
+      "jersey": 464,
+      "sprint_kom": 14086,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21835,
-      "variance": 470550095
+      "total": 15062,
+      "variance": 72912152
     },
     "livyns_arjen": {
-      "stage_finish": 393,
+      "stage_finish": 140,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 266,
+      "sprint_kom": 8068,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 8474,
+      "variance": 19928831
     },
     "lopez_harold": {
-      "stage_finish": 10309,
-      "gc": 3657,
-      "jersey": 1464,
-      "sprint_kom": 12219,
+      "stage_finish": 6359,
+      "gc": 2287,
+      "jersey": 1305,
+      "sprint_kom": 9239,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 27649,
-      "variance": 1366723284
+      "total": 19190,
+      "variance": 868235798
     },
     "malucelli_matteo": {
-      "stage_finish": 1115,
+      "stage_finish": 652,
       "gc": 0,
-      "jersey": 328,
-      "sprint_kom": 18923,
+      "jersey": 246,
+      "sprint_kom": 15312,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 20366,
-      "variance": 158020427
+      "total": 16210,
+      "variance": 92669602
     },
     "scaroni_christian": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 1214,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
+      "total": 19024,
+      "variance": 922329467
     },
     "ulissi_diego": {
-      "stage_finish": 493,
+      "stage_finish": 3601,
       "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
+      "jersey": 910,
+      "sprint_kom": 18054,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 22565,
+      "variance": 501530950
     },
     "battistella_samuele": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
+      "stage_finish": 13725,
+      "gc": 790,
+      "jersey": 1354,
+      "sprint_kom": 13953,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
+      "total": 29822,
+      "variance": 1772784259
     },
     "quinn_sean": {
-      "stage_finish": 450,
+      "stage_finish": 442,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 759,
+      "sprint_kom": 11903,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 13104,
+      "variance": 62984681
     },
     "rafferty_darren": {
-      "stage_finish": 393,
+      "stage_finish": 244,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 585,
+      "sprint_kom": 8894,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 9723,
+      "variance": 34805613
     },
     "shaw_james": {
-      "stage_finish": 393,
+      "stage_finish": 347,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 755,
+      "sprint_kom": 9852,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 10954,
+      "variance": 49443893
     },
     "valgren_michael": {
-      "stage_finish": 3373,
+      "stage_finish": 2792,
       "gc": 0,
-      "jersey": 765,
-      "sprint_kom": 17697,
+      "jersey": 572,
+      "sprint_kom": 16137,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21835,
-      "variance": 470550095
+      "total": 19501,
+      "variance": 391170276
     },
     "vandenbroek_frank": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "stage_finish": 11693,
+      "gc": 4485,
+      "jersey": 1655,
+      "sprint_kom": 11769,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 29602,
+      "variance": 1534027060
     },
     "flynn_sean": {
-      "stage_finish": 450,
+      "stage_finish": 238,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 450,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 8623,
+      "variance": 33920360
     },
     "hamilton_chris": {
-      "stage_finish": 10017,
-      "gc": 3458,
-      "jersey": 1408,
-      "sprint_kom": 12028,
+      "stage_finish": 5824,
+      "gc": 1955,
+      "jersey": 1175,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 26911,
-      "variance": 1330977326
+      "total": 17714,
+      "variance": 798272519
     },
     "dejong_timo": {
-      "stage_finish": 393,
+      "stage_finish": 154,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 342,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 7473,
+      "variance": 22004773
     },
     "knox_james": {
-      "stage_finish": 9730,
-      "gc": 3265,
-      "jersey": 1353,
+      "stage_finish": 8752,
+      "gc": 2937,
+      "jersey": 1311,
       "sprint_kom": 11836,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 26184,
-      "variance": 1295577834
+      "total": 24836,
+      "variance": 1173933664
     },
     "leemreize_gijs": {
-      "stage_finish": 9730,
-      "gc": 3265,
-      "jersey": 1353,
-      "sprint_kom": 11836,
+      "stage_finish": 9399,
+      "gc": 3605,
+      "jersey": 1547,
+      "sprint_kom": 9719,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 26184,
-      "variance": 1295577834
+      "total": 24270,
+      "variance": 1254619525
     },
     "naberman_tim": {
-      "stage_finish": 450,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 7438,
+      "variance": 17320436
     },
     "vanuden_casper": {
-      "stage_finish": 393,
+      "stage_finish": 652,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 246,
+      "sprint_kom": 15312,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 16210,
+      "variance": 92669602
     },
     "aerts_toon": {
-      "stage_finish": 3373,
+      "stage_finish": 3034,
       "gc": 0,
-      "jersey": 765,
+      "jersey": 749,
       "sprint_kom": 17697,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21835,
-      "variance": 470550095
+      "total": 21480,
+      "variance": 424289553
     },
     "debuyst_jasper": {
-      "stage_finish": 393,
+      "stage_finish": 1316,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 322,
+      "sprint_kom": 14220,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 15858,
+      "variance": 186262321
     },
     "vaneetvelt_lennert": {
-      "stage_finish": 11556,
-      "gc": 4321,
-      "jersey": 3559,
-      "sprint_kom": 11988,
+      "stage_finish": 9399,
+      "gc": 3605,
+      "jersey": 3537,
+      "sprint_kom": 9719,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 31424,
-      "variance": 1517677777
+      "total": 26260,
+      "variance": 1254619525
     },
     "gualdi_simone": {
-      "stage_finish": 450,
+      "stage_finish": 325,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 589,
+      "sprint_kom": 10944,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 11858,
+      "variance": 46312568
     },
     "delie_arnaud": {
-      "stage_finish": 1156,
+      "stage_finish": 1941,
       "gc": 0,
-      "jersey": 331,
-      "sprint_kom": 20153,
+      "jersey": 435,
+      "sprint_kom": 22355,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21640,
-      "variance": 163865403
+      "total": 24731,
+      "variance": 273599184
     },
     "rota_lorenzo": {
-      "stage_finish": 15103,
-      "gc": 941,
-      "jersey": 1513,
-      "sprint_kom": 14842,
+      "stage_finish": 16685,
+      "gc": 960,
+      "jersey": 1507,
+      "sprint_kom": 16004,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 32399,
-      "variance": 1929885104
+      "total": 35156,
+      "variance": 2105696718
     },
     "rutsch_jonas": {
-      "stage_finish": 450,
+      "stage_finish": 270,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 452,
+      "sprint_kom": 9986,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 10708,
+      "variance": 38460031
     },
     "slock_liam": {
-      "stage_finish": 450,
+      "stage_finish": 405,
       "gc": 0,
-      "jersey": 853,
+      "jersey": 851,
       "sprint_kom": 10331,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 11587,
+      "variance": 57716703
     },
     "campenaerts_victor": {
-      "stage_finish": 6890,
+      "stage_finish": 1772,
       "gc": 0,
-      "jersey": 1206,
-      "sprint_kom": 14153,
+      "jersey": 885,
+      "sprint_kom": 6018,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 22249,
-      "variance": 937010868
+      "total": 8675,
+      "variance": 250039690
     },
     "kelderman_wilco": {
-      "stage_finish": 493,
-      "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
+      "stage_finish": 11492,
+      "gc": 4683,
+      "jersey": 1757,
+      "sprint_kom": 10198,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
+      "total": 28130,
+      "variance": 1509999091
     },
     "kielich_timo": {
-      "stage_finish": 450,
+      "stage_finish": 332,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 350,
+      "sprint_kom": 13128,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 13810,
+      "variance": 47345043
     },
     "kuss_sepp": {
-      "stage_finish": 14027,
-      "gc": 5380,
-      "jersey": 2307,
-      "sprint_kom": 12179,
+      "stage_finish": 12305,
+      "gc": 5310,
+      "jersey": 2471,
+      "sprint_kom": 10677,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 33893,
-      "variance": 1807553408
+      "total": 30763,
+      "variance": 1606860909
     },
     "lemmen_bart": {
-      "stage_finish": 450,
+      "stage_finish": 197,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 448,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 8580,
+      "variance": 28041465
     },
     "piganzoli_davide": {
-      "stage_finish": 9730,
-      "gc": 3265,
-      "jersey": 2613,
-      "sprint_kom": 11836,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 2474,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 27444,
-      "variance": 1295577834
+      "total": 20284,
+      "variance": 922329467
     },
     "rex_tim": {
-      "stage_finish": 393,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 7438,
+      "variance": 17320436
     },
     "vingegaard_jonas": {
-      "stage_finish": 17346,
-      "gc": 7651,
-      "jersey": 2754,
-      "sprint_kom": 12919,
+      "stage_finish": 15603,
+      "gc": 7480,
+      "jersey": 2892,
+      "sprint_kom": 11636,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 40670,
-      "variance": 2177679296
+      "total": 37611,
+      "variance": 1986028984
     },
     "bastiaens_ayco": {
-      "stage_finish": 393,
+      "stage_finish": 238,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 450,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 8623,
+      "variance": 33920360
     },
     "vangestel_dries": {
-      "stage_finish": 3373,
+      "stage_finish": 250,
       "gc": 0,
-      "jersey": 765,
-      "sprint_kom": 17697,
+      "jersey": 346,
+      "sprint_kom": 11077,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21835,
-      "variance": 470550095
+      "total": 11673,
+      "variance": 35702209
     },
     "magnier_paul": {
-      "stage_finish": 15337,
-      "gc": 853,
-      "jersey": 2462,
-      "sprint_kom": 16837,
+      "stage_finish": 405,
+      "gc": 0,
+      "jersey": 593,
+      "sprint_kom": 10944,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 35489,
-      "variance": 1956248356
+      "total": 11942,
+      "variance": 57716703
     },
     "stuyven_jasper": {
-      "stage_finish": 2872,
+      "stage_finish": 2652,
       "gc": 0,
-      "jersey": 494,
-      "sprint_kom": 18446,
+      "jersey": 463,
+      "sprint_kom": 17229,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 21812,
-      "variance": 402108944
+      "total": 20344,
+      "variance": 371904829
     },
     "zana_filippo": {
-      "stage_finish": 11094,
-      "gc": 3989,
-      "jersey": 2066,
-      "sprint_kom": 11700,
+      "stage_finish": 10324,
+      "gc": 3960,
+      "jersey": 2147,
+      "sprint_kom": 11769,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 28849,
-      "variance": 1462150805
+      "total": 28200,
+      "variance": 1368601628
     },
     "arrieta_igor": {
-      "stage_finish": 515,
+      "stage_finish": 290,
       "gc": 0,
-      "jersey": 916,
-      "sprint_kom": 11644,
+      "jersey": 846,
+      "sprint_kom": 8281,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 13075,
-      "variance": 73358042
+      "total": 9417,
+      "variance": 41319835
     },
     "christen_jan": {
-      "stage_finish": 450,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
+      "total": 7438,
+      "variance": 17320436
     },
     "morgado_antonio": {
-      "stage_finish": 515,
-      "gc": 0,
-      "jersey": 916,
-      "sprint_kom": 11644,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 2474,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 13075,
-      "variance": 73358042
+      "total": 20284,
+      "variance": 922329467
     },
     "soler_marc": {
-      "stage_finish": 515,
-      "gc": 0,
-      "jersey": 916,
-      "sprint_kom": 11644,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13075,
-      "variance": 73358042
-    },
-    "vine_jay": {
-      "stage_finish": 14027,
-      "gc": 5380,
-      "jersey": 2307,
-      "sprint_kom": 12179,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 33893,
-      "variance": 1807553408
-    },
-    "yates_adam": {
-      "stage_finish": 14027,
-      "gc": 5380,
-      "jersey": 2307,
-      "sprint_kom": 12179,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 33893,
-      "variance": 1807553408
-    },
-    "barthe_cyril": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "cavagna_remi": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
-    },
-    "huens_axel": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "jacobs_johan": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
-    },
-    "kench_josh": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "penhoet_paul": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "rochas_remy": {
-      "stage_finish": 493,
-      "gc": 0,
-      "jersey": 855,
-      "sprint_kom": 11357,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12705,
-      "variance": 70130289
-    },
-    "rolland_brieuc": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
-    },
-    "magli_filippo": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "marcellusi_martin": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "paletti_luca": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
-    },
-    "rojas_vicente": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "tarozzi_manuele": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
-    },
-    "tsvetkov_nikita": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "turconi_filippo": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
-    },
-    "zanoncello_enrico": {
-      "stage_finish": 1596,
-      "gc": 0,
-      "jersey": 351,
-      "sprint_kom": 18102,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 20049,
-      "variance": 225441354
-    },
-    "aular_orluis": {
-      "stage_finish": 13684,
-      "gc": 761,
-      "jersey": 1320,
-      "sprint_kom": 14171,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 29936,
-      "variance": 1768065747
-    },
-    "garciacortina_ivan": {
-      "stage_finish": 3373,
-      "gc": 0,
-      "jersey": 765,
-      "sprint_kom": 17697,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 21835,
-      "variance": 470550095
-    },
-    "lopez_juanpe": {
-      "stage_finish": 472,
-      "gc": 0,
-      "jersey": 914,
-      "sprint_kom": 10619,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12005,
-      "variance": 67234653
-    },
-    "milesi_lorenzo": {
-      "stage_finish": 515,
-      "gc": 0,
-      "jersey": 916,
-      "sprint_kom": 11644,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 13075,
-      "variance": 73358042
-    },
-    "oliveira_nelson": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
-    },
-    "romo_javier": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "feldmann_karsten": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "groenewegen_dylan": {
-      "stage_finish": 1125,
-      "gc": 0,
-      "jersey": 306,
-      "sprint_kom": 20590,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 22021,
-      "variance": 159471962
-    },
-    "kopecky_tomas": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
-    },
-    "kubis_lukas": {
-      "stage_finish": 450,
-      "gc": 0,
-      "jersey": 853,
-      "sprint_kom": 10331,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 11634,
-      "variance": 64144719
-    },
-    "larsen_niklas": {
-      "stage_finish": 393,
-      "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
-      "team_bonus": 0,
-      "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
-    },
-    "poels_wout": {
-      "stage_finish": 8926,
-      "gc": 2996,
-      "jersey": 1313,
+      "stage_finish": 7501,
+      "gc": 2517,
+      "jersey": 1253,
       "sprint_kom": 10811,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 24046,
-      "variance": 1195799110
+      "total": 22082,
+      "variance": 1015475251
+    },
+    "vine_jay": {
+      "stage_finish": 10136,
+      "gc": 4130,
+      "jersey": 2251,
+      "sprint_kom": 10198,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 26715,
+      "variance": 1345516053
+    },
+    "yates_adam": {
+      "stage_finish": 11492,
+      "gc": 4683,
+      "jersey": 2307,
+      "sprint_kom": 10198,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 28680,
+      "variance": 1509999091
+    },
+    "barthe_cyril": {
+      "stage_finish": 250,
+      "gc": 0,
+      "jersey": 346,
+      "sprint_kom": 11077,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 11673,
+      "variance": 35702209
+    },
+    "cavagna_remi": {
+      "stage_finish": 164,
+      "gc": 0,
+      "jersey": 342,
+      "sprint_kom": 4926,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 5432,
+      "variance": 23445673
+    },
+    "huens_axel": {
+      "stage_finish": 191,
+      "gc": 0,
+      "jersey": 269,
+      "sprint_kom": 12169,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 12629,
+      "variance": 27247068
+    },
+    "jacobs_johan": {
+      "stage_finish": 154,
+      "gc": 0,
+      "jersey": 342,
+      "sprint_kom": 6977,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 7473,
+      "variance": 22004773
+    },
+    "kench_josh": {
+      "stage_finish": 197,
+      "gc": 0,
+      "jersey": 448,
+      "sprint_kom": 7935,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 8580,
+      "variance": 28041465
+    },
+    "penhoet_paul": {
+      "stage_finish": 793,
+      "gc": 0,
+      "jersey": 299,
+      "sprint_kom": 18321,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 19413,
+      "variance": 112628092
+    },
+    "rochas_remy": {
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 1214,
+      "sprint_kom": 8760,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 19024,
+      "variance": 922329467
+    },
+    "rolland_brieuc": {
+      "stage_finish": 290,
+      "gc": 0,
+      "jersey": 587,
+      "sprint_kom": 8894,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 9771,
+      "variance": 41319835
+    },
+    "magli_filippo": {
+      "stage_finish": 339,
+      "gc": 0,
+      "jersey": 456,
+      "sprint_kom": 14086,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 14881,
+      "variance": 48388819
+    },
+    "marcellusi_martin": {
+      "stage_finish": 540,
+      "gc": 0,
+      "jersey": 857,
+      "sprint_kom": 12382,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 13779,
+      "variance": 76820116
+    },
+    "paletti_luca": {
+      "stage_finish": 304,
+      "gc": 0,
+      "jersey": 454,
+      "sprint_kom": 12036,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 12794,
+      "variance": 43282986
+    },
+    "rojas_vicente": {
+      "stage_finish": 405,
+      "gc": 0,
+      "jersey": 851,
+      "sprint_kom": 10331,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 11587,
+      "variance": 57716703
+    },
+    "tarozzi_manuele": {
+      "stage_finish": 8576,
+      "gc": 2878,
+      "jersey": 2558,
+      "sprint_kom": 10811,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 24823,
+      "variance": 1151886543
+    },
+    "tsvetkov_nikita": {
+      "stage_finish": 405,
+      "gc": 0,
+      "jersey": 851,
+      "sprint_kom": 10331,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 11587,
+      "variance": 57716703
+    },
+    "turconi_filippo": {
+      "stage_finish": 472,
+      "gc": 0,
+      "jersey": 761,
+      "sprint_kom": 11903,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 13136,
+      "variance": 67239493
+    },
+    "zanoncello_enrico": {
+      "stage_finish": 698,
+      "gc": 0,
+      "jersey": 248,
+      "sprint_kom": 13261,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 14207,
+      "variance": 99254348
+    },
+    "aular_orluis": {
+      "stage_finish": 1040,
+      "gc": 0,
+      "jersey": 310,
+      "sprint_kom": 16270,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 17620,
+      "variance": 147457275
+    },
+    "garciacortina_ivan": {
+      "stage_finish": 2449,
+      "gc": 0,
+      "jersey": 455,
+      "sprint_kom": 18254,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 21158,
+      "variance": 343866928
+    },
+    "lopez_juanpe": {
+      "stage_finish": 9399,
+      "gc": 3605,
+      "jersey": 1547,
+      "sprint_kom": 9719,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 24270,
+      "variance": 1254619525
+    },
+    "milesi_lorenzo": {
+      "stage_finish": 214,
+      "gc": 0,
+      "jersey": 584,
+      "sprint_kom": 6843,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 7641,
+      "variance": 30492847
+    },
+    "oliveira_nelson": {
+      "stage_finish": 130,
+      "gc": 0,
+      "jersey": 340,
+      "sprint_kom": 4926,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 5396,
+      "variance": 18601836
+    },
+    "romo_javier": {
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 1214,
+      "sprint_kom": 8760,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 19024,
+      "variance": 922329467
+    },
+    "feldmann_karsten": {
+      "stage_finish": 405,
+      "gc": 0,
+      "jersey": 851,
+      "sprint_kom": 10331,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 11587,
+      "variance": 57716703
+    },
+    "groenewegen_dylan": {
+      "stage_finish": 693,
+      "gc": 0,
+      "jersey": 251,
+      "sprint_kom": 21463,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 22407,
+      "variance": 98544993
+    },
+    "kopecky_tomas": {
+      "stage_finish": 154,
+      "gc": 0,
+      "jersey": 342,
+      "sprint_kom": 6977,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 7473,
+      "variance": 22004773
+    },
+    "kubis_lukas": {
+      "stage_finish": 89,
+      "gc": 0,
+      "jersey": 219,
+      "sprint_kom": 11211,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 11519,
+      "variance": 12651112
+    },
+    "larsen_niklas": {
+      "stage_finish": 652,
+      "gc": 0,
+      "jersey": 246,
+      "sprint_kom": 15312,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 16210,
+      "variance": 92669602
+    },
+    "poels_wout": {
+      "stage_finish": 9399,
+      "gc": 3605,
+      "jersey": 1547,
+      "sprint_kom": 9719,
+      "team_bonus": 0,
+      "captain_bonus": 0,
+      "total": 24270,
+      "variance": 1254619525
     },
     "reinders_elmar": {
-      "stage_finish": 393,
+      "stage_finish": 900,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 302,
+      "sprint_kom": 14220,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 15422,
+      "variance": 127813670
     },
     "devries_hartthijs": {
-      "stage_finish": 393,
+      "stage_finish": 290,
       "gc": 0,
-      "jersey": 592,
-      "sprint_kom": 11969,
+      "jersey": 587,
+      "sprint_kom": 8894,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 12954,
-      "variance": 56018872
+      "total": 9771,
+      "variance": 41319835
     },
     "guillermo_thomas_silva": {
-      "stage_finish": 0,
+      "stage_finish": 121,
       "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "jersey": 340,
+      "sprint_kom": 6977,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 7438,
+      "variance": 17320436
     },
     "jardi_christiaan_van_der_lee": {
-      "stage_finish": 0,
+      "stage_finish": 197,
       "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "jersey": 448,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 8580,
+      "variance": 28041465
     },
     "jefferson_alexander_cepeda": {
-      "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "stage_finish": 9399,
+      "gc": 3605,
+      "jersey": 1547,
+      "sprint_kom": 9719,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 24270,
+      "variance": 1254619525
     },
     "andrea_raccagni_noviero": {
-      "stage_finish": 0,
+      "stage_finish": 197,
       "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "jersey": 448,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 8580,
+      "variance": 28041465
     },
     "gianmarco_garofoli": {
-      "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 1214,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 19024,
+      "variance": 922329467
     },
     "mathieu_kockelmann": {
-      "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "stage_finish": 6776,
+      "gc": 2274,
+      "jersey": 1214,
+      "sprint_kom": 8760,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 19024,
+      "variance": 922329467
     },
     "milan_menten": {
-      "stage_finish": 0,
+      "stage_finish": 1040,
       "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "jersey": 310,
+      "sprint_kom": 16270,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 17620,
+      "variance": 147457275
     },
     "derek_gee": {
-      "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "stage_finish": 12132,
+      "gc": 698,
+      "jersey": 1283,
+      "sprint_kom": 13953,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 28066,
+      "variance": 1586330593
     },
     "magnus_sheffield": {
-      "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "stage_finish": 11912,
+      "gc": 571,
+      "jersey": 1108,
+      "sprint_kom": 12995,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 26586,
+      "variance": 1560235029
     },
     "einer_augusto_rubio": {
-      "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "stage_finish": 7353,
+      "gc": 2644,
+      "jersey": 1346,
+      "sprint_kom": 9239,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 20582,
+      "variance": 996553031
     },
     "enric_mas_nicolau": {
-      "stage_finish": 0,
-      "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "stage_finish": 12305,
+      "gc": 5310,
+      "jersey": 1921,
+      "sprint_kom": 10677,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 30213,
+      "variance": 1606860909
     },
     "christopher_juul_jensen": {
-      "stage_finish": 0,
+      "stage_finish": 238,
       "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "jersey": 450,
+      "sprint_kom": 7935,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 8623,
+      "variance": 33920360
     },
     "luke_tuckwell": {
       "stage_finish": 0,
@@ -1814,14 +1814,14 @@
       "variance": 0
     },
     "jhonatan_manuel_narvaez_prado": {
-      "stage_finish": 0,
+      "stage_finish": 290,
       "gc": 0,
-      "jersey": 200,
-      "sprint_kom": 0,
+      "jersey": 587,
+      "sprint_kom": 8894,
       "team_bonus": 0,
       "captain_bonus": 0,
-      "total": 200,
-      "variance": 0
+      "total": 9771,
+      "variance": 41319835
     }
   }
 }

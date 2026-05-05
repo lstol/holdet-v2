@@ -135,7 +135,7 @@ def save_overrides(data: dict, path: Path) -> None:
 
 def already_researched(holdet_id: int, existing: dict) -> bool:
     return any(
-        o["holdet_id"] == holdet_id and o.get("source") == "web_search"
+        o["holdet_id"] == holdet_id and o.get("source") in ("web_search", "copilot_research")
         for o in existing.get("overrides", [])
     )
 

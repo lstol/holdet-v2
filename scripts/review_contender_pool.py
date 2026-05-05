@@ -98,7 +98,8 @@ def review_contender_pool(stage_n: int) -> None:
 
     enriched = [apply_overrides(r, stage_n, overrides) for r in active]
 
-    researched_ids = {o["holdet_id"] for o in overrides if o.get("source") == "web_search"}
+    researched_ids = {o["holdet_id"] for o in overrides
+                      if o.get("source") in ("web_search", "copilot_research")}
 
     contenders = [r for r in enriched
                   if r.get("terrain_affinity", {}).get(ta_key, 0) >= threshold]

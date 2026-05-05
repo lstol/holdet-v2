@@ -34,7 +34,8 @@ def load_overrides() -> list[dict]:
 
 
 def count_researched(overrides: list[dict]) -> int:
-    return len({o["holdet_id"] for o in overrides if o.get("source") == "web_search"})
+    return len({o["holdet_id"] for o in overrides
+                if o.get("source") in ("web_search", "copilot_research")})
 
 
 def main():

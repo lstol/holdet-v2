@@ -1,0 +1,115 @@
+unmatched:
+- rider_name: Robert Stannard
+  team: Bahrain Victorious
+  rider_type: puncheur
+  team_role: support
+  sprint_affinity: 0.5
+  climbing_affinity: 0.55
+  puncheur_affinity: 0.7
+  gc_affinity: 0.1
+  breakaway_affinity: 0.7
+  tt_affinity: 0.2
+  stage_win_types:
+  - hilly
+  - breakaway
+  notable_results: Former U23 Liège–Bastogne–Liège winner; versatile rider with several
+    top-10 finishes in hilly classics and stage races.
+  giro_role_2026: Experienced all-rounder who will marshal younger team members and
+    animate mid-mountain stages by getting into breakaways or covering dangerous moves.
+  confidence: high
+- rider_name: Stefan Bissegger
+  team: EF Education - EasyPost
+  rider_type: tt_specialist
+  team_role: support
+  sprint_affinity: 0.1
+  climbing_affinity: 0.3
+  puncheur_affinity: 0.4
+  gc_affinity: 0.0
+  breakaway_affinity: 0.4
+  tt_affinity: 0.9
+  stage_win_types:
+  - itt
+  - breakaway
+  notable_results: Multiple WorldTour time trial victories (including Paris-Nice 2021)
+    and former U23 European Champion; an powerhouse on flats and chrono.
+  giro_role_2026: Aims to win the Giro’s individual time trial and contributes his
+    big engine to control breakaways on flat stages, possibly also attempting a solo
+    break in a short stage.
+  confidence: medium
+- rider_name: Nico Denz
+  team: Red Bull - BORA - hansgrohe
+  rider_type: breakaway_artist
+  team_role: support
+  sprint_affinity: 0.4
+  climbing_affinity: 0.4
+  puncheur_affinity: 0.6
+  gc_affinity: 0.0
+  breakaway_affinity: 0.9
+  tt_affinity: 0.2
+  stage_win_types:
+  - hilly
+  - breakaway
+  notable_results: Two Giro stage wins in 2023 from audacious breakaways; an opportunistic
+    rider who thrives when given freedom to roam.
+  giro_role_2026: Dedicated breakaway specialist to target medium mountain or rolling
+    stages for a stage win; also helps lighten load on leaders by marking break moves
+    early on.
+  confidence: medium
+- rider_name: Fausto Masnada
+  team: Soudal - QuickStep
+  rider_type: climber
+  team_role: support
+  sprint_affinity: 0.1
+  climbing_affinity: 0.8
+  puncheur_affinity: 0.5
+  gc_affinity: 0.4
+  breakaway_affinity: 0.6
+  tt_affinity: 0.2
+  stage_win_types:
+  - mountain
+  notable_results: Giro d’Italia 2019 stage winner and 2020 Giro 9th overall; experienced
+    Italian climber regaining form after injury setbacks.
+  giro_role_2026: Brings veteran climbing depth, assisting Zana and others on the
+    big ascents; if fully fit, he could relaunch his career by featuring in mountain
+    breakaways seeking a home soil stage victory.
+  confidence: medium
+- rider_name: Warren Barguil
+  team: Team Picnic PostNL
+  rider_type: climber
+  team_role: protected_leader
+  sprint_affinity: 0.2
+  climbing_affinity: 0.8
+  puncheur_affinity: 0.7
+  gc_affinity: 0.3
+  breakaway_affinity: 0.8
+  tt_affinity: 0.2
+  stage_win_types:
+  - mountain
+  - hilly
+  notable_results: 2017 Tour de France Mountains classification winner with two stage
+    wins; veteran French climber and former Vuelta 10th overall known for his attacking
+    style.
+  giro_role_2026: Team’s inspirational leader and stage hunter, aiming to crown his
+    late career with a Giro mountain stage win; he will animate breakaways on difficult
+    stages and mentor his young teammates.
+  confidence: medium
+- rider_name: Mikkel Bjerg
+  team: UAE Team Emirates - XRG
+  rider_type: tt_specialist
+  team_role: support
+  sprint_affinity: 0.1
+  climbing_affinity: 0.3
+  puncheur_affinity: 0.3
+  gc_affinity: 0.0
+  breakaway_affinity: 0.2
+  tt_affinity: 0.9
+  stage_win_types:
+  - itt
+  - breakaway
+  notable_results: Triple U23 World Time Trial Champion (2017-2019) and Tour de France
+    2023 stage winner; a formidable engine on flats and TTs who also climbs better
+    than many pure TT specialists.
+  giro_role_2026: Leads out on flat stages and long valley sections with his immense
+    power, protects Yates in winds and technical areas, and will aim for a top performance
+    in the individual time trial stage as a personal goal.
+  confidence: medium

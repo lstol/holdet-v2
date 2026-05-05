@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build Stage 1 Decision Dashboard for Giro 2026 — Phase 3c (scoring fixes applied)."""
+"""Build Stage 1 Decision Dashboard for Giro 2026 — Phase 3d (with attribute overrides)."""
 
-import base64, json, os, sys
+import base64, json, os, sys, yaml
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent.parent
@@ -9,7 +9,7 @@ sys.path.insert(0, str(BASE))
 
 from models.ev_breakdown import (
     make_win_probs, rider_stage_ev_breakdown, captain_bonus_ev,
-    sprint_kom_ev, classify,
+    sprint_kom_ev, classify, load_rider_attributes,
 )
 
 OUT = Path(__file__).resolve().parent / "stage1_dashboard.html"
@@ -31,6 +31,13 @@ except Exception:
     odds_probs = {}
 
 snap_ts = prices_snap.get("timestamp", "unknown")
+
+# ── Load attribute overrides ──────────────────────────────────────────────────
+_overrides_path = BASE / "data/overrides/rider_attribute_overrides.yaml"
+_overrides: list[dict] = []
+if _overrides_path.exists():
+    _raw = yaml.safe_load(_overrides_path.read_text()) or {}
+    _overrides = _raw.get("overrides", [])
 
 # ── Embed stage 1 image as base64 data URI ───────────────────────────────────
 img_path = BASE / "data" / "stage_images" / "stage-1.jpg"
@@ -55,9 +62,10 @@ TYPE_LABEL = {
     "domestique":     "Domestique",
 }
 
-# ── Active riders ────────────────────────────────────────────────────────────
+# ── Active riders (with overrides applied) ───────────────────────────────────
 active_riders = [
-    r for r in riders_raw
+    load_rider_attributes(r, 1, _overrides)
+    for r in riders_raw
     if r.get("status") != "dns"
     and r.get("holdet_id")
     and r.get("holdet_id") not in DNS_IDS
